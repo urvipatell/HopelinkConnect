@@ -39,19 +39,37 @@
             <th>Time</th>
             <th>Date</th>
             <th>Address</th>
+            <th>Status</th> <!-- Add a new column for status -->
+             <th>Actions</th> <!-- Add a new column for actions -->
             <!-- Add more table headers for other fields -->
         </tr>
-        {% for health_camp in health_camps %}
-            <tr>
-                <td>{{ health_camp.nameofdoctor }}</td>
-                <td>{{ health_camp.email }}</td>
-                <td>{{ health_camp.phonenumberarea }} {{ health_camp.phonenumber }}</td>
-                <td>{{ health_camp.types1 }}, {{ health_camp.types2 }}, {{ health_camp.types3 }}, {{ health_camp.types4 }}, {{ health_camp.types5 }}</td>
-                <td>{{ health_camp.timeinput }} {{ health_camp.ampm }}</td>
-                <td>{{ health_camp.date }}</td>
-                <td>{{ health_camp.addrline1 }}, {{ health_camp.addresscity }}, {{ health_camp.addressstate }} {{ health_camp.addresspostal }}</td>
-                <!-- Add more table cells for other fields -->
-            </tr>
+        {% for health_camps in health_camps %}</td>
+        <tr>
+            <td>{{ health_camps.nameofdoctor }}</td>
+            <td>{{ health_camps.email }}</td>
+            <td>{{ health_camps.phonenumberarea }} {{ health_camps.phonenumber }}</td>
+            <td>{{ health_camps.types1 }}{% if health_camps.types2 %}, {% else %} {% endif %} {{ health_camps.types2 }}{% if health_camps.types3 %}, {% else %} {% endif %} {{ health_camps.types3 }}{% if health_camps.types4 %}, {% else %} {% endif %} {{ health_camps.tpes4 }}{% if health_camps.types5 %}, {% else %} {% endif %} {{ health_camps.types5 }}</td>
+            <td>{{ health_camps.date }}</td>
+            <td>{{ health_camps.timeinput }}{% if health_camps.addresscity %}, {% else %} {% endif %} {{ health_camps.addresscity }}{% if health_camps.addressstate %}, {% else %} {% endif %} {{ health_camps.addressstate }} - {{ health_camps.addresspostal }}</td>
+            <td>{{ health_camps.addrline1 }}
+            <td id="status-{{ health_camps.id }}">{{ health_camps.status }}</td>
+            <td>
+              <form action="{% url 'admin_helthcare' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="form_type" value="healthcamp" />
+                <input type="hidden" name="form_id" value="{{health_camps.id}}" />
+                <input type="hidden" name="status" value="Approved" />
+                <button type="submit" class="btn btn-success">Approve</button>
+              </form>
+              <form action="{% url 'admin_helthcare' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="form_type" value="healthcamp" />
+                <input type="hidden" name="form_id" value="{{health_camps.id}}" />
+                <input type="hidden" name="status" value="Rejected" />
+                <button type="submit" class="btn btn-danger">Reject</button>
+              </form>
+            </td>
+          </tr>
         {% endfor %}
     </table>
     <style>

@@ -83,6 +83,15 @@ class SocialEvent(models.Model):
     postal_code = models.CharField(max_length=20)
     file_upload = models.FileField(upload_to='socialevent/')  # Assuming you want to upload files
     description = models.TextField()
+    status = models.CharField(
+        max_length=255,
+        choices=[
+            ("Pending", "Pending"),
+            ("Approved", "Approved"),
+            ("Rejected", "Rejected"),
+        ],
+        default="Pending",
+        )
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
@@ -93,6 +102,15 @@ class UserStory(models.Model):
     user_story = models.TextField()
     notes = models.TextField()
     submission_date = models.DateTimeField(auto_now_add=True)
+    status = models.CharField(
+        max_length=255,
+        choices=[
+            ("Pending", "Pending"),
+            ("Approved", "Approved"),
+            ("Rejected", "Rejected"),
+        ],
+        default="Pending",
+        )
 
     def __str__(self):
         return self.name
@@ -125,6 +143,15 @@ class HealthCamp(models.Model):
     addressstate = models.CharField(max_length=255)
     addresspostal = models.CharField(max_length=10)
     description = models.TextField()
+    status = models.CharField(
+        max_length=255,
+        choices=[
+            ("Pending", "Pending"),
+            ("Approved", "Approved"),
+            ("Rejected", "Rejected"),
+        ],
+        default="Pending",
+        )
 
     def __str__(self):
         return self.nameofdoctor
@@ -143,6 +170,15 @@ class ScholarshipApplication(models.Model):
     addresstate = models.CharField(max_length=255)
     addresspostal = models.CharField(max_length=10)
     benefit = models.TextField()
+    status = models.CharField(
+        max_length=255,
+        choices=[
+            ("Pending", "Pending"),
+            ("Approved", "Approved"),
+            ("Rejected", "Rejected"),
+        ],
+        default="Pending",
+        )
 
     def __str__(self):
         return self.firstname

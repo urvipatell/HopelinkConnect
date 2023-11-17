@@ -47,20 +47,34 @@
         <th>Actions</th> <!-- Add a new column for actions -->
         <!-- Add more table headers for other fields -->
     </tr>
-    {% for scholarship_application in scholarship_applications %}
+    {% for scholarship_applications in scholarship_applications %}
         <tr>
-            <td>{{ scholarship_application.firstname }}</td>
-            <td>{{ scholarship_application.nameoforg }}</td>
-            <td>{{ scholarship_application.nameofscholarship }}</td>
-            <td>{{ scholarship_application.email }}</td>
-            <td>{{ scholarship_application.area }} - {{ scholarship_application.phonenumber }}</td>
-            <td>{{ scholarship_application.typeofscholarship }}</td>
-            <td>{{ scholarship_application.date }}</td>
-            <td>{{ scholarship_application.addrline1 }}, {{ scholarship_application.addresscity }}, {{ scholarship_application.addresstate }} {{ scholarship_application.addresspostal }}</td>
-            <td>{{ scholarship_application.benefit }}</td>
-            <td></td>
-            <td></td>
-            <!-- Add more table cells for other fields -->
+            <td>{{ scholarship_applications.firstname }}</td>
+            <td>{{ scholarship_applications.nameoforg }}</td>
+            <td>{{ scholarship_applications.nameofscholarship }}</td>
+            <td>{{ scholarship_applications.email }}</td>
+            <td>{{ scholarship_applications.area }} - {{ scholarship_applications.phonenumber }}</td>
+            <td>{{ scholarship_applications.typeofscholarship }}</td>
+            <td>{{ scholarship_applications.date }}</td>
+            <td>{{ scholarship_applications.addrline1 }}, {{ scholarship_applications.addresscity }}, {{ scholarship_applications.addresstate }} {{ scholarship_applications.addresspostal }}</td>
+            <td>{{ scholarship_applications.benefit }}</td>
+            <td id="status-{{ scholarship_applications.id }}">{{ scholarship_applications.status }}</td>
+            <td>
+              <form action="{% url 'admin_scholarship' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="form_type" value="scholarship" />
+                <input type="hidden" name="form_id" value="{{scholarship_applications.id}}" />
+                <input type="hidden" name="status" value="Approved" />
+                <button type="submit" class="btn btn-success">Approve</button>
+              </form>
+              <form action="{% url 'admin_scholarship' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="form_type" value="scholarship" />
+                <input type="hidden" name="form_id" value="{{scholarship_applications.id}}" />
+                <input type="hidden" name="status" value="Rejected" />
+                <button type="submit" class="btn btn-danger">Reject</button>
+              </form>
+            </td>
         </tr>
     {% endfor %}
 </table>

@@ -42,18 +42,20 @@
           <th>Type of Dress</th>
           <th>Size</th>
           <th>Note</th>
+          <th>Images</th>
           <th>Status</th>
           <th>Actions</th>
       </tr>
       {% for cloth_donation in cloth_donation %}
           <tr>
-              <td>{{ cloth_donation.first_name }} {{ cloth_donation.last_name }}</td>
+              <td>{{ cloth_donation.name }} </td>
               <td>{{ cloth_donation.phone_code }} - {{ cloth_donation.phone_number }}</td>
               <td>{{ cloth_donation.email }}</td>
               <td>{{ cloth_donation.condition }}</td>
               <td>{{ cloth_donation.type_of_dress }}</td>
               <td>{{ cloth_donation.size }}</td>
               <td>{{ cloth_donation.note }}</td>
+              <td><img src="{{ cloth_donation.image.url}}" width="200px" height="200px"/></td>
               <td id="status-{{ cloth_donation.id }}">{{ cloth_donation.status }}</td>
               <td>
                 <form action="{% url 'admin_clothdonation' %}" method="post">
@@ -71,10 +73,6 @@
                   <button type="submit" class="btn btn-danger">Reject</button>
                 </form>
               </td>
-              {% comment %} <td>
-                  <button class="btn btn-success" onclick="approveForm('cloth', {{ cloth_donation.id }}, 'approve')">Approve</button>
-                  <button class="btn btn-danger" onclick="approveForm('cloth', {{ cloth_donation.id }}, 'reject')">Reject</button>
-              </td> {% endcomment %}
           </tr>
       {% endfor %}
   </table>

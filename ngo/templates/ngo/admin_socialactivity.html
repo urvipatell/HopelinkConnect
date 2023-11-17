@@ -44,19 +44,33 @@
             <th>Actions</th> <!-- Add a new column for actions -->
             <!-- Add more table headers for other fields -->
         </tr>
-        {% for social_event in social_events %}
+        {% for social_events in social_events %}
             <tr>
-                <td>{{ social_event.first_name }} {{ social_event.last_name }}</td>
-                <td>{{ social_event.email }}</td>
-                <td>{{ social_event.phone_number }}</td>
-                <td>{{ social_event.type_of_event }}</td>
-                <td>{{ social_event.activity_time }}</td>
-                <td>{{ social_event.activity_date }}</td>
-                <td>{{ social_event.address_line1 }}, {{ social_event.city }}, {{ social_event.state }} {{ social_event.postal_code }}</td>
-                <td></td>
-                <td></td>
-                <!-- Add more table cells for other fields -->
-            </tr>
+                <td>{{ social_events.first_name }} {{ social_events.last_name }}</td>
+                <td>{{ social_events.email }}</td>
+                <td>{{ social_events.phone_number }}</td>
+                <td>{{ social_events.type_of_event }}</td>
+                <td>{{ social_events.activity_time }}</td>
+                <td>{{ social_events.activity_date }}</td>
+                <td>{{ social_events.address_line1 }}, {{ social_events.city }}, {{ social_events.state }} {{ social_events.postal_code }}</td>
+                <td id="status-{{ social_events.id }}">{{social_events.status }}</td>
+                <td>
+                  <form action="{% url 'admin_socialactivity' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="form_type" value="social" />
+                    <input type="hidden" name="form_id" value="{{social_events.id}}" />
+                    <input type="hidden" name="status" value="Approved" />
+                    <button type="submit" class="btn btn-success">Approve</button>
+                  </form>
+                  <form action="{% url 'admin_socialactivity' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="form_type" value="social" />
+                    <input type="hidden" name="form_id" value="{{social_events.id}}" />
+                    <input type="hidden" name="status" value="Rejected" />
+                    <button type="submit" class="btn btn-danger">Reject</button>
+                  </form>
+                </td>            
+              </tr>
         {% endfor %}
     </table>
 <style>

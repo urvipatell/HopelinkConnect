@@ -1,6 +1,8 @@
 
 from functools import cache
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
+from django.http import JsonResponse
+from django.shortcuts import get_object_or_404
 from ngo.models import *
 from .models import *
 from .models import Notification
@@ -58,11 +60,29 @@ def admin_signup(request):
     return render(request, 'ngo/admin_sign-up.html')
 
 def admin_clothdonation(request):
+
+    if request.method == 'POST':
+        form_type = request.POST.get('form_type')
+        form_id = request.POST.get('form_id')
+        status = request.POST.get('status')  # 'approve' or 'reject'
+
+        if form_type == 'cloth':
+        
+             donation = get_object_or_404(clothDonation, id=form_id)
+        else:
+            return JsonResponse({'success': False})
+
+        # Update the status of the donation.
+        donation.status = status
+        donation.save()
+    
     cloth_donation = clothDonation.objects.all().order_by('-id')
     context = {
         'cloth_donation': cloth_donation
     }
     return render(request, 'ngo/admin_clothdonation.html', context)
+
+
 def admin_edudonation(request):
     if request.method == 'POST':
         form_type = request.POST.get('form_type')
@@ -70,7 +90,7 @@ def admin_edudonation(request):
         status = request.POST.get('status')  # 'approve' or 'reject'
 
         if form_type == 'education':
-            # You need to have an 'EducationDonation' model defined.
+      
             donation = get_object_or_404(EducationDonation, id=form_id)
         else:
             return JsonResponse({'success': False})
@@ -83,12 +103,27 @@ def admin_edudonation(request):
         'education_donations': education_donations
     }
     return render(request, 'ngo/admin_edudonation.html', context)
+
 def admin_fooddonation(request):
+    if request.method == 'POST':
+        form_type = request.POST.get('form_type')
+        form_id = request.POST.get('form_id')
+        status = request.POST.get('status')  # 'approve' or 'reject'
+
+        if form_type == 'education':
+            donation = get_object_or_404(FoodDonation, id=form_id)
+        else:
+            return JsonResponse({'success': False})
+
+        # Update the status of the donation.
+        donation.status = status
+        donation.save()
     food_donation = FoodDonation.objects.all().order_by('-id')
     context = {
         'food_donation': food_donation
     }
     return render(request, 'ngo/admin_fooddonation.html', context)
+
 def admin_money(request):
     money_donation = MoneyDonation.objects.all().order_by('-id')
     context = {
@@ -98,6 +133,20 @@ def admin_money(request):
 
 
 def admin_impactstory(request):
+    if request.method == 'POST':
+        form_type = request.POST.get('form_type')
+        form_id = request.POST.get('form_id')
+        status = request.POST.get('status')  # 'approve' or 'reject'
+
+        if form_type == 'impact':
+            event = get_object_or_404(UserStory, id=form_id)
+        else:
+            return JsonResponse({'success': False})
+
+        # Update the status of the donation.
+        event.status = status
+        event.save()
+
     user_stories = UserStory.objects.all()
     context = {
         'user_stories': user_stories,
@@ -105,6 +154,20 @@ def admin_impactstory(request):
     return render(request, 'ngo/admin_impactstory.html',context)
 
 def admin_helthcare(request):
+    if request.method == 'POST':
+        form_type = request.POST.get('form_type')
+        form_id = request.POST.get('form_id')
+        status = request.POST.get('status')  # 'approve' or 'reject'
+
+        if form_type == 'healthcamp':
+            event = get_object_or_404(HealthCamp, id=form_id)
+        else:
+            return JsonResponse({'success': False})
+
+        # Update the status of the donation.
+        event.status = status
+        event.save()
+
     health_camps = HealthCamp.objects.all()
     context = {
          'health_camps':health_camps,
@@ -112,6 +175,20 @@ def admin_helthcare(request):
     return render(request, 'ngo/admin_helthcare.html',context)
 
 def admin_scholarship(request):
+    if request.method == 'POST':
+        form_type = request.POST.get('form_type')
+        form_id = request.POST.get('form_id')
+        status = request.POST.get('status')  # 'approve' or 'reject'
+
+        if form_type == 'scholarship':
+            event = get_object_or_404(ScholarshipApplication, id=form_id)
+        else:
+            return JsonResponse({'success': False})
+
+        # Update the status of the donation.
+        event.status = status
+        event.save()
+
     scholarship_applications = ScholarshipApplication.objects.all()
     context = {
         'scholarship_applications':scholarship_applications,
@@ -119,6 +196,20 @@ def admin_scholarship(request):
     return render(request, 'ngo/admin_scholarship.html',context)
 
 def admin_socialactivity(request):
+    if request.method == 'POST':
+        form_type = request.POST.get('form_type')
+        form_id = request.POST.get('form_id')
+        status = request.POST.get('status')  # 'approve' or 'reject'
+
+        if form_type == 'social':
+            event = get_object_or_404(SocialEvent, id=form_id)
+        else:
+            return JsonResponse({'success': False})
+
+        # Update the status of the donation.
+        event.status = status
+        event.save()
+
     social_events = SocialEvent.objects.all()
     context = {
         'social_events':social_events,
@@ -192,8 +283,7 @@ def applications(request):
     return render(request, 'ngo/applications.html', context)
 
 
-from django.http import JsonResponse
-from django.shortcuts import get_object_or_404
+
 
 def approve_donation(request):
     if request.method == 'POST':

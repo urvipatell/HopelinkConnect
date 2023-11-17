@@ -37,15 +37,33 @@
          <th>Story Name</th>
          <th>User Story</th>
          <th>Notes</th>
+         <th>Status</th> <!-- Add a new column for status -->
+        <th>Actions</th> <!-- Add a new column for actions -->
          <!-- Add more table headers for other fields -->
      </tr>
-     {% for user_story in user_stories %}
+     {% for user_stories in user_stories %}
          <tr>
-             <td>{{ user_story.name }}</td>
-             <td>{{ user_story.story_name }}</td>
-             <td>{{ user_story.user_story }}</td>
-             <td>{{ user_story.notes }}</td>
-             <!-- Add more table cells for other fields -->
+             <td>{{ user_stories.name }}</td>
+             <td>{{ user_stories.story_name }}</td>
+             <td>{{ user_stories.user_story }}</td>
+             <td>{{ user_stories.notes }}</td>
+             <td id="status-{{ user_stories.id }}">{{ user_stories.status }}</td>
+              <td>
+                <form action="{% url 'admin_impactstory' %}" method="post">
+                  {% csrf_token %}
+                  <input type="hidden" name="form_type" value="impact" />
+                  <input type="hidden" name="form_id" value="{{user_stories.id}}" />
+                  <input type="hidden" name="status" value="Approved" />
+                  <button type="submit" class="btn btn-success">Approve</button>
+                </form>
+                <form action="{% url 'admin_impactstory' %}" method="post">
+                  {% csrf_token %}
+                  <input type="hidden" name="form_type" value="impact" />
+                  <input type="hidden" name="form_id" value="{{user_stories.id}}" />
+                  <input type="hidden" name="status" value="Rejected" />
+                  <button type="submit" class="btn btn-danger">Reject</button>
+                </form>
+              </td>
          </tr>
      {% endfor %}
  </table>
