@@ -242,10 +242,10 @@ def logout(request):
 
 @csrf_exempt
 def user_donation(request):
-    print("Hello", request)
+    username = request.session.get('username')
+    userDetails = signup.objects.filter(username=username).first()
     if request.method == 'POST':
         # Extract data from the form
-        print(request.POST.get('formType'))
         if request.POST.get('formType') == 'education':
             first_name = request.POST.get('firstname')
             last_name = request.POST.get('lastname')
@@ -278,12 +278,11 @@ def user_donation(request):
             education.save()
 
         elif request.POST.get('formType') == "cloth" :
-            print(request.POST)
-            first_name = request.POST['first']
-            last_name = request.POST['last']
-            email = request.POST['email']
+            username = userDetails.username
+            name = userDetails.name
+            email = userDetails.email
             phone_code = request.POST['phonecode']
-            phone_number = request.POST['phonenumber']
+            phone_number = userDetails.phonenumber
             condition = request.POST['condition']
             type_of_dress = request.POST['type_of_dress']
             size = request.POST['size']
@@ -292,8 +291,8 @@ def user_donation(request):
 
             # Create a new Donation object and save it to the database
             cloth = clothDonation(
-            first_name=first_name,
-            last_name=last_name,
+            username = userDetails.username,
+            name=name,
             email=email,
             phone_code=phone_code,
             phone_number=phone_number,
@@ -376,7 +375,7 @@ def user_donation(request):
                 razorpay_order_id=razorpay_order_id
             )
             money.save()            
-    return render(request, 'user/user_donation.html')
+    return render(request, 'user/user_donation.html', {'userDetails': userDetails})
 
 def user_event (request):
     print(request.method)
