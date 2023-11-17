@@ -1,0 +1,182 @@
+{% extends 'staffbase.html' %}
+
+{% load static %}
+
+
+
+{% block content %}
+                 
+<style>
+   /* Add some basic CSS for styling */
+   body {
+       font-family: Arial, sans-serif;
+       margin: 0;
+       padding: 0;
+       background-color: #f0f0f0;
+   }
+
+   .container {
+       max-width: 600px;
+       margin: 0 auto;
+       padding: 20px;
+       background-color: #fff;
+       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+       border-radius: 5px;
+       text-align: left; /* Align content to the left */
+   }
+
+   label {
+       display: block;
+       margin-bottom: 8px;
+       text-align: left; /* Align labels to the left */
+   }
+   h1 {
+       display: block;
+       margin-bottom: 8px;
+       text-align: center; /* Align labels to the left */
+   }
+
+   p {
+       display: block;
+       margin-bottom: 8px;
+       text-align: center; /* Align labels to the left */
+   }
+   select,
+   input[type="text"],
+   input[type="file"],
+   input[type="datetime-local"] {
+       width: 90%;
+       padding: 10px;
+       margin-bottom: 20px;
+       border: 1px solid #ccc;
+       border-radius: 5px;
+   }
+
+   #imagePreview {
+       max-width: 100%;
+       max-height: 200px;
+       margin-top: 10px;
+   }
+
+   .datetime-container {
+       display: flex;
+       flex-direction: column;
+       align-items: flex-start; /* Align date and time input to the left */
+   }
+
+   .datetime-label {
+       text-align: left;
+       margin-bottom: 5px;
+   }
+
+   .datetime-input {
+       width: 100%;
+       padding: 10px;
+       border: 1px solid #ccc;
+       border-radius: 5px;
+   }
+   .form-group button {
+    background-color: #FEA116;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+   .error-message {
+       color: red;
+       margin-top: 10px;
+   }
+</style>
+
+               <!-- dashboard inner -->
+               <div class="midde_cont">
+                  <div class="container-fluid">
+                     <div class="row column_title">
+                        <div class="col-md-12">
+                           <div class="page_title">
+                              <h2>Notification</h2>
+                           </div>
+                        </div>
+                     </div>
+
+
+                     <!-- row -->
+                     <div class="row column4 graph">
+                        <!-- tab style 1 -->
+                        <div class="container">
+                           <h1>Event Details</h1>
+                           <form id="myForm" method="post" action="{% url 'staffnotification' %}">
+                              {% csrf_token %}
+                               <label for="Name">Name Of The Event:</label>
+                               <input type="text" id="Name" name="Name" placeholder="Enter the Name" required><br>
+                        
+                               <div class="datetime-container">
+                                   <label class="datetime-label" for="datetime">Date and Time Of The Event:</label>
+                                   <input class="datetime-input" type="datetime-local" id="datetime" name="datetime" required>
+                               </div>
+                        
+                               <label for="description">Description:</label>
+                               <input type="text" id="description" name="description" placeholder="Enter a description"><br>
+                        
+                               <div class="form-group">
+                                 <button type="submit" value= "submit"> <center> Submit </center></button>
+                               </div>
+                        
+                            
+                           </form>
+                        </div>    
+                     </div> 
+<br><br>
+                        
+                        <div class="col-md-12">
+                           <div class="white_shd full margin_bottom_30">
+                              <div class="full graph_head">
+                                 <div class="heading1 margin_0">
+                                    <h2>Notification</h2>
+                                 </div>
+                              </div>
+                              <div class="table_section padding_infor_info">
+                                 <div class="table-responsive-sm">
+                                    <table class="table">
+                                       <thead>
+                                           <tr>
+                                               <th>#</th>
+                                               <th>Name of Event</th>
+                                               <th>Timedate</th>
+                                               <th>Description</th>
+                                           </tr>
+                                       </thead>
+                                       <tbody>
+                                           {% for notification in notifications %}
+                                           <tr>
+                                               <td>{{ forloop.counter }}</td>
+                                               <td>{{ notification.name }}</td>
+                                               <td>{{ notification.event_datetime }}</td>
+                                               <td>{{ notification.description }}</td>
+                                           </tr>
+                                           {% endfor %}
+                                       </tbody>
+                                   </table>
+                                   
+                                   
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+                       
+                 
+                        
+               </div>
+               <!-- end dashboard inner -->
+            </div>
+         </div>
+         
+         
+         <!-- end model popup -->
+      </div>
+      {%endblock%}

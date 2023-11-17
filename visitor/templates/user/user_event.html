@@ -1,0 +1,598 @@
+{% extends 'profile_base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- dashboard inner -->
+<div class="midde_cont">
+    <div class="container-fluid">
+      <div class="row column_title">
+          <div class="col-md-12">
+            <div class="page_title">
+                <h2>Event Request Form</h2>
+            </div>
+          </div>
+      </div>
+      <!-- row -->
+      <div class="row column4 graph">
+          <!-- tab style 2 -->
+          <div class="col-md-12">
+            <div class="white_shd full margin_bottom_30">
+                <div class="full graph_head">
+                  <div class="heading1 margin_0">
+                      <h4>Please fill out this form to request donation form of HopeLink Connect. You will receive a phone call within days at most.</h4>
+                  </div>
+                </div>
+                <div class="full inner_elements">
+                  <div class="row">
+                      <div class="col-md-12">
+                        <div class="tab_style2">
+                            <div class="tabbar padding_infor_info">
+                              <nav>
+                                  <div class="nav nav-tabs" id="nav-tab1" role="tablist">
+                                    <a class="nav-item nav-link active" id="nav-socialactivity-tab2" data-toggle="tab" href="#nav-socialactivity_s2" role="tab" aria-controls="nav-socialactivity_s2" aria-selected="true">Socail Activity</a>
+                                    <a class="nav-item nav-link" id="nav-impactstories-tab2" data-toggle="tab" href="#nav-impactstories_s2" role="tab" aria-controls="nav-impactstories_s2" aria-selected="false">Impact Stories</a>
+                                    <a class="nav-item nav-link" id="nav-healthcamp-tab2" data-toggle="tab" href="#nav-healthcamp_s2" role="tab" aria-controls="nav-healthcamp_s2" aria-selected="false">Health Camp</a>
+                                    <a class="nav-item nav-link" id="nav-scholarship-tab2" data-toggle="tab" href="#nav-scholarship_s2" role="tab" aria-controls="nav-scholarship_s2" aria-selected="false">Scholarship</a>
+                                  </div>
+                              </nav>
+                              <div class="tab-content" id="nav-tabContent_2">
+                                <div class="tab-pane fade show active" id="nav-socialactivity_s2" role="tabpanel" aria-labelledby="nav-socialactivity-tab">
+                                  <!--socialactivity-->
+                                  <form class="jotform-form" action=""{% url 'userevent' %}" method="post" enctype="multipart/form-data"  name="form_232711695219459" id="232711695219459" accept-charset="utf-8" autocomplete="on">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="formType" value="social">   
+                                    <div role="main" class="">
+                                      <ul class="form-section">
+                                        <!--name-->
+                                        <li class="form-line jf-required" data-type="control_fullname" id="id_2" data-compound-hint=",">
+                                          <label class="form-label form-label-top" id="label_2" for="first_2" aria-hidden="false">Full Name<span class="form-required">*</span> </label>
+                                          <div id="cid_2" class="form-input-wide jf-required" data-layout="full">
+                                            <div data-wrapper-react="true">
+                                              <span class="form-sub-label-container" style="vertical-align:top" data-input-type="first">
+                                                <input type="text" id="first_2" name="firstname" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_2 given-name" size="10" value="" data-component="first" aria-labelledby="label_2 sublabel_2_first" required="" />
+                                                <label class="form-sub-label" for="first_2" id="sublabel_2_first" style="min-height:13px" aria-hidden="false">First Name</label>
+                                              </span>
+                                              <span class="form-sub-label-container" style="vertical-align:top" data-input-type="last">
+                                                <input type="text" id="last_2" name="lastname" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_2 family-name" size="15" value="" data-component="last" aria-labelledby="label_2 sublabel_2_last" required="" />
+                                                <label class="form-sub-label" for="last_2" id="sublabel_2_last" style="min-height:13px" aria-hidden="false">Last Name</label>
+                                              </span>
+                                            </div>
+                                          </div>
+                                        </li>
+                                        <!--email-->
+                                        <li class="form-line form-line-column form-col-1 jf-required" data-type="control_email" id="id_3">
+                                          <label class="form-label form-label-top" id="label_3" for="input_3" aria-hidden="false"> E-mail<span class="form-required">*</span> </label>
+                                          <div id="cid_3" class="form-input-wide jf-required" data-layout="half">
+                                            <span class="form-sub-label-container" style="vertical-align:top">
+                                              <input type="email" id="input_3" name="email" class="form-textbox validate[required, Email]" data-defaultvalue="" style="width:310px" size="310" value="" placeholder="ex: myname@example.com" data-component="email" aria-labelledby="label_3 sublabel_input_3" required="" />
+                                              <label class="form-sub-label" for="input_3" id="sublabel_input_3" style="min-height:13px" aria-hidden="false"></label>
+                                            </span> 
+                                          </div>
+                                        </li>
+                                        <!--phone number-->
+                                        <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_4">Phone Number<label class="form-label form-label-top" id="label_4" for="input_4_area" aria-hidden="true"> </label>
+                                          <div id="cid_4" class="form-input-wide" data-layout="half">
+                                            <div data-wrapper-react="true">
+                                              <span class="form-sub-label-container" style="vertical-align:top" data-input-type="areaCode">
+                                                <input type="tel" id="input_4_area" name="phonenumberarea" class="form-textbox" data-defaultvalue="" autoComplete="section-input_4 tel-area-code" value="" data-component="areaCode" aria-labelledby="label_4 sublabel_4_area" />
+                                                <span class="phone-separate" aria-hidden="true"> -</span>
+                                                <label class="form-sub-label" for="input_4_area" id="sublabel_4_area" style="min-height:13px" aria-hidden="false">Area Code</label>
+                                              </span>
+                                              <span class="form-sub-label-container" style="vertical-align:top" data-input-type="phone">
+                                                <input type="tel" id="input_4_phone" name="phonenumber" class="form-textbox" data-defaultvalue="" autoComplete="section-input_4 tel-local" value="" data-component="phone" aria-labelledby="label_4 sublabel_4_phone" />
+                                                <label class="form-sub-label" for="input_4_phone" id="sublabel_4_phone" style="min-height:13px" aria-hidden="false">Phone Number</label>
+                                              </span>
+                                            </div>
+                                          </div>
+                                        </li>
+                                        <!--type of event-->
+                                        <li class="form-line" data-type="control_matrix" id="id_55">
+                                          <label class="form-label form-label-top form-label-auto" id="label_55" for="input_55" aria-hidden="false"> Type Of Event </label>
+                                          <div id="cid_55" class="form-input-wide" data-layout="full">
+                                            <table summary="" aria-labelledby="label_55" cellPadding="4" cellSpacing="0" class="form-matrix-table" data-component="matrix">
+                                              <tr class="form-matrix-tr form-matrix-header-tr">
+                                                <th class="form-matrix-th" style="border:none"> </th>
+                                                <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_0">
+                                                  <label id="label_55_col_0">Name Of The Event</label></th>
+                                              </tr>
+                                              <tr class="form-matrix-tr form-matrix-value-tr" aria-labelledby="label_55 label_55_row_0">
+                                                <th scope="row" class="form-matrix-headers form-matrix-row-headers">
+                                                  <label id="label_55_row_0">1</label></th>
+                                                <td class="form-matrix-values">
+                                                  <input type="text" id="input_55_0_0" class="form-textbox" size="5" name="type1" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_55_col_0 label_55_row_0" aria-label="Cells Text Box" /></td>
+                                              </tr>
+                                              <tr class="form-matrix-tr form-matrix-value-tr" aria-labelledby="label_55 label_55_row_1">
+                                                <th scope="row" class="form-matrix-headers form-matrix-row-headers">
+                                                  <label id="label_55_row_1">2</label></th>
+                                                <td class="form-matrix-values">
+                                                  <input type="text" id="input_55_1_0" class="form-textbox" size="5" name="type2" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_55_col_0 label_55_row_1" aria-label="Cells Text Box" /></td>
+                                              </tr>
+                                              <tr class="form-matrix-tr form-matrix-value-tr" aria-labelledby="label_55 label_55_row_2">
+                                                <th scope="row" class="form-matrix-headers form-matrix-row-headers">
+                                                  <label id="label_55_row_2">3</label></th>
+                                                <td class="form-matrix-values">
+                                                  <input type="text" id="input_55_2_0" class="form-textbox" size="5" name="type3" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_55_col_0 label_55_row_2" aria-label="Cells Text Box" /></td>
+                                              </tr>
+                                              <tr class="form-matrix-tr form-matrix-value-tr" aria-labelledby="label_55 label_55_row_3">
+                                                <th scope="row" class="form-matrix-headers form-matrix-row-headers">
+                                                  <label id="label_55_row_3">4</label></th>
+                                                <td class="form-matrix-values">
+                                                  <input type="text" id="input_55_3_0" class="form-textbox" size="5" name="type4" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_55_col_0 label_55_row_3" aria-label="Cells Text Box" /></td>
+                                              </tr>
+                                              <tr class="form-matrix-tr form-matrix-value-tr" aria-labelledby="label_55 label_55_row_4">
+                                                <th scope="row" class="form-matrix-headers form-matrix-row-headers">
+                                                  <label id="label_55_row_4">5</label></th>
+                                                <td class="form-matrix-values">
+                                                  <input type="text" id="input_55_4_0" class="form-textbox" size="5" name="type5" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_55_col_0 label_55_row_4" aria-label="Cells Text Box" /></td>
+                                              </tr>
+                                            </table>
+                                          </div>
+                                        </li>
+                                        <!--Activity Time-->
+                                        <li class="form-line form-line-column form-col-1" data-type="control_time" id="id_57">
+                                          <label class="form-label form-label-top" id="label_57" for="input_57_hourSelect" aria-hidden="false"> Activity Time </label>
+                                          <div id="cid_57" class="form-input-wide" data-layout="half">
+                                            <div data-wrapper-react="true">
+                                              <div class="time-wrapper">
+                                                <span class="form-sub-label-container hasAMPM" style="vertical-align:top">
+                                                  <input type="text" class="time-dropdown form-textbox validate[time]" id="input_57_timeInput" name="timeinput" placeholder="HH : MM" aria-labelledby="label_57 sublabel_57_hour" data-mask="hh:MM" data-version="v2" />
+                                                  <label data-seperate-translate="true" class="form-sub-label" for="input_57_timeInput" id="sublabel_57_hour" style="min-height:13px" aria-hidden="false">Hour Minutes</label>
+                                                </span>
+                                              </div>
+                                              <div class="time-wrapper">
+                                                <span class="form-sub-label-container" style="vertical-align:top">
+                                                  <select class="time-dropdown form-dropdown" id="input_57_ampm" name="ampm" data-component="time-ampm" aria-labelledby="label_57 sublabel_57_ampm">
+                                                    <option selected="" value="AM">AM</option>
+                                                    <option value="PM">PM</option>
+                                                  </select>
+                                                  <label class="form-sub-label" for="input_57_ampm" id="sublabel_57_ampm" style="border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap" aria-hidden="false">AM/PM Option</label>
+                                                </span>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </li>
+                                        <!--date time-->
+                                        <li class="form-line form-line-column form-col-2" data-type="control_datetime" id="id_50">
+                                          <label class="form-label form-label-top form-label-auto" id="label_50" for="lite_mode_50" aria-hidden="false"> Activity Date </label>
+                                          <div id="cid_50" class="form-input-wide" data-layout="half">
+                                            <div data-wrapper-react="true">
+                                              <span class="form-sub-label-container" style="vertical-align:top">
+                                                <input type="text" name="date" class="form-textbox validate[limitDate, validateLiteDate]" id="lite_mode_50" size="12" data-maxlength="12" maxLength="12" data-age="" value="" data-format="mmddyyyy" data-seperator="-" placeholder="MM-DD-YYYY" data-placeholder="MM-DD-YYYY" autoComplete="off" aria-labelledby="label_50" />
+                                                <img class=" newDefaultTheme-dateIcon icon-liteMode" alt="Pick a Date" id="input_50_pick" src="https://cdn.jotfor.ms/images/calendar.png" data-component="datetime" aria-hidden="true" data-allow-time="No" data-version="v2" />
+                                                <label class="form-sub-label is-empty" for="lite_mode_50" id="sublabel_50_litemode" style="min-height:13px" aria-hidden="false"></label>
+                                              </span>
+                                            </div>
+                                          </div>
+                                        </li>
+                                        <!--Address-->
+                                        <li class="form-line" data-type="control_address" id="id_59" data-compound-hint=",,,,Please Select,,Please Select,">
+                                          <label class="form-label form-label-top form-label-auto" id="label_59" for="input_59_addr_line1" aria-hidden="false"> Address </label>
+                                          <div id="cid_59" class="form-input-wide" data-layout="full">
+                                            <div summary="" class="form-address-table jsTest-addressField">
+                                              <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
+                                                <span class="form-address-line form-address-street-line jsTest-address-lineField">
+                                                  <span class="form-sub-label-container" style="vertical-align:top">
+                                                    <input type="text" id="input_59_addr_line1" name="addrline1" class="form-textbox form-address-line" data-defaultvalue="" autoComplete="section-input_59 address-line1" value="" data-component="address_line_1" aria-labelledby="label_59 sublabel_59_addr_line1" required="" />
+                                                    <label class="form-sub-label" for="input_59_addr_line1" id="sublabel_59_addr_line1" style="min-height:13px" aria-hidden="false">Street Address</label>
+                                                  </span>
+                                                </span>
+                                              </div>
+                                              <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
+                                                <span class="form-address-line form-address-city-line jsTest-address-lineField ">
+                                                  <span class="form-sub-label-container" style="vertical-align:top">
+                                                    <input type="text" id="input_59_city" name="addresscity" class="form-textbox form-address-city" data-defaultvalue="" autoComplete="section-input_59 address-level2" value="" data-component="city" aria-labelledby="label_59 sublabel_59_city" required="" />
+                                                    <label class="form-sub-label" for="input_59_city" id="sublabel_59_city" style="min-height:13px" aria-hidden="false">City</label>
+                                                  </span>
+                                                </span>
+                                                <span class="form-address-line form-address-state-line jsTest-address-lineField ">
+                                                  <span class="form-sub-label-container" style="vertical-align:top">
+                                                    <input type="text" id="input_59_state" name="addressstate" class="form-textbox form-address-state" data-defaultvalue="" autoComplete="section-input_59 address-level1" value="" data-component="state" aria-labelledby="label_59 sublabel_59_state" required="" />
+                                                    <label class="form-sub-label" for="input_59_state" id="sublabel_59_state" style="min-height:13px" aria-hidden="false">State / Province</label>
+                                                  </span>
+                                                </span>
+                                              </div>
+                                              <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
+                                                <span class="form-address-line form-address-zip-line jsTest-address-lineField ">
+                                                  <span class="form-sub-label-container" style="vertical-align:top">
+                                                    <input type="text" id="input_59_postal" name="addresspostal" class="form-textbox form-address-postal" data-defaultvalue="" autoComplete="section-input_59 postal-code" value="" data-component="zip" aria-labelledby="label_59 sublabel_59_postal" required="" />
+                                                    <label class="form-sub-label" for="input_59_postal" id="sublabel_59_postal" style="min-height:13px" aria-hidden="false">Postal / Zip Code</label>
+                                                  </span>
+                                                </span>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </li>
+                                        <!--file upload-->
+                                        <li class="form-line" data-type="control_fileupload" id="id_61"><label class="form-label form-label-top form-label-auto" id="label_61" for="input_61" aria-hidden="false"> File Upload </label>
+                                          <div id="cid_61" class="form-input-wide" data-layout="full">
+                                            <div class="jfQuestion-fields" data-wrapper-react="true">
+                                              <div class="jfField isFilled">
+                                                <div class="jfUpload-wrapper">
+                                                  <div class="jfUpload-container">
+                                                    <div class="jfUpload-button-container">
+                                                      <div class="jfUpload-button" aria-hidden="true" tabindex="0" style="display:none" data-version="v2">Browse Files<div class="jfUpload-heading forDesktop">Drag and drop files here</div>
+                                                        <div class="jfUpload-heading forMobile">Choose a file</div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                  <div class="jfUpload-files-container">
+                                                    <div class="validate[multipleUpload]"><input type="file" id="input_61" name="fileupload" multiple="" class="form-upload-multiple" data-imagevalidate="yes" data-file-accept="pdf, doc, docx, xls, xlsx, csv, txt, rtf, html, zip, mp3, wma, mpg, flv, avi, jpg, jpeg, png, gif" data-file-maxsize="10854" data-file-minsize="0" data-file-limit="" data-component="fileupload" aria-label="Browse Files" /></div>
+                                                  </div>
+                                                </div>
+                                                <div data-wrapper-react="true"></div>
+                                              </div><span style="display:none" class="cancelText">Cancel</span><span style="display:none" class="ofText">of</span>
+                                            </div>
+                                          </div>
+                                        </li>
+                                        <!--description-->
+                                        <li class="form-line form-line-column form-col-1 jf-required" data-type="control_textarea" id="id_33">
+                                          <label class="form-label form-label-top form-label-auto" id="label_33" for="input_33" aria-hidden="false"> Description<span class="form-required">*</span> </label>
+                                          <div id="cid_33" class="form-input-wide jf-required" data-layout="full"> 
+                                              <textarea id="input_33" class="form-textarea validate[required]" name="description" style="width:648px;height:163px" data-component="textarea" required="" aria-labelledby="label_33"></textarea> </div>
+                                        </li>
+                                        <!--submit-->
+                                        <li class="form-line" data-type="control_button" id="id_24">
+                                          <div id="cid_24" class="form-input-wide" data-layout="full">
+                                            <div data-align="auto" class="form-buttons-auto jsTest-button-wrapperField">
+                                              <button id="input_24" type="submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">Submit</button>
+                                            </div>
+                                          </div>
+                                        </li>
+                                      </ul>  
+                                    </div>
+                                  </form>
+                                  <!--socialactivity ends-->
+                                </div>
+                                <div class="tab-pane fade" id="nav-impactstories_s2" role="tabpanel" aria-labelledby="nav-impactstories-tab">
+                                <!--impactstories starts-->
+                                  <form class="jotform-form" action="{% url 'userevent' %}" method="post" enctype="multipart/form-data" name="form_232711695219459" id="232711695219459" accept-charset="utf-8" autocomplete="on">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="formType" value="impact">   
+                                    <div role="main" class="">
+                                      <ul class="form-section page-sectionns">
+                                      <!--name-->
+                                        <li class="form-line" data-type="control_fullname" id="id_14">
+                                          <label class="form-label form-label-top form-label-auto" id="label_14" for="input_14" aria-hidden="false"> Name </label>
+                                            <div id="cid_14" class="form-input-wide" data-layout="half"> 
+                                              <input type="text" id="input_14" name="storyid" data-type="input-textbox" class="form-textbox" data-defaultvalue="" placeholder="Name" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_14" /> 
+                                            </div>
+                                        </li>
+                                        <!--story name-->
+                                        <li class="form-line" data-type="control_textbox" id="id_15"><label class="form-label form-label-top form-label-auto" id="label_15" for="input_15" aria-hidden="false"> Story Name </label>
+                                        <div id="cid_15" class="form-input-wide" data-layout="half"> <input type="text" id="input_15" name="storyname" data-type="input-textbox" class="form-textbox" data-defaultvalue="" placeholder="Story Name" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_15" /> </div>
+                                        </li>
+                                        <!--user story-->
+                                        <li class="form-line" data-type="control_textarea" id="id_16"><label class="form-label form-label-top form-label-auto" id="label_16" for="input_16" aria-hidden="false"> User Story </label>
+                                        <div id="cid_16" class="form-input-wide" data-layout="full"> <textarea id="input_16" class="form-textarea" name="userstory" style="width:648px;height:163px" data-component="textarea" placeholder="User Story"aria-labelledby="label_16"></textarea> </div>
+                                        </li>
+                                        <!--notes-->
+                                        <li class="form-line" data-type="control_textarea" id="id_18"><label class="form-label form-label-top form-label-auto" id="label_18" for="input_18" aria-hidden="false"> Notes </label>
+                                        <div id="cid_18" class="form-input-wide" data-layout="full"> <textarea id="input_18" class="form-textarea" name="notes" style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_18"></textarea> </div>
+                                        </li>
+                                        <!--submit-->
+                                        <li class="form-line" data-type="control_button" id="id_19">
+                                        <div id="cid_19" class="form-input-wide" data-layout="full">
+                                          <div data-align="auto" class="form-buttons-auto jsTest-button-wrapperField">
+                                              <button id="input_19" type="submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">Submit</button></div>
+                                        </div>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </form>
+                                <!--impactstories ends-->
+                                </div>
+                                <!--healthcamp starts-->
+                                <div class="tab-pane fade" id="nav-healthcamp_s2" role="tabpanel" aria-labelledby="nav-healthcamp-tab">
+                                  <form class="jotform-form" action="{% url 'userevent' %}" method="post" enctype="multipart/form-data" name="form_232714804509456" id="232714804509456" accept-charset="utf-8" autocomplete="on">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="formType" value="healthcamp">
+                                    <div role="main" class="">
+                                      <ul class="page-sections">
+                                        <!--name-->
+                                        <li class="form-line jf-required" data-type="control_fullname" id="id_29" data-compound-hint="Name,">
+                                          <label class="form-label form-label-top" id="label_29" for="first_29" aria-hidden="false"> Name Of The Doctor<span class="form-required">*</span> </label>
+                                          <div id="cid_29" class="form-input-wide jf-required" data-layout="full">
+                                            <div data-wrapper-react="true">
+                                              <span class="form-sub-label-container" style="vertical-align:top" data-input-type="first">
+                                                <input type="text" id="first_29" name="nameofdoctor" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_29 given-name" size="10" value="" placeholder="Name" data-component="first" aria-labelledby="label_29 sublabel_29_first" required="" />
+                                              </span>
+                                            </div>
+                                        </li>
+                                        <!--name of organization-->
+                                        <li class="form-line jf-required" data-type="control_fullname" id="id_2" data-compound-hint="Name,">
+                                          <label class="form-label form-label-top" id="label_2" for="first_2" aria-hidden="false"> Name Of The Organization </label>
+                                          <div id="cid_2" class="form-input-wide jf-required" data-layout="full">
+                                            <div data-wrapper-react="true">
+                                              <span class="form-sub-label-container" style="vertical-align:top" data-input-type="first">
+                                                <input type="text" id="first_2" name="nameoforg" class="form-textbox validate" data-defaultvalue="" autoComplete="section-input_2 given-name" size="10" value="" placeholder="Name Of Organization" data-component="first" aria-labelledby="label_2 sublabel_2_first"  />
+                                              </span>
+                                            </div>
+                                        </li>
+                                        <!--email-->
+                                        <li class="form-line form-line-column form-col-1 jf-required" data-type="control_email" id="id_30">
+                                          <label class="form-label form-label-top" id="label_30" for="input_30" aria-hidden="false"> E-mail<span class="form-required">*</span> </label>
+                                          <div id="cid_30" class="form-input-wide jf-required" data-layout="half"> 
+                                            <input type="email" id="input_30" name="email" class="form-textbox validate[required, Email]" data-defaultvalue="" style="width:310px" size="310" value="" placeholder="ex: myname@example.com" data-component="email" aria-labelledby="label_30" required="" /> </div>
+                                        </li>
+                                        <!--number-->
+                                        <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25">Phone Number
+                                          <label class="form-label form-label-top" id="label_25" for="input_25_area" aria-hidden="true"> </label>
+                                          <div id="cid_25" class="form-input-wide" data-layout="half">
+                                            <div data-wrapper-react="true">
+                                              <span class="form-sub-label-container" style="vertical-align:top" data-input-type="areaCode">
+                                                <input type="tel" id="input_25_area" name="phonenumberarea" class="form-textbox" data-defaultvalue="" autoComplete="section-input_25 tel-area-code" value="" data-component="areaCode" aria-labelledby="label_25 sublabel_25_area" />
+                                                <span class="phone-separate" aria-hidden="true"> -</span><label class="form-sub-label" for="input_25_area" id="sublabel_25_area" style="min-height:13px" aria-hidden="false">Area Code</label></span><span class="form-sub-label-container" style="vertical-align:top" data-input-type="phone">
+                                                  <input type="tel" id="input_25_phone" name="phonenumber" class="form-textbox" data-defaultvalue="" autoComplete="section-input_25 tel-local" value="" data-component="phone" aria-labelledby="label_25 sublabel_25_phone" />
+                                                  <label class="form-sub-label" for="input_25_phone" id="sublabel_25_phone" style="min-height:13px" aria-hidden="false">Phone Number</label></span></div>
+                                          </div>
+                                        </li>
+                                        <!--table-->
+                                        <li class="form-linee form-line-column form-col-3"width="100%" data-type="control_matrix" id="id_55">
+                                            <label class="form-label form-label-top form-label-auto" id="label_55" for="input_55" aria-hidden="false"> Types Of Health Checkup </label>
+                                            <div id="cid_55" class="form-input-wide" data-layout="full">
+                                            <table summary="" aria-labelledby="label_55" cellPadding="4" cellSpacing="0" class="form-matrix-table" data-component="matrix">
+                                              <tr class="form-matrix-tr form-matrix-header-tr">
+                                                <th class="form-matrix-th" style="border:none"></th>
+                                                <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_0"><h3>Name</h3><label id="label_55_col_0"></label></th>
+                                                <td class="form-matrix-values"></td>
+                                                    </tr>
+                                              <tr class="form-matrix-tr form-matrix-value-tr" aria-labelledby="label_55 label_55_row_0">
+                                                <th scope="row" class="form-matrix-headers form-matrix-row-headers"><label id="label_55_row_0">1</label></th>
+                                                <td class="form-matrix-values"><input type="text" id="input_55_1_0" class="form-textbox" size="5" name="types1" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_55_col_0 label_55_row_1" aria-label="Cells Text Box" /></td>
+                                      
+                                              </tr>
+                                              <tr class="form-matrix-tr form-matrix-value-tr" aria-labelledby="label_55 label_55_row_1">
+                                                <th scope="row" class="form-matrix-headers form-matrix-row-headers"><label id="label_55_row_1">2</label></th>
+                                                <td class="form-matrix-values"><input type="text" id="input_55_1_0" class="form-textbox" size="5" name="types2" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_55_col_0 label_55_row_1" aria-label="Cells Text Box" /></td>
+
+                                              </tr>
+                                              <tr class="form-matrix-tr form-matrix-value-tr" aria-labelledby="label_55 label_55_row_2">
+                                                <th scope="row" class="form-matrix-headers form-matrix-row-headers"><label id="label_55_row_2">3</label></th>
+                                                <td class="form-matrix-values"><input type="text" id="input_55_1_0" class="form-textbox" size="5" name="types3" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_55_col_0 label_55_row_1" aria-label="Cells Text Box" /></td>
+                                      
+                                              </tr>
+                                              <tr class="form-matrix-tr form-matrix-value-tr" aria-labelledby="label_55 label_55_row_3">
+                                                <th scope="row" class="form-matrix-headers form-matrix-row-headers"><label id="label_55_row_3">4</label></th>
+                                                <td class="form-matrix-values"><input type="text" id="input_55_1_0" class="form-textbox" size="5" name="types4" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_55_col_0 label_55_row_1" aria-label="Cells Text Box" /></td>
+                                      
+                                              </tr>
+                                              <tr class="form-matrix-tr form-matrix-value-tr" aria-labelledby="label_55 label_55_row_4">
+                                                <th scope="row" class="form-matrix-headers form-matrix-row-headers"><label id="label_55_row_4">5</label></th>
+                                                <td class="form-matrix-values"><input type="text" id="input_55_1_0" class="form-textbox" size="5" name="types5" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_55_col_0 label_55_row_1" aria-label="Cells Text Box" /></td>
+                                      
+                                              </tr>
+                                            </table>
+                                          </div>
+                                        </li>
+                                        <!--Arriving Time-->
+                                        <li class="form-line form-line-column form-col-1" data-type="control_time" id="id_57"><label class="form-label form-label-top" id="label_57" for="input_57_hourSelect" aria-hidden="false"> Arriving Time </label>
+                                          <div id="cid_57" class="form-input-wide" data-layout="half">
+                                            <div data-wrapper-react="true">
+                                              <div class="time-wrapper">
+                                                <span class="form-sub-label-container hasAMPM" style="vertical-align:top">
+                                                  <input type="text" class="time-dropdown form-textbox validate[time]" id="input_57_timeInput" name="timeinput" placeholder="HH : MM" aria-labelledby="label_57 sublabel_57_hour" data-mask="hh:MM" value="" data-version="v2" />
+                                                  <label data-seperate-translate="true" class="form-sub-label" for="input_57_timeInput" id="sublabel_57_hour" style="min-height:13px" aria-hidden="false">Hour Minutes</label>
+                                                </span>
+                                              </div>
+                                              <div class="time-wrapper">
+                                                <span class="form-sub-label-container" style="vertical-align:top">
+                                                  <select class="time-dropdown form-dropdown" id="input_57_ampm" name="ampm" data-component="time-ampm" aria-labelledby="label_57 sublabel_57_ampm">
+                                                    <option selected="" value="AM">AM</option>
+                                                    <option value="PM">PM</option>
+                                                  </select>
+                                                </span>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </li>
+                                        <!--Arriving Date-->
+                                        <li class="form-line form-linee-column form-col-6" data-type="control_datetime" id="id_50">
+                                          <label class="form-label form-label-top form-label-auto" id="label_50" for="lite_mode_50" aria-hidden="false"> Arriving Date </label>
+                                          <div id="cid_50" class="form-input-wide" data-layout="half">
+                                            <div data-wrapper-react="true">
+                                              <span class="form-sub-label-container" style="vertical-align:top">
+                                                <input type="text" name="date" class="form-textbox validate[limitDate, validateLiteDate]" id="lite_mode_50" size="12" data-maxlength="12" maxLength="12" data-age="" value="" data-format="mmddyyyy" data-seperator="-" placeholder="MM-DD-YYYY" data-placeholder="MM-DD-YYYY" autoComplete="off" aria-labelledby="label_50" />
+                                                <img class=" newDefaultTheme-dateIcon icon-liteMode" alt="Pick a Date" id="input_50_pick" src="https://cdn.jotfor.ms/images/calendar.png" data-component="datetime" aria-hidden="true" data-allow-time="No" data-version="v2" />
+                                                <label class="form-sub-label is-empty" for="lite_mode_50" id="sublabel_50_litemode" style="min-height:13px" aria-hidden="false"></label>
+                                              </span>
+                                            </div>
+                                          </div>
+                                        </li>
+                                        <!--address-->
+                                        <li class="form-line" data-type="control_address" id="id_59" data-compound-hint="Please Select">
+                                          <label class="form-label form-label-top form-label-auto" id="label_59" for="input_59_addr_line1" aria-hidden="false"> Address </label>
+                                          <div id="cid_59" class="form-input-wide" data-layout="full">
+                                            <div summary="" class="form-address-table jsTest-addressField">
+                                              <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
+                                                <span class="form-address-line form-address-street-line jsTest-address-lineField">
+                                                  <span class="form-sub-label-container" style="vertical-align:top">
+                                                    <input type="text" id="input_59_addr_line1" name="addrline1" class="form-textbox form-address-line" data-defaultvalue="" autoComplete="section-input_59 address-line1" value="" data-component="address_line_1" aria-labelledby="label_59 sublabel_59_addr_line1" required="" />
+                                                    <label class="form-sub-label" for="input_59_addr_line1" id="sublabel_59_addr_line1" style="min-height:13px" aria-hidden="false">Street Address</label>
+                                                  </span>
+                                                </span>
+                                              </div>
+                                              <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
+                                                <span class="form-address-line form-address-city-line jsTest-address-lineField ">
+                                                  <span class="form-sub-label-container" style="vertical-align:top">
+                                                    <input type="text" id="input_59_city" name="addresscity" class="form-textbox form-address-city" data-defaultvalue="" autoComplete="section-input_59 address-level2" value="" data-component="city" aria-labelledby="label_59 sublabel_59_city" required="" />
+                                                    <label class="form-sub-label" for="input_59_city" id="sublabel_59_city" style="min-height:13px" aria-hidden="false">City</label>
+                                                  </span>
+                                                </span>
+                                                <span class="form-address-line form-address-state-line jsTest-address-lineField ">
+                                                  <span class="form-sub-label-container" style="vertical-align:top">
+                                                    <input type="text" id="input_59_state" name="addressstate" class="form-textbox form-address-state" data-defaultvalue="" autoComplete="section-input_59 address-level1" value="" data-component="state" aria-labelledby="label_59 sublabel_59_state" required="" />
+                                                    <label class="form-sub-label" for="input_59_state" id="sublabel_59_state" style="min-height:13px" aria-hidden="false">State / Province</label>
+                                                  </span>
+                                                </span>
+                                              </div>
+                                              <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
+                                                <span class="form-address-line form-address-zip-line jsTest-address-lineField ">
+                                                  <span class="form-sub-label-container" style="vertical-align:top">
+                                                    <input type="text" id="input_59_postal" name="addresspostal" class="form-textbox form-address-postal" data-defaultvalue="" autoComplete="section-input_59 postal-code" value="" data-component="zip" aria-labelledby="label_59 sublabel_59_postal" required="" />
+                                                    <label class="form-sub-label" for="input_59_postal" id="sublabel_59_postal" style="min-height:13px" aria-hidden="false">Postal / Zip Code</label>
+                                                  </span>
+                                                </span>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </li>
+                                        <!--description-->
+                                        <li class="form-line form-line-column form-col-1 jf-required" data-type="control_textarea" id="id_33"><label class="form-label form-label-top form-label-auto" id="label_33" for="input_33" aria-hidden="false"> Description<span class="form-required">*</span> </label>
+                                          <div id="cid_33" class="form-input-wide jf-required" data-layout="full"> 
+                                            <textarea id="input_33" class="form-textarea validate[required]" name="description" style="width:648px;height:163px" data-component="textarea" required="" aria-labelledby="label_33"></textarea> </div>
+                                        </li>
+                                        <!--submit-->
+                                        <li class="form-line" data-type="control_button" id="id_14">
+                                          <div id="cid_14" class="form-input-wide" data-layout="full">
+                                            <div data-align="auto" class="form-buttons-auto jsTest-button-wrapperField">
+                                                <button id="input_14" type="submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">Submit</button></div>
+                                          </div>
+                                        </li>
+                                        </ul>
+                                    </div>
+                                  </form>
+                                  <!--healthcamp ends-->
+                                </div>
+                                <!--scholarship starts-->
+                                <div class="tab-pane fade" id="nav-scholarship_s2" role="tabpanel" aria-labelledby="nav-scholarship-tab">
+                                  <form class="jotform-form" action="{% url 'userevent' %}" method="post" enctype="multipart/form-data" name="form_232715261826456" id="232715261826456" accept-charset="utf-8" autocomplete="on">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="formType" value="scholarship">
+                                    <div role="main" class="">
+                                      <ul class="form-sectionn ">
+                                        <!--name-->
+                                        <li class="form-line jf-required" data-type="control_fullname" id="id_29" data-compound-hint="Name,">
+                                          <label class="form-label form-label-top" id="label_29" for="first_29" aria-hidden="false"> Name<span class="form-required">*</span> </label>
+                                          <div id="cid_29" class="form-input-wide jf-required" data-layout="full">
+                                            <div data-wrapper-react="true">
+                                              <span class="form-sub-label-container" style="vertical-align:top" data-input-type="first">
+                                                <input type="text" id="first_29" name="firstname" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_29 given-name" size="10" value="" placeholder="Name" data-component="first" aria-labelledby="label_29 sublabel_29_first" required="" />
+                                              </span>       
+                                            </div>
+                                        </li>
+                                        <!--name of organization-->
+                                        <li class="form-line jf-required" data-type="control_fullname" id="id_2" data-compound-hint="Name,">
+                                          <label class="form-label form-label-top" id="label_2" for="first_2" aria-hidden="false"> Name Of The Organization </label>
+                                          <div id="cid_2" class="form-input-wide jf-required" data-layout="full">
+                                            <div data-wrapper-react="true">
+                                              <span class="form-sub-label-container" style="vertical-align:top" data-input-type="first">
+                                                <input type="text" id="first_2" name="nameoforg" class="form-textbox validate" data-defaultvalue="" autoComplete="section-input_2 given-name" size="10" value="" placeholder="Name Of Organization" data-component="first" aria-labelledby="label_2 sublabel_2_first"  />
+                                              </span>        
+                                            </div>
+                                        </li>   
+                                        <!--name of scholarship-->
+                                        <li class="form-line jf-required" data-type="control_fullname" id="id_2" data-compound-hint="Name,">
+                                          <label class="form-label form-label-top" id="label_2" for="first_2" aria-hidden="false"> Name Of The Scholarship </label>
+                                          <div id="cid_2" class="form-input-wide jf-required" data-layout="full">
+                                            <div data-wrapper-react="true">
+                                              <span class="form-sub-label-container" style="vertical-align:top" data-input-type="first">
+                                                <input type="text" id="first_2" name="nameofscholarship" class="form-textbox validate" data-defaultvalue="" autoComplete="section-input_2 given-name" size="10" value="" placeholder="Name Of The Scholarship" data-component="first" aria-labelledby="label_2 sublabel_2_first"  />
+                                              </span>        
+                                            </div>
+                                        </li>           
+                                        <!--email-->
+                                        <li class="form-line form-line-column form-col-1 jf-required" data-type="control_email" id="id_3">
+                                          <label class="form-label form-label-top" id="label_3" for="input_3" aria-hidden="false"> E-mail<span class="form-required">*</span> </label>
+                                          <div id="cid_3" class="form-input-wide jf-required" data-layout="half">
+                                            <span class="form-sub-label-container" style="vertical-align:top">
+                                              <input type="email" id="input_3" name="email" class="form-textbox validate[required, Email]" data-defaultvalue="" style="width:310px" size="310" value="" placeholder="ex: myname@example.com" data-component="email" aria-labelledby="label_3 sublabel_input_3" required="" />
+                                            </span> 
+                                          </div>
+                                        </li>
+                                        <!--phone number-->
+                                        <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_4">Phone Number<label class="form-label form-label-top" id="label_4" for="input_4_area" aria-hidden="true"> </label>
+                                          <div id="cid_4" class="form-input-wide" data-layout="half">
+                                            <div data-wrapper-react="true"><span class="form-sub-label-container" style="vertical-align:top" data-input-type="areaCode"><input type="tel" id="input_4_area" name="area" class="form-textbox" data-defaultvalue="" autoComplete="section-input_4 tel-area-code" value="" data-component="areaCode" aria-labelledby="label_4 sublabel_4_area" />
+                                                <span class="phone-separate" aria-hidden="true"> -</span><label class="form-sub-label" for="input_4_area" id="sublabel_4_area" style="min-height:13px" aria-hidden="false">Area Code</label></span><span class="form-sub-label-container" style="vertical-align:top" data-input-type="phone">
+                                                  <input type="tel" id="input_4_phone" name="phonenumber" class="form-textbox" data-defaultvalue="" autoComplete="section-input_4 tel-local" value="" data-component="phone" aria-labelledby="label_4 sublabel_4_phone" />
+                                                  <label class="form-sub-label" for="input_4_phone" id="sublabel_4_phone" style="min-height:13px" aria-hidden="false">Phone Number</label>
+                                                </span>
+                                              </div>
+                                          </div>
+                                        </li>
+                                        <!--type of scholarship-->
+                                        <li class="form-line jf-required" data-type="control_fullname" id="id_2" data-compound-hint="Name,">
+                                          <label class="form-label form-label-top" id="label_2" for="first_2" aria-hidden="false"> Type Of Scholarship </label>
+                                          <div id="cid_2" class="form-input-wide jf-required" data-layout="full">
+                                            <div data-wrapper-react="true">
+                                              <span class="form-sub-label-container" style="vertical-align:top" data-input-type="first">
+                                                <input type="text" id="first_2" name="typeofscholarship" class="form-textbox validate" data-defaultvalue="" autoComplete="section-input_2 given-name" size="10" value="" placeholder="Type Of Scholarship" data-component="first" aria-labelledby="label_2 sublabel_2_first"  />
+                                              </span>        
+                                            </div>
+                                          </div>
+                                        </li>
+                                        <!--date time-->
+                                        <li class="form-line form-line-column form-col-2" data-type="control_datetime" id="id_50">
+                                          <label class="form-label form-label-top form-label-auto" id="label_50" for="lite_mode_50" aria-hidden="false"> Activity Date </label>
+                                          <div id="cid_50" class="form-input-wide" data-layout="half">
+                                            <div data-wrapper-react="true">
+                                              <span class="form-sub-label-container" style="vertical-align:top">
+                                                <input type="text" name="date" class="form-textbox validate[limitDate, validateLiteDate]" id="lite_mode_50" size="12" data-maxlength="12" maxLength="12" data-age="" value="" data-format="mmddyyyy" data-seperator="-" placeholder="MM-DD-YYYY" data-placeholder="MM-DD-YYYY" autoComplete="off" aria-labelledby="label_50" />
+                                                <img class=" newDefaultTheme-dateIcon icon-liteMode" alt="Pick a Date" id="input_50_pick" src="https://cdn.jotfor.ms/images/calendar.png" data-component="datetime" aria-hidden="true" data-allow-time="No" data-version="v2" />
+                                                <label class="form-sub-label is-empty" for="lite_mode_50" id="sublabel_50_litemode" style="min-height:13px" aria-hidden="false"></label>
+                                              </span>
+                                            </div>
+                                          </div>
+                                        </li>
+                                        <!--Address-->
+                                        <li class="form-line" data-type="control_address" id="id_59" data-compound-hint=",,,,Please Select,,Please Select,">
+                                          <label class="form-label form-label-top form-label-auto" id="label_59" for="input_59_addr_line1" aria-hidden="false"> Address </label>
+                                          <div id="cid_59" class="form-input-wide" data-layout="full">
+                                            <div summary="" class="form-address-table jsTest-addressField">
+                                              <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
+                                                <span class="form-address-line form-address-street-line jsTest-address-lineField">
+                                                  <span class="form-sub-label-container" style="vertical-align:top">
+                                                    <input type="text" id="input_59_addr_line1" name="addrline1" class="form-textbox form-address-line" data-defaultvalue="" autoComplete="section-input_59 address-line1" value="" data-component="address_line_1" aria-labelledby="label_59 sublabel_59_addr_line1" required="" />
+                                                    <label class="form-sub-label" for="input_59_addr_line1" id="sublabel_59_addr_line1" style="min-height:13px" aria-hidden="false">Street Address</label>
+                                                  </span>
+                                                </span>
+                                              </div>
+                                              <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
+                                                <span class="form-address-line form-address-city-line jsTest-address-lineField ">
+                                                  <span class="form-sub-label-container" style="vertical-align:top">
+                                                    <input type="text" id="input_59_city" name="addresscity" class="form-textbox form-address-city" data-defaultvalue="" autoComplete="section-input_59 address-level2" value="" data-component="city" aria-labelledby="label_59 sublabel_59_city" required="" />
+                                                    <label class="form-sub-label" for="input_59_city" id="sublabel_59_city" style="min-height:13px" aria-hidden="false">City</label>
+                                                  </span>
+                                                </span>
+                                                <span class="form-address-line form-address-state-line jsTest-address-lineField ">
+                                                  <span class="form-sub-label-container" style="vertical-align:top">
+                                                    <input type="text" id="input_59_state" name="addresstate" class="form-textbox form-address-state" data-defaultvalue="" autoComplete="section-input_59 address-level1" value="" data-component="state" aria-labelledby="label_59 sublabel_59_state" required="" />
+                                                    <label class="form-sub-label" for="input_59_state" id="sublabel_59_state" style="min-height:13px" aria-hidden="false">State / Province</label>
+                                                  </span>
+                                                </span>
+                                              </div>
+                                              <div class="form-address-line-wrapper jsTest-address-line-wrapperField"><span class="form-address-line form-address-zip-line jsTest-address-lineField "><span class="form-sub-label-container" style="vertical-align:top"><input type="text" id="input_59_postal" name="addresspostal" class="form-textbox form-address-postal" data-defaultvalue="" autoComplete="section-input_59 postal-code" value="" data-component="zip" aria-labelledby="label_59 sublabel_59_postal" required="" /><label class="form-sub-label" for="input_59_postal" id="sublabel_59_postal" style="min-height:13px" aria-hidden="false">Postal / Zip Code</label></span></span></div>
+                                            </div>
+                                          </div>
+                                        </li>
+                                        <!--benifit of the scholarship-->
+                                        <li class="form-line jf-required" data-type="control_textarea" id="id_33">
+                                          <label class="form-label form-label-top form-label-auto" id="label_33" for="input_33" aria-hidden="false">Benefit Of The Scholarship<span class="form-required">*</span> </label>
+                                          <div id="cid_33" class="form-input-wide jf-required" data-layout="full"> 
+                                              <textarea id="input_33" class="form-textarea validate[required]" name="benefit" style="width:648px;height:163px" data-component="textarea" required="" aria-labelledby="label_33"></textarea> </div>
+                                        </li>
+                                        <!--submit-->
+                                        <li class="form-line" data-type="control_button" id="id_24">
+                                          <div id="cid_24" class="form-input-wide" data-layout="full">
+                                            <div data-align="auto" class="form-buttons-auto jsTest-button-wrapperField">
+                                              <button id="input_24" type="submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">Submit</button></div>
+                                          </div>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+      </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,113 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>HopeLink Connect</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <link rel="icon" href="{% static 'staff/images/fevicon.png' %}" type="image/png" />
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="{% static 'staff/css/bootstrap.min.css' %}" />
+      <!-- site css -->
+      <link rel="stylesheet" href="{% static 'staff/style.css' %}" />
+      <!-- responsive css -->
+      <link rel="stylesheet" href="{% static 'staff/css/responsive.css' %}" />
+      <!-- color css -->
+      <link rel="stylesheet" href="{% static 'staff/css/colors.css' %}" />
+      <!-- select bootstrap -->
+      <link rel="stylesheet" href="{% static 'staff/css/bootstrap-select.css' %}" />
+      <!-- scrollbar css -->
+      <link rel="stylesheet" href="{% static 'staff/css/perfect-scrollbar.css' %}" />
+      <!-- custom css -->
+      <link rel="stylesheet" href="{% static 'staff/css/custom.css' %}" />
+      <link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?v=3.3.45874&themeRevisionID=5f7ed99c2c2c7240ba580251"/>
+      <link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/payment/payment_styles.css?3.3.45874" />
+      <link type="text/css" rel="stylesheet" href="https://cdn03.jotfor.ms/css/styles/payment/payment_feature.css?3.3.45874" />
+      <link rel="stylesheet" href="{% static 'staff/css/cloth-donation.css' %}" />
+      <link rel="stylesheet" href="{% static 'staff/css/food-donation.css' %}" />
+      <link rel="stylesheet" href="{% static 'staff/css/education-donation.css' %}" />
+      <link rel="stylesheet" href="{% static 'staff/css/social-activity.css' %}" />
+      
+
+
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+   </head>
+   <body class="dashboard dashboard_1">
+
+    {% include 'includes/staffnav.html' %}
+
+    {% block content %}
+
+    {% endblock %}
+    <!-- jQuery -->
+    <script src="{% static 'staff/js/jquery.min.js' %}"></script>
+    <script src="{% static 'staff/js/popper.min.js' %}"></script>
+    <script src="{% static 'staff/js/bootstrap.min.js' %}"></script>
+    <!-- wow animation -->
+    <script src="{% static 'staff/js/animate.js' %}"></script>
+    <!-- select country -->
+    <script src="{% static 'staff/js/bootstrap-select.js' %}"></script>
+    <!-- owl carousel -->
+    <script src="{% static 'staff/js/owl.carousel.js' %}"></script> 
+    <!-- chart js -->
+    <script src="{% static 'staff/js/Chart.min.js' %}"></script>
+    <script src="{% static 'staff/js/Chart.bundle.min.js' %}"></script>
+    <script src="{% static 'staff/js/utils.js' %}"></script>
+    <script src="{% static 'staff/js/analyser.js' %}"></script>
+    <!-- nice scrollbar -->
+    <script src="{% static 'staff/js/perfect-scrollbar.min.js' %}"></script>
+    <script>
+       var ps = new PerfectScrollbar('#sidebar');
+    </script>
+    <!-- custom js -->
+    <script src="{% static 'staff/js/chart_custom_style1.js' %}"></script>
+    <script src="{% static 'staff/js/custom.js' %}"></script>
+    
+    {% comment %} <script src="https://cdn02.jotfor.ms/static/prototype.forms.js?3.3.45893" type="text/javascript"></script>
+    <script src="https://cdn03.jotfor.ms/static/jotform.forms.js?3.3.45893" type="text/javascript"></script>
+    <script type="text/javascript">	JotForm.newDefaultTheme = true;
+       JotForm.init(function(){
+       JotForm.displayLocalTime("input_57_hourSelect", "input_57_minuteSelect","input_57_ampm", "input_57_timeInput", true);
+ 
+  JotForm.calendarMonths = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  if (!JotForm.calenderViewMonths) JotForm.calenderViewMonths = {};  JotForm.calenderViewMonths[50] = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  if (!JotForm.calenderViewDays) JotForm.calenderViewDays = {};  JotForm.calenderViewDays[50] = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+  JotForm.calendarDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+  JotForm.calendarOther = {"today":"Today"};
+  var languageOptions = document.querySelectorAll('#langList li'); 
+  for(var langIndex = 0; langIndex < languageOptions.length; langIndex++) { 
+    languageOptions[langIndex].on('click', function(e) { setTimeout(function(){ JotForm.setCalendar("50", false, {"days":{"monday":true,"tuesday":true,"wednesday":true,"thursday":true,"friday":true,"saturday":true,"sunday":true},"future":true,"past":true,"custom":false,"ranges":false,"start":"","end":"","countSelectedDaysOnly":false}); }, 0); });
+  } 
+  JotForm.onTranslationsFetch(function() { JotForm.setCalendar("50", false, {"days":{"monday":true,"tuesday":true,"wednesday":true,"thursday":true,"friday":true,"saturday":true,"sunday":true},"future":true,"past":true,"custom":false,"ranges":false,"start":"","end":"","countSelectedDaysOnly":false}); });
+ if (window.JotForm && JotForm.accessible) $('input_33').setAttribute('tabindex',0);
+       JotForm.alterTexts({"couponApply":"Apply","couponBlank":"Please enter a coupon.","couponChange":"","couponEnter":"Enter coupon","couponExpired":"Coupon is expired. Please try another one.","couponInvalid":"Coupon is invalid.","couponValid":"Coupon is valid.","shippingShipping":"Shipping","taxTax":"Tax","totalSubtotal":"Subtotal","totalTotal":"Total"}, true);
+       setTimeout(function() {
+           JotForm.initMultipleUploads();
+       }, 2);
+    });
+ 
+    setTimeout(function() {
+ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null,null,null,null,null,{"name":"submit","qid":"14","text":"Submit","type":"control_button"},null,null,null,null,null,null,null,null,null,null,{"name":"phoneNumber","qid":"25","type":"control_phone"},null,null,{"name":"socialActivity","qid":"28","text":"Social Activity Form","type":"control_head"},{"description":"","name":"fullName","qid":"29","text":"Full Name","type":"control_fullname"},{"name":"email30","qid":"30","subLabel":"example@example.com","text":"E-mail","type":"control_email"},null,null,{"name":"comments33","qid":"33","text":"Description","type":"control_textarea"},null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,{"description":"","name":"sendingDate","qid":"50","text":"Activity Date","type":"control_datetime"},null,null,null,null,{"description":"","name":"typeA","qid":"55","text":"Type Of Event","type":"control_matrix"},null,{"description":"","name":"time","qid":"57","text":"Activity Time","type":"control_time"},null,{"description":"","name":"address","qid":"59","text":"Address","type":"control_address"},null,{"description":"","name":"fileUpload","qid":"61","subLabel":"","text":"File Upload","type":"control_fileupload"}]);}, 20); 
+ </script> {% endcomment %}
+    <!-- end dashboard inner -->
+    {% comment %} <script src="https://cdn03.jotfor.ms/file-uploader/fileuploader.js?v=3.3.45874"></script>
+    <script src="https://cdn02.jotfor.ms/static/prototype.forms.js?3.3.45874" type="text/javascript"></script>
+    <script src="https://cdn03.jotfor.ms/static/jotform.forms.js?3.3.45874" type="text/javascript"></script>
+    <script defer src="https://cdn01.jotfor.ms//js/punycode-1.4.1.min.js"></script> {% endcomment %}
+          </div>
+      </div>
+  </div>
+ </body>
+</html>

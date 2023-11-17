@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container-xxl py-5 bg-dark hero-header mb-5">
+    <div class="container text-center my-5 pt-5 pb-4">
+        <h1 class="display-3 text-white mb-3 animated slideInDown">Log In</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center text-uppercase">
+                <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                <li class="breadcrumb-item text-white active" aria-current="page">Login</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+</div>
+<!-- Navbar & Hero End -->
+
+
+    <section class="darksoul-section">        
+            <div class="darksoul-left">
+                <h1 class="darksoul-r-h1 register" id="regh"><button class="darksoul-btn-small" type="button" onclick="register()">Register</button></h1>
+                <h1 class="darksoul-l-h1 login" id="logh"><button class="darksoul-btn-small" type="button" onclick="login()">Login</button></h1>
+            </div>
+            <div class="darksoul-right">
+                <div class="darksoul-container" id="card">
+                    <div></div>
+                    <div class="darksoul-header">                     
+                    </div>
+                    <div class="darksoul-content" id="Login">
+                        <form class="darksoul-form" method="POST"  >
+                        {% csrf_token %}
+                        <input class="darksoul-input" type="text" name="username" placeholder="UserName" /><br>
+                        <input class="darksoul-input" type="password" name="password" placeholder="Password" /><br>
+                        <a class="darksoul-in" href="forgetpass.html" type="pass" name="pass" color="white">Forget Password?</a>
+                    </div>
+                    <div class="darksoul-signup-content" id="Register">
+                        <a href="{%url 'registration' %}"  class="darksoul-h2">Sign up</a>
+                        <div class="darksoul-logo">
+                            <svg  height="10" >
+                                <line x1="1000" y1="0" x2="0" y2="0" style="stroke:rgb(0, 0, 0);stroke-width:5" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="darksoul-footer" id="footer">
+                        <button class="darksoul-btn" type="submit" name="submit">Login</button>
+                    </div>
+                    <div class="error-message">
+                        {{ error_message }}
+                    </div> 
+                    </form>
+                </div>
+            </div>
+        </section>
+{% endblock %}
+
+    
+    {% comment %} {% load static %}
+
+
+
+    <!DOCTYPE html>
+        <html>
+            <head>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+           <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+           <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+            
+        
+        <link rel='stylesheet' href="{% static 'css\login.css' %}"></head>
+            <body>
+                
+        <section class="darksoul-section">
+            
+            <div class="darksoul-left">
+              
+                <button class="darksoul-btn-small" type="button" onclick="register()"><h1 class="darksoul-r-h1" id="regh">Register</h1></button>
+                <button class="darksoul-btn-small" type="button" onclick="login()"><h1 class="darksoul-l-h1" id="logh">Login</h1></button>
+                
+            </div>
+            <div class="darksoul-right">
+                <div class="darksoul-container" id="card">
+                    <div></div>
+                    <div class="darksoul-header">
+                     
+                    </div>
+                    <div class="darksoul-content" id="Login">
+                        <form class="darksoul-form" action="" method="get">
+                            <input class="darksoul-input" type="email" name="email" placeholder=" Email ID" /><br>
+                            <input class="darksoul-input" type="password" name="password" placeholder=" Password" /><br>
+                            <input class="darksoul-input" type="pass" name="pass" placeholder="Forget Password" />
+                          
+                    </div><div  class="darksoul-signup-content" id="Register">
+                        <a href="registration.html"  class="darksoul-h2">Sign up</a>
+                        <div class="darksoul-logo">
+                        <svg  height="10" >
+                            <line x1="1000" y1="0" x2="0" y2="0" style="stroke:rgb(0, 0, 0);stroke-width:5" />
+                           
+                          </svg>
+                        </div>
+                        
+                        <div class="darksoul-logo">
+                                 
+    </div>
+                </div>
+                    <div class="darksoul-footer" id="footer">
+                        <button class="darksoul-btn" type="submit" name="submit">Login</button>
+                    </div>
+                        
+                    </form>
+                </div>
+    <script src="{% static 'js/login.js' %}"></script>
+            </div>
+        </section>
+    </body>
+    </html> {% endcomment %}

@@ -1,0 +1,102 @@
+{% load static %}
+<div class="full_container">
+    <div class="inner_container">
+       <!-- Sidebar  -->
+       <nav id="sidebar">
+          <div class="sidebar_blog_1">
+             <div class="sidebar-header">
+                <div class="logo_section">
+                   <a href="{% url 'userdonation' %}""><img class="logo_icon img-responsive" src="{{ request.session.profileImage }}" alt="#" /></a>
+                </div>
+             </div>
+             <div class="sidebar_user_info">
+                <div class="icon_setting"></div>
+                <div class="user_profle_side">
+                  <div class="user_img"><img class="img-responsive" src="{{ request.session.profileImage }}"/></div>
+                   <div class="user_info">
+                      <h6>{{request.session.username}}</h6>
+                      <p><span class="online_animation"></span> Online</p>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <div class="sidebar_blog_2">
+             
+             <ul class="list-unstyled components">
+                <li class="active">
+                   <a href="{% url 'staffdeshbord' %}"   aria-expanded="false" ><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a>
+                   
+                </li>
+                <li>
+                  <a href="{% url 'newmember' %}"  aria-expanded="false" ><i class="fa fa-diamond yellow_color"></i> <span>Add Members</span></a>
+                  </li>
+                <li>
+                   <a href="{%url 'staff_money_do'%}"  aria-expanded="false" ><i class="fa fa-diamond yellow_color"></i> <span>Donations</span></a>
+                   </li>
+                   <li>
+                     <a href="{%url 'staffevent'%}"  aria-expanded="false" ><i class="fa fa-file yellow_color "></i> <span>Event</span></a>
+                     </li>
+                   <li>
+                      <a href="{%url 'staffnotification'%}"  aria-expanded="false" ><i class="fa fa-bell fa-custom yellow_color"></i> <span>Notification</span></a>
+                      </li>
+                      <li>
+                         <a href="{%url 'staffmediagallery'%}"  aria-expanded="false" ><i class="fa fa-image yellow_color"></i> <span>Media Gallery</span></a>
+                         </li>
+                       
+                      
+                {% comment %} <li><a href="{%url 'staffdonationre'%}"><i class="fa fa-table yellow_color"></i> <span>Donation Receive </span></a></li>
+                
+                 
+                <li class="active">
+                   <a href="#additional_page" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-clone yellow_color"></i> <span>Additional Pages</span></a>
+                   <ul class="collapse list-unstyled" id="additional_page">
+                      <li>
+                         <a href="{%url 'staffprofile'%}">> <span>Profile</span></a>
+                      </li>
+                      <li>
+                         <a href="{%url 'staffproject'%}">> <span>Projects</span></a>
+                      </li>
+                      
+                   </ul> {% endcomment %}
+                </li>
+                <li><a href="{% url 'staffmap' %}"><i class="fa fa-map yellow_color"></i> <span>Map</span></a></li>
+                </ul>
+          </div>
+       </nav>
+       <!-- end sidebar -->
+       <!-- right content -->
+       <div id="content">
+          <!-- topbar -->
+          <div class="topbar">
+             <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="full">
+                   <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
+                   <div class="logo_section">
+                     <a href=""><h4 style="color: white;align:center;">
+                        <img src="{% static 'profile/images/logo/logo1_1.png' %}" alt="HopeLink Connect"> HopeLink Connect
+                      </h4></div>
+                   <div class="right_topbar">
+                      <div class="icon_info">
+                         <ul>
+                            <li><a href="#"><i class="fa fa-bell-o"></i><span class="badge">2</span></a></li>
+                            <li><a href="#"><i class="fa fa-question-circle"></i></a></li>
+                            <li><a href="#"><i class="fa fa-envelope-o"></i><span class="badge">3</span></a></li>
+                         </ul>
+                         <ul class="user_profile_dd">
+                            <li>
+                               <a class="dropdown-toggle" data-toggle="dropdown">
+                                 <img class="{% static 'profile/img-responsive rounded-circle' %}" src= "{{ request.session.profileImage }}" />
+                                 <span class="name_user">{{ request.session.username }}</span></a>
+                               <div class="dropdown-menu">
+                                  <a class="dropdown-item" href="{%url 'staffprofile'%}">My Profile</a>
+                                 
+                                  <a class="dropdown-item" href="{% url 'logout' %}"><span>Log Out</span> <i class="fa fa-sign-out"></i></a>
+                               </div>
+                            </li>
+                         </ul>
+                      </div>
+                   </div>
+                </div>
+             </nav>
+          </div>
+          <!-- end topbar -->

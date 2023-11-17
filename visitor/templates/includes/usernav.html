@@ -1,0 +1,46 @@
+{% load static %}
+
+ <!-- Navbar & Hero Start -->
+ <div class="container-xxl position-relative p-0">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
+        <a href="" class="navbar-brand p-0">
+            <h3 class="text-primary m-0"><img src="{% static 'img/logo1_1.png' %}">HopeLink Connect</h3>
+            <!-- <img src="img/logo.png" alt="Logo"> -->
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0 pe-4">
+                <a href="{% url 'userhome' %}"class="nav-item nav-link  {% if request.resolver_match.url_name == 'userhome' %}active{% endif %}">Home</a>
+                <a href="{% url 'userabout' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'userabout' %}active{% endif %}">About</a>
+                <a href="{% url 'usergallery' %}"class="nav-item nav-link {% if request.resolver_match.url_name == 'usergallery' %}active{% endif %}">Gallery</a>
+                {% comment %} <a href="{% url 'intant' %}" class="nav-item nav-link">Internship</a> {% endcomment %}
+                {% comment %} <div class="nav-item dropdown">
+                    <a href="{% static '#' %}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Login</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="{% url 'login' %}" class="dropdown-item">Admin</a>
+                        <a href="{% url 'login' %}" class="dropdown-item">Staff</a>
+                        <a href="{% url 'login' %}" class="dropdown-item">User</a><!--testimonial.html-->
+                    </div>
+                </div> {% endcomment %}
+                {% comment %} <a href="{% url 'usercontact' %}" class="nav-item nav-link">Contact</a> {% endcomment %}
+            </div>
+            <a href="{% url 'userevent' %}" class="btn btn-primary py-2 px-4 {% if request.resolver_match.url_name == 'userevent' %}active{% endif %}">Book An Event Now</a>
+
+
+            <div class="circle">
+                <a href="{% url 'userdeshbord' %}">
+                    <img class="circle-inner" src="{{ request.session.profileImage }}" alt="{{ request.session.username }}">
+                </a>
+            </div>
+            {% comment %} {% if signup.image %}
+            <div class="circle">
+                <img src="{{ signup.image.url }}" alt="{{ signup.user.username }}'s Profile Picture" class="circle-inner">
+            </div>
+             {% endif %}
+             {% endcomment %}
+            
+        </div>
+    </nav>
+

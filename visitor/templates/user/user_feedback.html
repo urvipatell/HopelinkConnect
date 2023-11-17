@@ -1,0 +1,104 @@
+
+{% extends 'profile_base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+
+    .form-group button {
+      background-color: #ff9800;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .form-group button:hover {
+      background-color: #45a049;
+    }
+  </style>
+  <div class="midde_cont">
+    <div class="container-fluid">
+      <div class="row column_title">
+          <div class="col-md-12">
+            <div class="page_title">
+                <h2>Feedback</h2>
+            </div>
+          </div>
+      </div>
+  <form id="feedbackForm" method="post" acrion="{% url 'userfeedback' %}">
+    {% csrf_token %}
+
+    <h1><center><b>Feedback Form</b></center></h1>
+
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="feedbackType">Feedback Type:</label>
+      <select id="feedbackType" name="feedbackType" required>
+        <option value="compliment">Compliment</option>
+        <option value="suggestion">Suggestion</option>
+        <option value="thought">Thought</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="comments">Comments:</label>
+      <textarea id="comments" name="comments" placeholder="Enter your comments" rows="4" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <button type="submit">Submit Feedback</button>
+    </div>
+  </form>
+
+<script >
+  function submitFeedback() {
+    // Here, you can add JavaScript logic to handle the form submission, such as sending data to a server or displaying a thank you message.
+    // For this example, let's just show an alert.
+    alert("Thank you for your feedback!");
+  }
+</script>
+
+{% endblock %}

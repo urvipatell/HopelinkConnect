@@ -1,0 +1,235 @@
+{% extends 'staffbase.html' %}
+
+{% load static %}
+{% block content %}
+<div class="midde_cont">
+    <div class="container-fluid">
+       <div class="row column_title">
+          <div class="col-md-12">
+             <div class="page_title">
+                <h2>Event</h2>
+             </div>
+          </div>
+       </div>
+    <!-- Social Events Table -->
+    <div class="midde_cont">
+        <div class="container-fluid">
+           <div class="row column_title">
+              <div class="col-md-12">
+                 <div class="page_title">
+                    <h2>Social Event</h2>
+                 </div>
+              </div>
+           </div>
+    <table class="custom-table">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Event Types</th>
+            <th>Activity Time</th>
+            <th>Activity Date</th>
+            <th>Address</th>
+            <!-- Add more table headers for other fields -->
+        </tr>
+        {% for social_event in social_events %}
+            <tr>
+                <td>{{ social_event.first_name }} {{ social_event.last_name }}</td>
+                <td>{{ social_event.email }}</td>
+                <td>{{ social_event.phone_number }}</td>
+                <td>{{ social_event.type_of_event }}</td>
+                <td>{{ social_event.activity_time }}</td>
+                <td>{{ social_event.activity_date }}</td>
+                <td>{{ social_event.address_line1 }}, {{ social_event.city }}, {{ social_event.state }} {{ social_event.postal_code }}</td>
+                <!-- Add more table cells for other fields -->
+            </tr>
+        {% endfor %}
+    </table>
+
+    <div class="midde_cont">
+        <div class="container-fluid">
+           <div class="row column_title">
+              <div class="col-md-12">
+                 <div class="page_title">
+                    <h2>Impact Story</h2>
+                 </div>
+              </div>
+           </div>
+    <table class="custom-table">
+        <tr>
+            <th>Name</th>
+            <th>Story Name</th>
+            <th>User Story</th>
+            <th>Notes</th>
+            <!-- Add more table headers for other fields -->
+        </tr>
+        {% for user_story in user_stories %}
+            <tr>
+                <td>{{ user_story.name }}</td>
+                <td>{{ user_story.story_name }}</td>
+                <td>{{ user_story.user_story }}</td>
+                <td>{{ user_story.notes }}</td>
+                <!-- Add more table cells for other fields -->
+            </tr>
+        {% endfor %}
+    </table>
+
+    <div class="midde_cont">
+        <div class="container-fluid">
+           <div class="row column_title">
+              <div class="col-md-12">
+                 <div class="page_title">
+                    <h2>Healthcamp Event</h2>
+                 </div>
+              </div>
+           </div>
+    <table class="custom-table">
+        <tr>
+            <th>Doctor Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Event Types</th>
+            <th>Time</th>
+            <th>Date</th>
+            <th>Address</th>
+            <!-- Add more table headers for other fields -->
+        </tr>
+        {% for health_camp in health_camps %}
+            <tr>
+                <td>{{ health_camp.nameofdoctor }}</td>
+                <td>{{ health_camp.email }}</td>
+                <td>{{ health_camp.phonenumberarea }} {{ health_camp.phonenumber }}</td>
+                <td>{{ health_camp.types1 }}, {{ health_camp.types2 }}, {{ health_camp.types3 }}, {{ health_camp.types4 }}, {{ health_camp.types5 }}</td>
+                <td>{{ health_camp.timeinput }} {{ health_camp.ampm }}</td>
+                <td>{{ health_camp.date }}</td>
+                <td>{{ health_camp.addrline1 }}, {{ health_camp.addresscity }}, {{ health_camp.addressstate }} {{ health_camp.addresspostal }}</td>
+                <!-- Add more table cells for other fields -->
+            </tr>
+        {% endfor %}
+    </table>
+
+    <!-- Scholarship Applications Table -->
+    <div class="midde_cont">
+        <div class="container-fluid">
+           <div class="row column_title">
+              <div class="col-md-12">
+                 <div class="page_title">
+                    <h2>Scholarship</h2>
+                 </div>
+              </div>
+           </div>
+    <table class="custom-table">
+        <tr>
+            <th>Name</th>
+            <th>Organization</th>
+            <th>Scholarship Name</th>
+            <th>Email</th>
+            <th>Area</th>
+            <th>Phone</th>
+            <th>Scholarship Type</th>
+            <th>Date</th>
+            <th>Address</th>
+            <th>Benefit</th>
+            <!-- Add more table headers for other fields -->
+        </tr>
+        {% for scholarship_application in scholarship_applications %}
+            <tr>
+                <td>{{ scholarship_application.firstname }}</td>
+                <td>{{ scholarship_application.nameoforg }}</td>
+                <td>{{ scholarship_application.nameofscholarship }}</td>
+                <td>{{ scholarship_application.email }}</td>
+                <td>{{ scholarship_application.area }}</td>
+                <td>{{ scholarship_application.phonenumber }}</td>
+                <td>{{ scholarship_application.typeofscholarship }}</td>
+                <td>{{ scholarship_application.date }}</td>
+                <td>{{ scholarship_application.addrline1 }}, {{ scholarship_application.addresscity }}, {{ scholarship_application.addresstate }} {{ scholarship_application.addresspostal }}</td>
+                <td>{{ scholarship_application.benefit }}</td>
+                <!-- Add more table cells for other fields -->
+            </tr>
+        {% endfor %}
+    </table>
+    <style>
+        /* General table styles */
+        .custom-table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+            border-radius: \50px;
+            overflow: hidden;
+            
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+    
+        .custom-table th, .custom-table td {
+            border: 1px solid #dddddd;
+            padding: 8px;
+            
+            text-align: center;
+        }
+    
+        .custom-table th {
+            background-color: #f2f2f2;
+            color: #333;
+            
+        }
+    
+        .custom-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+            
+        }
+    
+        .custom-table tr:hover {
+            background-color: #e2e2e2;
+            
+        }
+    
+        /* Additional styling for specific event types */
+        .custom-table.social-table th {
+            background-color: #ff9900; /* Adjust the color as needed */
+        }
+    
+        .custom-table.impact-table th {
+            background-color: #4caf50; /* Adjust the color as needed */
+        }
+    
+        .custom-table.health-table th {
+            background-color: #2196F3; /* Adjust the color as needed */
+        }
+    
+        .custom-table.scholarship-table th {
+            background-color: #f44336; /* Adjust the color as needed */
+        }
+    
+        /* Adjust colors for table headers of other event types */
+    
+        /* Style table headers */
+        .custom-table th {
+            background-color: #053b67;
+            color: #ffff;
+            font-weight: bold;
+        }
+    
+        /* Style alternating rows */
+        .custom-table tr:nth-child(even) {
+            background-color: #ffff;
+        }
+    
+        .custom-table tr:hover {
+            background-color: #e2e2e2;
+        }
+    
+        /* Style hyperlinks within tables (e.g., email addresses) */
+        .custom-table a {
+            color: orange; /* Adjust the link color as needed */
+            text-decoration: none;
+        }
+    
+        .custom-table a:hover {
+            text-decoration: underline;
+        }
+    
+    </style>
+    
+
+</div>
+{%endblock%}

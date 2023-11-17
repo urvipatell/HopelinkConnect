@@ -1,0 +1,137 @@
+
+<div class="tab-pane fade" id="nav-cloth_s2" role="tabpanel" aria-labelledby="nav-cloth-tab">
+                                   
+    <form class="jotform-form" action="https://submit.jotform.com/submit/232714804509456" method="post" enctype="multipart/form-data" name="form_232714804509456" id="232714804509456" accept-charset="utf-8" autocomplete="on" action="{% url 'userdonation' %}">
+      {% csrf_token %}
+      <div role="main" class="">
+        <ul class="page-sections">
+          <!--name-->
+          <li class="form-line" data-type="control_fullname" id="id_3"><label class="form-label form-label-top form-label-auto" id="label_3" for="first_3" aria-hidden="false"> Name </label>
+            <div id="cid_3" class="form-input-wide" data-layout="full">
+              <div data-wrapper-react="true">
+                <span class="form-sub-label-container" style="vertical-align:top" data-input-type="first">
+                  <input type="text" id="first_3" name="q3_name[first]" class="form-textbox" data-defaultvalue="" autoComplete="section-input_3 given-name" size="10" value="" data-component="first" aria-labelledby="label_3 sublabel_3_first" />
+                  <label class="form-sub-label" for="first_3" id="sublabel_3_first" style="min-height:13px" aria-hidden="false">First Name</label>
+                </span>
+                <span class="form-sub-label-container" style="vertical-align:top" data-input-type="last">
+                    <input type="text" id="last_3" name="q3_name[last]" class="form-textbox" data-defaultvalue="" autoComplete="section-input_3 family-name" size="15" value="" data-component="last" aria-labelledby="label_3 sublabel_3_last" />
+                    <label class="form-sub-label" for="last_3" id="sublabel_3_last" style="min-height:13px" aria-hidden="false">Last Name</label>
+                  </span>
+              </div>
+            </div>
+          </li>
+          <!--email-->
+          <li class="form-line form-line-column form-col-1" data-type="control_email" id="id_4"><label class="form-label form-label-top form-label-auto" id="label_4" for="input_4" aria-hidden="false"> Email </label>
+            <div id="cid_4" class="form-input-wide" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top"><input type="email" id="input_4" name="q4_email" class="form-textbox validate[Email]" data-defaultvalue="" style="width:310px" size="310" value="" data-component="email" aria-labelledby="label_4 sublabel_input_4" /><label class="form-sub-label" for="input_4" id="sublabel_input_4" style="min-height:13px" aria-hidden="false">example@example.com</label></span> </div>
+          </li>
+          <!--phone-->
+          <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_5"><label class="form-label form-label-top" id="label_5" for="input_5_area" aria-hidden="true"> Phone Number<span class="form-required">*</span></label>
+            <div id="cid_5" class="form-input-wide" data-layout="half">
+              <div data-wrapper-react="true"><span class="form-sub-label-container" style="vertical-align:top" data-input-type="areaCode">
+                <input type="tel" id="input_5_area" name="q5_phoneNumber[area]" class="form-textbox validation[required, Phone NUmber]" data-defaultvalue="" autoComplete="section-input_5 tel-area-code" value="" data-component="areaCode" aria-labelledby="label_5 sublabel_5_area" />
+                <span class="phone-separate" aria-hidden="true"> -</span><label class="form-sub-label" for="input_5_area" id="sublabel_5_area" style="min-height:13px" aria-hidden="false">Area Code</label></span><span class="form-sub-label-container" style="vertical-align:top" data-input-type="phone">
+                    <input type="tel" id="input_5_phone" name="q5_phoneNumber[phone]" class="form-textbox" data-defaultvalue="" autoComplete="section-input_5 tel-local" value="" data-component="phone" aria-labelledby="label_5 sublabel_5_phone" />
+                    <label class="form-sub-label" for="input_5_phone" id="sublabel_5_phone" style="min-height:13px" aria-hidden="false">Phone Number</label></span></div>
+            </div>
+          </li>
+          <!--condition of the dress-->
+          <li class="form-line form-line-column form-col-1" data-type="control_dropdown" id="id_6">
+              <label class="form-label form-label-top form-label-auto" id="label_6" for="input_6" aria-hidden="false"> Condition of the dress? </label>
+              <div id="cid_6" class="form-input-wide" data-layout="half"> 
+                <select class="form-dropdown" id="input_6" name="q6_whatIs6" style="width:310px" data-component="dropdown" aria-label="Condition of the dress? ">
+                  <option value="">Please Select</option>
+                  <option value="Brand New">Brand New</option>
+                  <option value="Very Good Condition ">Very Good Condition </option>
+                  <option value="Good Condition ">Good Condition </option>
+                  <option value="Average Condition ">Average Condition </option>
+                  <option value="Bad Condition">Bad Condition</option>
+                </select> 
+              </div>
+          </li>
+          <!--type of the dress-->
+          <li class="form-line form-line-column form-col-2" data-type="control_dropdown" id="id_10">
+              <label class="form-label form-label-top form-label-auto" id="label_10" for="input_10" aria-hidden="false"> Type of the dress? </label>
+              <div id="cid_10" class="form-input-wide" data-layout="half"> 
+                <select class="form-dropdown" id="input_10" name="q10_whatIs10" style="width:310px" data-component="dropdown" aria-label="Type of the dress? ">
+                  <option value="">Please Select</option>
+                  <option value="Wedding Dress">Wedding Dress</option>
+                  <option value="Bridesmaid Dress">Bridesmaid Dress</option>
+                  <option value="Flower Girl Dress">Flower Girl Dress</option>
+                  <option value="Vow Renewal Outfit">Vow Renewal Outfit</option>
+                  <option value="Christening Dress">Christening Dress</option>
+                  <option value="Holy Communion Dress">Holy Communion Dress</option>
+                  <option value="Formal Dress">Formal Dress</option>
+                  <option value="Prom Dress">Prom Dress</option>
+                  <option value="Evening Dress">Evening Dress</option>
+                </select> 
+              </div>
+          </li>
+           <!--size of dress-->
+          <li class="form-line" data-type="control_radio" id="id_11"><label class="form-label form-label-top form-label-auto" id="label_11" for="input_11" aria-hidden="false"> Size of the dress? </label>
+            <div id="cid_11" class="form-input-wide" data-layout="full">
+              <div class="form-multiple-column" data-columncount="3" role="group" aria-labelledby="label_11" data-component="radio"><span class="form-radio-item"><span class="dragger-item"></span><input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_0" name="q11_whatIs11" value="Size 4" />
+                <label id="label_input_11_0" for="input_11_0">Size 4</label></span><span class="form-radio-item"><span class="dragger-item"></span>
+                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_1" name="q11_whatIs11" value="Size 6" />
+                <label id="label_input_11_1" for="input_11_1">Size 6</label></span><span class="form-radio-item"><span class="dragger-item"></span>
+                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_2" name="q11_whatIs11" value="Size 8" />
+                <label id="label_input_11_2" for="input_11_2">Size 8</label></span><span class="form-radio-item" style="clear:left"><span class="dragger-item"></span>
+                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_3" name="q11_whatIs11" value="Size 10" /><label id="label_input_11_3" for="input_11_3">Size 10</label></span><span class="form-radio-item"><span class="dragger-item"></span>
+                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_4" name="q11_whatIs11" value="Size 12" /><label id="label_input_11_4" for="input_11_4">Size 12</label></span><span class="form-radio-item"><span class="dragger-item"></span>
+                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_5" name="q11_whatIs14" value="Size 11" /><label id="label_input_11_5" for="input_11_5">Size 14</label></span><span class="form-radio-item" style="clear:left"><span class="dragger-item"></span>
+                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_6" name="q11_whatIs11" value="Size 16" /> <label id="label_input_11_6" for="input_11_6">Size 16</label></span><span class="form-radio-item"><span class="dragger-item"></span><input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_7" name="q11_whatIs11" value="Size 18" /><label id="label_input_11_7" for="input_11_7">Size 18</label></span><span class="form-radio-item"><span class="dragger-item"></span>
+                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_8" name="q11_whatIs11" value="Size 20" /><label id="label_input_11_8" for="input_11_8">Size 20</label></span><span class="form-radio-item" style="clear:left"><span class="dragger-item"></span>
+                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_9" name="q11_whatIs11" value="Size 22" /><label id="label_input_11_9" for="input_11_9">Size 22</label></span><span class="form-radio-item"><span class="dragger-item"></span><input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_10" name="q11_whatIs11" value="Size 24" /><label id="label_input_11_10" for="input_11_10">Size 24</label></span><span class="form-radio-item"><span class="dragger-item"></span>
+                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_11" name="q11_whatIs11" value="Size 26" /><label id="label_input_11_11" for="input_11_11">Size 26</label></span><span class="form-radio-item" style="clear:left"><span class="dragger-item"></span>
+                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_12" name="q11_whatIs11" value="Size 28" /><label id="label_input_11_12" for="input_11_12">Size 28</label></span><span class="form-radio-item"><span class="dragger-item"></span>
+                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_13" name="q11_whatIs11" value="Size 30" /><label id="label_input_11_13" for="input_11_13">Size 30</label></span><span class="form-radio-item"><span class="dragger-item"></span>
+                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_14" name="q11_whatIs11" value="Size 32" /><label id="label_input_11_14" for="input_11_14">Size 32</label></span><span class="form-radio-item" style="clear:left"><span class="dragger-item"></span>
+                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_15" name="q11_whatIs11" value="Child 0-5" /><label id="label_input_11_15" for="input_11_15">Child 0-5</label></span><span class="form-radio-item"><span class="dragger-item"></span>
+                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_16" name="q11_whatIs11" value="Child 5-16" /><label id="label_input_11_16" for="input_11_16">Child 5-16</label></span><span class="form-radio-item"><span class="dragger-item"></span>
+                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_17" name="q11_whatIs11" value="Small" /><label id="label_input_11_17" for="input_11_17">Small</label></span><span class="form-radio-item" style="clear:left"><span class="dragger-item"></span>
+                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_18" name="q11_whatIs11" value="Medium" /><label id="label_input_11_18" for="input_11_18">Medium</label></span><span class="form-radio-item"><span class="dragger-item"></span>
+                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_19" name="q11_whatIs11" value="Large" /><label id="label_input_11_19" for="input_11_19">Large</label></span><span class="form-radio-item"><span class="dragger-item"></span>
+                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_20" name="q11_whatIs11" value="XL" /><label id="label_input_11_20" for="input_11_20">XL</label></span><span class="form-radio-item" style="clear:left"><span class="dragger-item"></span>
+                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_21" name="q11_whatIs11" value="XXL" /><label id="label_input_11_21" for="input_11_21">XXL</label></span><span class="form-radio-item"><span class="dragger-item"></span>
+                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_22" name="q11_whatIs11" value="XXXL" /><label id="label_input_11_22" for="input_11_22">XXXL</label></span><span class="form-radio-item"><span class="dragger-item"></span>
+                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_23" name="q11_whatIs11" value="XXXXL" /><label id="label_input_11_23" for="input_11_23">XXXXL</label></span><span class="form-radio-item" style="clear:left"><span class="dragger-item"></span>
+                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_24" name="q11_whatIs11" value="Unknown" /><label id="label_input_11_24" for="input_11_24">Unknown</label></span><span class="form-radio-item formRadioOther">
+                <input type="radio" class="form-radio-other form-radio" name="q11_whatIs11" id="other_11" value="other" tabindex="0" aria-label="Other" /><label id="label_other_11" style="text-indent:0" for="other_11">Other</label><span id="other_11_input" class="other-input-container" style="display:none">
+                <input type="text" class="form-radio-other-input form-textbox" name="q11_whatIs11[other]" data-otherhint="Other" size="15" id="input_11" data-placeholder="Please type another option here" placeholder="Please type another option here" /></span></span></div>
+            </div>
+          </li>
+          <!--photo of dress-->
+          <li class="form-line" data-type="control_fileupload" id="id_12"><label class="form-label form-label-top form-label-auto" id="label_12" for="input_12" aria-hidden="false"> Please upload the photos of the dress. </label>
+            <div id="cid_12" class="form-input-wide" data-layout="full">
+              <div class="jfQuestion-fields" data-wrapper-react="true">
+                <div class="jfField isFilled">
+                  <div class="jfUpload-wrapper">
+                    <div class="jfUpload-container">
+                      <div class="jfUpload-button-container">
+                        <div class="jfUpload-button" aria-hidden="true" tabindex="0" style="display:none" data-version="v2">Browse Files<div class="jfUpload-heading forDesktop">Drag and drop files here</div>
+                          <div class="jfUpload-heading forMobile">Choose a file</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="jfUpload-files-container">
+                      <div class="validate[multipleUpload]"><input type="file" id="input_12" name="q12_pleaseUpload[]" multiple="" class="form-upload-multiple" data-imagevalidate="yes" data-file-accept="pdf, doc, docx, xls, xlsx, csv, txt, rtf, html, zip, mp3, wma, mpg, flv, avi, jpg, jpeg, png, gif" data-file-maxsize="10854" data-file-minsize="0" data-file-limit="0" data-component="fileupload" aria-label="Browse Files" /></div>
+                    </div>
+                  </div>
+                  <div data-wrapper-react="true"></div>
+                </div><span style="display:none" class="cancelText">Cancel</span><span style="display:none" class="ofText">of</span>
+              </div>
+            </div>
+          </li> 
+          <!--description-->
+          <li class="form-line" data-type="control_textarea" id="id_13"><label class="form-label form-label-top form-label-auto" id="label_13" for="input_13" aria-hidden="false"> Is there any information that you would like to add? </label>
+            <div id="cid_13" class="form-input-wide" data-layout="full"> <textarea id="input_13" class="form-textarea" name="q13_isThere" style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_13"></textarea> </div>
+          </li>
+          <!--submit-->
+          <li class="form-line" data-type="control_button" id="id_14">
+            <div id="cid_14" class="form-input-wide" data-layout="full">
+              <div data-align="auto" class="form-buttons-auto   jsTest-button-wrapperField"><button id="input_14" type="submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">Submit</button></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </form>
+  </div>

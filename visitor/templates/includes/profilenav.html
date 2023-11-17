@@ -1,0 +1,105 @@
+
+{% load static %}
+
+<div class="full_container">
+    <div class="inner_container">
+       <!-- Sidebar  -->
+       <nav id="sidebar">
+          <div class="sidebar_blog_1">
+             <div class="sidebar-header">
+                <div class="logo_section">
+                   {% comment %} <a href=""><img  src="{% static 'profile/images/logo/logo1_1.png' %}"  /></a> {% endcomment %}
+                      
+                  </a></a>
+                </div>
+             </div>
+             <div class="sidebar_user_info">
+                <div class="icon_setting"></div>
+                <div class="user_profle_side">
+                   <div class="user_img"><img class="img-responsive" src="{{ request.session.profileImage }}"/></div>
+                   <div class="user_info">
+                      <h6>{{request.session.username}}</h6>
+                      <p><span class="online_animation"></span> Online</p>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <div class="sidebar_blog_2">
+             <h4>General</h4>
+          
+          </div><ul class="list-unstyled components">
+            <li class="active">
+               <a href="{% url 'userhome' %}"   aria-expanded="false" ><i class="fa fa-home yellow_color"></i> <span>Home</span></a>
+               <ul class="collapse list-unstyled" id="userhome"> 
+               </ul>
+            </li>
+
+            <li class="active">
+              <a href="{% url 'userdeshbord' %}"   aria-expanded="false" ><i class="fa fa-dashboard yellow_color"></i> <span>Deshbord</span></a>
+              <ul class="collapse list-unstyled" id="dashboard"> 
+              </ul>
+           </li>
+            
+            <li class="active">
+              <a href="{% url 'userdonation' %}"  aria-expanded="false" ><i class="fa fa-usd yellow_color"></i> <span>Donation</span></a>
+              <ul class="collapse list-unstyled" id="dashboard"> 
+              </ul>
+           </li>
+
+           
+           <li class="active">
+              <a href="{% url 'userevent' %}"  aria-expanded="false" ><i class="fa fa-calendar yellow_color"></i> <span>Events</span></a>
+              <ul class="collapse list-unstyled" id="dashboard"> 
+              </ul>
+           </li>
+           
+           <li class="active">
+              <a href="{% url 'userfeedback' %}"  aria-expanded="false" ><i class="fa fa-comments-o yellow_color"></i> <span>Feedback</span></a>
+              <ul class="collapse list-unstyled" id="dashboard"> 
+              </ul>
+           </li>
+          
+            
+            <li><a href="{% url 'usercontact' %}" "><i class="fa fa-map yellow_color"></i> <span>Map</span></a></li>
+            
+         </ul>
+       </nav>
+       <!-- end sidebar -->
+       <!-- right content -->
+       <div id="content">
+          <!-- topbar -->
+          <div class="topbar">
+             <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="full">
+                   <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
+                   <div class="logo_section">
+                      <a href=""><h4 style="color: white;">
+                         <img src="{% static 'profile/images/logo/logo1_1.png' %}" alt="HopeLink Connect"> HopeLink Connect
+                       </h4></div>
+                   <div class="right_topbar">
+                      <div class="icon_info">
+                         <ul>
+                           <li><a href="{% url 'user_notification' %}"><i class="fa fa-bell-o"></i><span class="badge">2</span></a></li>
+                            <li><a href="#"><i class="fa fa-question-circle"></i></a></li>
+                            {% comment %} <li><a href="#"><i class="fa fa-envelope-o"></i><span class="badge">3</span></a></li> {% endcomment %}
+                         </ul>
+                         <ul class="user_profile_dd">
+                            <li>
+                               <a class="dropdown-toggle" data-toggle="dropdown">
+                                 <img class="{% static 'profile/img-responsive rounded-circle' %}" src= "{{ request.session.profileImage }}" />
+                                 <span class="name_user">{{ request.session.username }}</span></a>
+                               <div class="dropdown-menu">
+                                  <a class="dropdown-item" href="{% url 'userprofile' %}">My Profile</a>
+                                  {% comment %} <a class="dropdown-item" href="settings.html">Settings</a> {% endcomment %}
+                                  <a class="dropdown-item" href="">Help</a>
+                                  <a class="dropdown-item" href="{% url 'logout' %}"><span>Log Out</span> <i class="fa fa-sign-out"></i></a>
+                               </div>
+                            </li>
+                         </ul>
+                      </div>
+                   </div>
+                </div>
+             </nav>
+          </div>
+          <!-- end topbar -->
+ 

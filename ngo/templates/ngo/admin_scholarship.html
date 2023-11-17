@@ -1,0 +1,153 @@
+{% extends 'adminbase.html' %}
+
+{% load static %}
+
+
+{% block content %}
+<nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
+  <div class="container-fluid py-1 px-3">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;"><h5>Pages/</h5></a></li>
+        <li aria-current="page"><h5>Event</h5></li>
+      </ol>
+      <h2 class="font-weight-bolder mb-0">Scholarship</h2>
+    </nav>
+    <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+      <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+        <div class="input-group input-group-outline">
+          <label class="form-label"></label>
+        </div>
+      </div>
+      <ul class="navbar-nav  justify-content-end">
+        <li class="nav-item d-flex align-items-center">
+          <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
+            <i class="fa fa-sign-out me-sm-1"></i>
+            <a href="{% url 'login' %}"><span class="d-sm-inline d-none"><h5>Logout</h5></span></a>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<table class="custom-table">
+    <tr>
+        <th>Name</th>
+        <th>Organization</th>
+        <th>Scholarship Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Scholarship Type</th>
+        <th>Date</th>
+        <th>Address</th>
+        <th>Benefit</th>
+        <th>Status</th> <!-- Add a new column for status -->
+        <th>Actions</th> <!-- Add a new column for actions -->
+        <!-- Add more table headers for other fields -->
+    </tr>
+    {% for scholarship_application in scholarship_applications %}
+        <tr>
+            <td>{{ scholarship_application.firstname }}</td>
+            <td>{{ scholarship_application.nameoforg }}</td>
+            <td>{{ scholarship_application.nameofscholarship }}</td>
+            <td>{{ scholarship_application.email }}</td>
+            <td>{{ scholarship_application.area }} - {{ scholarship_application.phonenumber }}</td>
+            <td>{{ scholarship_application.typeofscholarship }}</td>
+            <td>{{ scholarship_application.date }}</td>
+            <td>{{ scholarship_application.addrline1 }}, {{ scholarship_application.addresscity }}, {{ scholarship_application.addresstate }} {{ scholarship_application.addresspostal }}</td>
+            <td>{{ scholarship_application.benefit }}</td>
+            <td></td>
+            <td></td>
+            <!-- Add more table cells for other fields -->
+        </tr>
+    {% endfor %}
+</table>
+
+
+<style>
+    /* General table styles */
+    .custom-table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .custom-table th, .custom-table td {
+        border: 1px solid #ffff;
+        padding: 8px;
+        text-align: center;
+    }
+
+    .custom-table th {
+        background-color: #f2f2f2;
+        color: #333;
+    }
+
+    .custom-table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .custom-table tr:hover {
+        background-color: #e2e2e2;
+    }
+
+    /* Additional styling for specific event types */
+    .custom-table.social-table th {
+        background-color: #ff9900; /* Adjust the color as needed */
+    }
+
+    .custom-table.impact-table th {
+        background-color: #ff9900; /* Adjust the color as needed */
+    }
+
+    .custom-table.health-table th {
+        background-color: #ff9900; /* Adjust the color as needed */
+    }
+
+    .custom-table.scholarship-table th {
+        background-color: #f44336; /* Adjust the color as needed */
+    }
+
+    /* Adjust colors for table headers of other event types */
+
+    /* Style table headers */
+    .custom-table th {
+        background-color: #ed7014;
+        color: #ffff;
+        font-weight: bold;
+        border-color:#000;
+    }
+
+    /* Style alternating rows */
+    .custom-table tr:nth-child(even) {
+        background-color: #ffff;
+        color:#000;
+    }
+
+    .custom-table tr:hover {
+        background-color: #ffff;
+        color:#000;
+    }
+    .bg-gray-200 {
+      background-color: #ffff ;
+  }
+    /* Style hyperlinks within tables (e.g., email addresses) */
+    .custom-table a {
+        color: #000000; /* Adjust the link color as needed */
+        text-decoration: none;
+    }
+
+    .custom-table a:hover {
+        text-decoration: underline;
+    }
+
+</style>
+
+
+
+{% endblock %}
