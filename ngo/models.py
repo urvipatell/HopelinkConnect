@@ -13,7 +13,6 @@ class signup(models.Model):
     gender = models.CharField(max_length=1, choices=[('M', 'Male'), ('F', 'Female'), ('O', 'Other')])
     email = models.EmailField()
     phonenumber = models.CharField(max_length=13, help_text="Format: +919876543210")
-    dob = models.DateField()
     image = models.ImageField(upload_to='user_images/')
     username = models.CharField(max_length=100, unique=True)
     password = models.CharField(max_length=100)
@@ -321,8 +320,8 @@ class NewMember(models.Model):
     member_type = models.CharField(max_length=50)
     age = models.IntegerField()
     arriving_datetime = models.DateTimeField()
-    description = models.TextField(blank=True)
-    image = models.ImageField(upload_to='new_members/', blank=True)
+    description = models.CharField(max_length=50)
+    uploaded_file = models.ImageField(upload_to='new_members/')
 
     def __str__(self):
         return self.member_type

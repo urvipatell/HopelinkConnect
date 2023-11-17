@@ -101,7 +101,7 @@
            </div>
            <div class="container">
             <h1><center><b>New Members Of Our NGO</b></center></h1>
-            <form id="myForm" method="post" action="{% url 'newmember' %}">
+            <form id="myForm" method="post" action="{% url 'newmember' %}" enctype="multipart/form-data">
                 {% csrf_token %}
                 <label for="Name">Name Of The New Member:</label>
                 <input type="text" id="Name" name="Name" placeholder="Enter the Name" required><br>
@@ -121,7 +121,7 @@
                 </div>
     
                 <label for="description">Description:</label>
-                <input type="text" id="description" name "description" placeholder="Enter a description"><br>
+                <input type="text" id="description" name= "description" placeholder="Enter a description"><br>
     
                 <label for="file">Upload Image:</label>
                 <input type="file" id="file" name="file">

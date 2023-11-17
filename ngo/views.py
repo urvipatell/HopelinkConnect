@@ -38,8 +38,12 @@ def admin_dashboard (request):
     return render(request, 'ngo/admin_dashboard.html',context)
 
 def admin_newMember(request): #new member 
+    new_member = NewMember.objects.all()
+    context = {
+        'new_member': new_member
+    }
 
-    return render(request, 'ngo/admin_NewMember.html')
+    return render(request, 'ngo/admin_NewMember.html',context)
 
 def calendar(request):
     return render(request, 'ngo/calendar.html')

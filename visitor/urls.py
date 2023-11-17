@@ -26,9 +26,6 @@ urlpatterns = [
     path('newmember', views.new_member, name="newmember"),
     path('user_notification/', views.user_notification, name='user_notification'),
     path('fetch_notifications/', views.fetch_notifications, name='fetch_notifications'),
-
-
-
     path('staffdeshbord', views.staff_deshbord, name="staffdeshbord"),
     path('staffdonationre', views.staff_donation, name="staffdonationre"),
     path('staffindex', views.staff_index, name="staffindex"),
@@ -40,7 +37,4 @@ urlpatterns = [
     path('staffprofile', views.staff_profile, name="staffprofile"),
     path('staffproject', views.staff_project, name="staffproject"),
     path('staffevent', views.staffevent, name="staffevent"),
-   
-    
-    
 ]   

@@ -110,7 +110,6 @@ def registration(request):
         email = request.POST.get('email')
         password = request.POST.get('password')
         phonenumber = request.POST.get('phonenumber')
-        dob = request.POST.get('dob')
         gender = request.POST.get('gender')
         image = request.FILES.get('image')
         forwhom = request.POST.get('forwhom')
@@ -127,7 +126,6 @@ def registration(request):
             password=password,
             name=name,
             phonenumber=phonenumber,
-            dob=dob,
             gender=gender,
             image=image,
             forwhom=forwhom
@@ -730,8 +728,8 @@ def new_member(request):
         member_type = request.POST.get('dropdown')
         age = request.POST.get('age')
         arriving_datetime = request.POST.get('datetime')
-        description = request.POST.get('description', '')  # Use '' as a default value
-        uploaded_file = request.FILES.get('file')
+        description = request.POST.get('description')  # Use '' as a default value
+        uploaded_file = request.FILES['file']
 
         # Create a new member instance and save it to the database
         new_member = NewMember(
@@ -740,7 +738,7 @@ def new_member(request):
         age=age,
         arriving_datetime=arriving_datetime,
         description=description,
-        image=uploaded_file
+        uploaded_file = uploaded_file
         )
         new_member.save()
     return render(request, 'staff/ngo_member.html')

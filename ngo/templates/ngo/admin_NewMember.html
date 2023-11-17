@@ -48,11 +48,9 @@
                 <td>{{ new_member.name }}</td>
                 <td>{{ new_member.member_type }}</td>
                 <td>{{ new_member.age }}</td>
+                <td>{{ new_member.description  }}</td>
                 <td>{{ new_member.arriving_datetime }}</td>
-                <td>{{ new_member.description }}</td>
-                <td>{{ new_member.image }}</td>
-               
-                <!-- Add more table cells for other fields -->
+                <td><img src="{{ new_member.uploaded_file.url }}" width="200px" height="200px"/></td>
             </tr>
         {% endfor %}
     </table>
