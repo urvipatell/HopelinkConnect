@@ -1,0 +1,216 @@
+{% extends 'staffbase.html' %}
+
+{% load static %}
+
+
+
+{% block content %}
+<style> 
+   /* Add some basic CSS for styling */
+   body {
+       font-family: Arial, sans-serif;
+       margin: 0;
+       padding: 0;
+       background-color: #f0f0f0;
+       
+   }
+   
+   .container {
+       max-width: 600px;
+       margin: 0 auto;
+       padding: 20px;
+       background-color: #fff;
+       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+       border-radius: 5px;
+   }
+   
+   label {
+       display: block;
+       margin-bottom: 8px;
+   }
+   
+   .form-group button {
+    background-color: #FEA116;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+   select, input[type="text"], input[type="file"] {
+       width: 100%;
+       padding: 10px;
+       margin-bottom: 20px;
+       border: 1px solid #ccc;
+       border-radius: 5px;
+   }
+   
+   #imagePreview {
+       max-width: 100%;
+       max-height: 200px;
+       margin-top: 10px;
+   }
+   </style>
+
+
+
+     
+
+                 
+          
+               <!-- dashboard inner -->
+               <div class="midde_cont">
+                  <div class="container-fluid">
+                     <div class="row column_title">
+                        <div class="col-md-12">
+                           <div class="page_title">
+                              <h2>Media Gallery</h2>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="container">
+                        <h1> <b><center> Event's image uplode </b></center></h1>
+                        <form id="myForm" method="post" enctype="multipart/form-data" action= "{% url 'staffmediagallery' %}">
+                         {% csrf_token %}
+                            <label for="dropdown">Event:</label>
+                            <select id="dropdown" name="event">
+                               <option value="Social Activity">Social Activity</option>
+                               <option value="Impact Story">Impact Story</option>
+                               <option value="Health Camp">Health Camp</option>
+                                <option value="Scholarship">Scholarship</option>
+                            </select>
+                               <br>
+                            <label for="description">Description:</label>
+                            <input type="text" id="description" name="description" placeholder="Enter a description"><br>
+                   
+                            <label for="file">Upload File:</label>
+                            <input type="file" id="file" name="file">
+                   
+                            <div id="imagePreview"></div>
+                            <div class="form-group">
+                                <button type="submit" value= "submit"> <center> Submit </center></button>
+                            </div>
+                        </form>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                     <!-- row -->
+                     <div class="white_shd full margin_bottom_30">
+                        <div class="full graph_head">
+                            <div class="heading1 margin_0">
+                                <h2>Health Camp</h2>
+                            </div>
+                        </div>
+                        <div class="full gallery_section_inner padding_infor_info">
+                            <div class="row">
+                                {% for image in health_camp_images %}
+                                <div class="col-sm-4 col-md-3 margin_bottom_30">
+                                    <div class="column">
+                                        <a data-fancybox="gallery" href="{{ image.image.url }}">
+                                            <img class="img-responsive" src="{{ image.image.url }}" alt="{{ image.description }}" width="200px" height="200px" />
+                                        </a>
+                                    </div>
+                                    <div class="heading_section">
+                                        <h4>{{ image.description }}</h4>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                
+                
+                    <!-- Social Activity section -->
+                    <div class="white_shd full margin_bottom_30">
+                        <div class="full graph_head">
+                            <div class="heading1 margin_0">
+                                <h2>Social Activity</h2>
+                            </div>
+                        </div>
+                        <div class="full gallery_section_inner padding_infor_info">
+                            <div class="row">
+                                {% for image in social_activity_images %}
+                                <div class="col-sm-4 col-md-3 margin_bottom_30">
+                                    <div class="column">
+                                        <a data-fancybox="gallery" href="{{ image.image.url }}">
+                                            <img class="img-responsive" src="{{ image.image.url }}" alt="{{ image.description }}" width="200px" height="200px" />
+                                        </a>
+                                    </div>
+                                    <div class="heading_section">
+                                        <h4>{{ image.description }}</h4>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Repeat the same structure for Impact Story and Scholarship sections -->
+                    <!-- Impact Story section -->
+                    <div class="white_shd full margin_bottom_30">
+                        <div class="full graph_head">
+                            <div class="heading1 margin_0">
+                                <h2>Impact Story</h2>
+                            </div>
+                        </div>
+                        <div class="full gallery_section_inner padding_infor_info">
+                            <div class="row">
+                                {% for image in impact_story_images %}
+                                <div class="col-sm-4 col-md-3 margin_bottom_30">
+                                    <div class="column">
+                                        <a data-fancybox="gallery" href="{{ image.image.url }}">
+                                            <img class="img-responsive" src="{{ image.image.url }}" alt="{{ image.description }}" width="200px" height="200px" />
+                                        </a>
+                                    </div>
+                                    <div class="heading_section">
+                                        <h4>{{ image.description }}</h4>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Scholarship section -->
+                    <div class="white_shd full margin_bottom_30">
+                     <div class="full graph_head">
+                         <div class="heading1 margin_0">
+                             <h2>Scholarship</h2>
+                         </div>
+                     </div>
+                     <div class="full gallery_section_inner padding_infor_info">
+                         <div class="row">
+                             {% for image in scholarship_images %}
+                             <div class="col-sm-4 col-md-3 margin_bottom_30">
+                                 <div class="column">
+                                     <a data-fancybox="gallery" href="{{ image.image.url }}">
+                                         <img class="img-responsive" src="{{ image.image.url }}" alt="{{ image.description }}" width="200px" height="200px" />
+                                     </a>
+                                 </div>
+                                 <div class="heading_section">
+                                     <h4>{{ image.description }}</h4>
+                                 </div>
+                             </div>
+                             {% endfor %}
+                         </div>
+                     </div>
+                 </div>
+                        </div>
+                     </div>
+                     <!-- footer -->
+                     
+                  <!-- end dashboard inner -->
+               </div>
+            </div>
+            <!-- model popup -->
+            <!-- The Modal -->
+            
+            <!-- end model popup -->
+         </div>
+      </div>
+
+
+      
+           
+      {%endblock%}

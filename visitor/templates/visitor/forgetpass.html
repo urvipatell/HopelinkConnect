@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .form-container {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+
+    .button-container {
+      text-align: center; /* Center align the button */
+    }
+
+    .form-group button {
+      background-color: #FEA116;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .form-group button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-container">
+  <h2>Forget Password</h2>
+  <p>Enter your new password and confirm it.</p>
+
+  <div class="form-group">
+    <label for="new-password">New Password:</label>
+    <input type="password" id="new-password" placeholder="Enter your new password" required>
+  </div>
+
+  <div class="form-group">
+    <label for="confirm-password">Confirm Password:</label>
+    <input type="password" id="confirm-password" placeholder="Confirm your new password" required>
+  </div>
+
+  <!-- Add a container for the button and center it -->
+  <div class="button-container">
+    <div class="form-group">
+      <button>Reset Password</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function resetPassword() {
+    var newPassword = document.getElementById('new-password').value;
+    var confirmPassword = document.getElementById('confirm-password').value;
+
+    if (newPassword !== confirmPassword) {
+      alert("Passwords do not match. Please confirm your new password.");
+      return;
+    }
+
+    // Here, you can add JavaScript logic to handle the password reset, such as making an API call or updating the database.
+    // For this example, let's just show an alert.
+    alert("Password successfully reset!");
+  }
+</script>
+
+</body>
+</html>

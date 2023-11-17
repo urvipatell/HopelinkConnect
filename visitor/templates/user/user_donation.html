@@ -1,0 +1,662 @@
+{% extends 'profile_base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- dashboard inner -->
+<div class="midde_cont">
+    <div class="container-fluid">
+      <div class="row column_title">
+          <div class="col-md-12">
+            <div class="page_title">
+                <h2>Donation Request Form</h2>
+            </div>
+          </div>
+      </div>
+      <!-- row -->
+      <div class="row column4 graph">
+          <!-- tab style 2 -->
+          <div class="col-md-12">
+            <div class="white_shd full margin_bottom_30">
+                <div class="full graph_head">
+                  <div class="heading1 margin_0">
+                      <h4>Please fill out this form to request donation form of HopeLink Connect. You will receive a phone call within days at most.</h4>
+                  </div>
+                </div>
+                <div class="full inner_elements">
+                  <div class="row">
+                      <div class="col-md-12">
+                        <div class="tab_style2">
+                            <div class="tabbar padding_infor_info">
+                              <nav>
+                                  <div class="nav nav-tabs" id="nav-tab1" role="tablist">
+                                    <a class="nav-item nav-link active" id="nav-money-tab2" data-toggle="tab" href="#nav-money_s2" role="tab" aria-controls="nav-money_s2" aria-selected="true">Money</a>
+                                    <a class="nav-item nav-link" id="nav-education-tab2" data-toggle="tab" href="#nav-education_s2" role="tab" aria-controls="nav-education_s2" aria-selected="false">Educational</a>
+                                    <a class="nav-item nav-link" id="nav-cloth-tab2" data-toggle="tab" href="#nav-cloth_s2" role="tab" aria-controls="nav-cloth_s2" aria-selected="false">Cloth</a>
+                                    <a class="nav-item nav-link" id="nav-food-tab2" data-toggle="tab" href="#nav-food_s2" role="tab" aria-controls="nav-food_s2" aria-selected="false">Food</a>
+                                  </div>
+                              </nav>
+                              <div class="tab-content" id="nav-tabContent_2">
+                                  <div class="tab-pane fade show active" id="nav-money_s2" role="tabpanel" aria-labelledby="nav-money-tab">
+                                    <form class="jotform-form" action="{% url 'userdonation' %}" method="post" name="form_232711695219459" id="232711695219459" accept-charset="utf-8" autocomplete="on">
+                                      {% csrf_token %}
+                                      <input type="hidden" name="formType" value="money">
+                                      <div role="main" class="">
+                                        <ul class="form-section">
+                                          <!--Name Code-->
+                                          <li class="form-line form-line-column form-col-1" data-type="control_fullname" id="id_11">
+                                            <label class="form-label form-label-top form-label-auto" id="label_11" for="first_11" aria-hidden="false"> Donors Name <span class="form-required">*</span>
+                                            </label>
+                                            <div id="cid_11" class="form-input-wide" data-layout="full">
+                                              <div data-wrapper-react="true"><span class="form-sub-label-container" style="vertical-align:top" data-input-type="first">
+                                                <input type="text" id="first_11" name="firstname" class="form-textbox validate[required, Donors Name]" data-defaultvalue="" autoComplete="section-input_11 given-name" size="10" value="" data-component="first" aria-labelledby="label_11 sublabel_11_first" />
+                                                <label class="form-sub-label" for="first_11" id="sublabel_11_first" style="min-height:13px" aria-hidden="false">First Name</label></span>
+                                                <span class="form-sub-label-container" style="vertical-align:top" data-input-type="last">
+                                                <input type="text" id="last_11" name="lastname" class="form-textbox" data-defaultvalue="" autoComplete="section-input_11 family-name" size="15" value="" data-component="last" aria-labelledby="label_11 sublabel_11_last" />
+                                                <label class="form-sub-label" for="last_11" id="sublabel_11_last" style="min-height:13px" aria-hidden="false">Last Name</label></span></div>
+                                            </div>
+                                          </li>
+                                          <!--Email-->
+                                          <li class="form-line form-line-column form-col-2" data-type="control_email" id="id_12"><label class="form-label form-label-top form-label-auto" id="label_12" for="input_12" aria-hidden="false"> Donors E-mail <span class="form-required">*</span></label>
+                                            <div id="cid_12" class="form-input-wide" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top">
+                                              <input type="email" id="input_12" name="email" class="form-textbox validate[required, Donors E-mail]" data-defaultvalue="" style="width:310px" size="310" value="" placeholder="ex: myname@example.com" data-component="email" aria-labelledby="label_12 sublabel_input_12" />
+                                                <label class="form-sub-label" for="input_12" id="sublabel_input_12" style="min-height:13px" aria-hidden="false">Email</label></span> </div>
+                                          </li>
+                                          <!--phoneNumber-->
+                                          <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_25"><label class="form-label form-label-top" id="label_25" for="input_25_area" aria-hidden="true"> Phone Number<span class="form-required">*</span></label>
+                                            <div id="cid_25" class="form-input-wide" data-layout="half">
+                                              <div data-wrapper-react="true"><span class="form-sub-label-container" style="vertical-align:top" data-input-type="areaCode">
+                                                <input type="tel" id="input_25_area" name="phonecode" class="form-textbox validate[required, Phone Number]" attern="[0-9]{10}" title="Please enter a 10-digit phone number" data-defaultvalue="" autoComplete="section-input_25 tel-area-code" value="" data-component="areaCode" aria-labelledby="label_25 sublabel_25_area" />
+                                                <span class="phone-separate" aria-hidden="true"> -</span><label class="form-sub-label" for="input_25_area" id="sublabel_25_area" style="min-height:13px" aria-hidden="false">Area Code</label></span>
+                                                <span class="form-sub-label-container" style="vertical-align:top" data-input-type="phone">
+                                                  <input type="tel" id="input_25_phone" attern="[0-9]{10}" title="Please enter a 10-digit phone number" name="phonenumber" class="form-textbox" data-defaultvalue="" autoComplete="section-input_25 tel-local" value="" data-component="phone" aria-labelledby="label_25 sublabel_25_phone" />
+                                                  <label class="form-sub-label" for="input_25_phone" id="sublabel_25_phone" style="min-height:13px" aria-hidden="false">Phone Number</label></span></div>
+                                            </div>
+                                          </li>
+                                          <!--Address-->
+                                          <li class="form-line" data-type="control_address" id="id_6"><label class="form-label form-label-top form-label-auto" id="label_6" for="input_6_addr_line1" aria-hidden="false"> Donors Address </label>
+                                            <div id="cid_6" class="form-input-wide validate[required, Donors Address]" data-layout="full">
+                                              <div summary="" class="form-address-table jsTest-addressField">
+                                                <div class="form-address-line-wrapper jsTest-address-line-wrapperField"><span class="form-address-line form-address-street-line jsTest-address-lineField"><span class="form-sub-label-container" style="vertical-align:top">
+                                                    <input type="text" id="input_6_addr_line1" name="address" class="form-textbox form-address-line" data-defaultvalue="" autoComplete="section-input_6 address-line6" value="" data-component="address_line_6" aria-labelledby="label_6 sublabel_6_addr_line1" required="" />
+                                                    <label class="form-sub-label" for="input_6_addr_line1" id="sublabel_6_addr_line1" style="min-height:13px" aria-hidden="false">Street Address</label></span></span></div>
+                                                    <div class="form-address-line-wrapper jsTest-address-line-wrapperField"><span class="form-address-line form-address-city-line jsTest-address-lineField "><span class="form-sub-label-container" style="vertical-align:top">
+                                                    <input type="text" id="input_6_city" name="city" class="form-textbox form-address-city" data-defaultvalue="" autoComplete="section-input_6 address-leve6" value="" data-component="city" aria-labelledby="label_6 sublabel_6_city" required="" />
+                                                    <label class="form-sub-label" for="input_6_city" id="sublabel_6_city" style="min-height:13px" aria-hidden="false">City</label></span></span>
+                                                    <span class="form-address-line form-address-state-line jsTest-address-lineField "><span class="form-sub-label-container" style="vertical-align:top">
+                                                        <input type="text" id="input_6_state" name="state" class="form-textbox form-address-state" data-defaultvalue="" autoComplete="section-input_6 address-level1" value="" data-component="state" aria-labelledby="label_6 sublabel_6_state" required="" />
+                                                    <label class="form-sub-label" for="input_6_state" id="sublabel_6_state" style="min-height:13px" aria-hidden="false">State / Province</label></span></span></div>
+                                              
+                                                    <div class="form-address-line-wrapper jsTest-address-line-wrapperField"><span class="form-address-line form-address-zip-line jsTest-address-lineField "><span class="form-sub-label-container" style="vertical-align:top">
+                                                    <input type="text" id="input_6_postal" name="portno" class="form-textbox form-address-postal" data-defaultvalue="" autoComplete="section-input_6 postal-code" value="" data-component="zip" aria-labelledby="label_6 sublabel_6_postal" required="" />
+                                                    <label class="form-sub-label" for="input_6_postal" id="sublabel_6_postal" style="min-height:13px" aria-hidden="false">Postal / Zip Code</label></span></span>
+                                                    <span class="form-address-line form-address-country-line jsTest-address-lineField "><span class="form-sub-label-container" style="vertical-align:top"><select class="form-dropdown form-address-country" name="country" id="input_6_country" data-component="country" required="" aria-labelledby="label_6 sublabel_6_country" autoComplete="section-input_6 country">
+                                                        <option value="" >Please Select</option>
+                                                          <option value="United States">United States</option>
+                                                          <option value="Afghanistan">Afghanistan</option>
+                                                          <option value="India">India</option>
+                                                          
+                                                          <option value="other">Other</option>
+                                                      </select><label class="form-sub-label" for="input_6_country" id="sublabel_6_country" style="min-height:13px" aria-hidden="false">Country</label></span></span></div>
+                                              </div>
+                                            </div>
+                                          </li>
+                                          <!--Donation Range-->
+                                          <li class="form-line jf-required" data-type="control_paypalpro" id="id_10" data-payment="true">
+                                            <label class="form-label form-label-top" id="label_10" for="input_10" aria-hidden="false"> Donation Amount<span class="form-required">*</span> 
+                                            </label>
+                                            <div id="cid_10" class="form-input-wide jf-required" data-layout="full">
+                                              <div data-wrapper-react="true" id="payment-wrapper-songbird" data-currency="usd" data-paymentType="donation" data-sandbox="Disabled">
+                                                <div data-wrapper-react="true" class="product-container-wrapper">
+                                                  <span class="form-sub-label-container" style="vertical-align:top">
+                                                    <input type="text" class="form-textbox validate[required, Numeric]" id="donation_amount" name="donation_amount" />
+                                                    <span class="donation_currency">Rupees</span>
+                                                  </span>
+                                                  <span class="form-sub-label-container" style="vertical-align:top">
+                                                    <button id="rzp-button1" class="form-submit-button submit-button jf-form-buttons jsTest-submitField">
+                                                      Payment
+                                                    </button>
+                                                  </span>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </li>
+                                          <li class="form-line" data-type="control_button" id="id_2">
+                                            <div id="cid_2" class="form-input-wide" data-layout="full">
+                                              <div data-align="auto" class=" form-buttons-auto   jsTest-button-wrapperField">
+                                                <button type="submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField">
+                                                  Donate
+                                                </button>
+                                              </div>
+                                            </div>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </form>
+                                  </div>
+                                  <div class="tab-pane fade" id="nav-education_s2" role="tabpanel" aria-labelledby="nav-education-tab">
+                                    <form class="jotform-form" method="post" name="form_232711695219459" id="232711695219459" accept-charset="utf-8" autocomplete="on" action="{% url 'userdonation' %}">
+                                      {% csrf_token %}
+                                      <input type="hidden" name="formType" value="education">
+                                      <div role="main" class="">
+                                        <ul class="form-section page-sectionns">
+                                          <!--Name-->
+                                          <li class="form-line" data-type="control_fullname" id="id_5">
+                                            <label class="form-label form-label-top form-label-auto" id="label_5" for="first_5" aria-hidden="false"> Donors Name <span class="form-required">*</span>
+                                            </label>
+                                            <div id="cid_5" class="form-input-wide" data-layout="full">
+                                              <div data-wrapper-react="true">
+                                                <span class="form-sub-label-container" style="vertical-align:top" data-input-type="first">
+                                                  <input type="text" id="first_5" name="firstname" class="form-textbox validate[required, Name]" data-defaultvalue="" autoComplete="section-input_5 given-name" size="10" value="" data-component="first" aria-labelledby="label_5 sublabel_5_first" />
+                                                    <label class="form-sub-label" for="first_5" id="sublabel_5_first" style="min-height:13px" aria-hidden="false">First Name</label>
+                                                </span>
+                                                <span class="form-sub-label-container" style="vertical-align:top" data-input-type="last">
+                                                  <input type="text" id="last_5" name="lastname" class="form-textbox" data-defaultvalue="" autoComplete="section-input_5 family-name" size="15" value="" data-component="last" aria-labelledby="label_5 sublabel_5_last" />
+                                                    <label class="form-sub-label" for="last_5" id="sublabel_5_last" style="min-height:13px" aria-hidden="false">Last Name</label>
+                                                </span>
+                                              </div>
+                                            </div>
+                                          </li>
+                                          <!--phoneNumber-->
+                                          <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_26"><label class="form-label form-label-top" id="label_26" for="input_26_area" aria-hidden="true"> Phone Number<span class="form-required">*</span></label>
+                                            <div id="cid_26" class="form-input-wide" data-layout="half">
+                                              <div data-wrapper-react="true">
+                                                <span class="form-sub-label-container" style="vertical-align:top" data-input-type="areaCode">
+                                                  <input type="tel" id="input_26_area" name="phonecode" class="form-textbox validation[required, Phone NUmber]" data-defaultvalue="" autoComplete="section-input_26 tel-area-code" value="" data-component="areaCode" aria-labelledby="label_26 sublabel_26_area" />
+                                                  <span class="phone-separate" aria-hidden="true"> -</span>
+                                                  <label class="form-sub-label" for="input_26_area" id="sublabel_26_area" style="min-height:13px" aria-hidden="false">Area Code</label>
+                                                </span>
+                                                <span class="form-sub-label-container" style="vertical-align:top" data-input-type="phone">
+                                                  <input type="tel" id="input_26_phone" name="phonenumber" class="form-textbox" data-defaultvalue="" autoComplete="section-input_26 tel-local" value="" data-component="phone" aria-labelledby="label_26 sublabel_26_phone" />
+                                                  <label class="form-sub-label" for="input_26_phone" id="sublabel_26_phone" style="min-height:13px" aria-hidden="false">Phone Number</label>
+                                                </span>
+                                              </div>
+                                            </div>
+                                          </li>
+                                          <!--emali-->
+                                          <li class="form-line form-line-column form-col-3" data-type="control_email" id="id_3"><label class="form-label form-label-top form-label-auto" id="label_3" for="input_3" aria-hidden="false"> Email<span class="form-required">*</span> </label>
+                                            <div id="cid_3" class="form-input-wide" data-layout="half"> 
+                                              <span class="form-sub-label-container" style="vertical-align:top">
+                                                  <input type="email" id="input_3" name="email" class="form-textbox validate[required, Email]" data-defaultvalue="" style="width:310px" size="310" value="" data-component="email" aria-labelledby="label_3 sublabel_input_3" />
+                                              <label class="form-sub-label" for="input_3" id="sublabel_input_3" style="min-height:13px" aria-hidden="false">Email</label></span> </div>
+                                          </li>
+                                          <!--address-->
+                                          <li class="form-line" data-type="control_address" id="id_13"><label class="form-label form-label-top form-label-auto" id="label_13" for="input_13_addr_line1" aria-hidden="false"> Address <span class="form-required">*</span></label>
+                                            <div id="cid_13" class="form-input-wide" data-layout="full">
+                                              <div summary="" class="form-address-table jsTest-addressField">
+                                                <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
+                                                  <span class="form-address-line form-address-street-line jsTest-address-lineField">
+                                                    <span class="form-sub-label-container" style="vertical-align:top">
+                                                    <input type="text" id="input_13_addr_line1" name="address" class="form-textbox validate[required, Address]" data-defaultvalue="" autoComplete="section-input_13 address-line1" value="" data-component="address_line_13" aria-labelledby="label_13 sublabel_13_addr_line1" required="" />
+                                                      <label class="form-sub-label" for="input_13_addr_line1" id="sublabel_13_addr_line1" style="min-height:13px" aria-hidden="false">Street Address</label>
+                                                    </span>
+                                                  </span>
+                                                </div>
+                                                <div class="form-address-line-wrapper jsTest-address-line-wrapperField"><span class="form-address-line form-address-city-line jsTest-address-lineField "><span class="form-sub-label-container" style="vertical-align:top"><input type="text" id="input_13_city" name="city" class="form-textbox form-address-city" data-defaultvalue="" autoComplete="section-input_13 address-level2" value="" data-component="city" aria-labelledby="label_13 sublabel_13_city" required="" />
+                                                  <label class="form-sub-label" for="input_13_city" id="sublabel_13_city" style="min-height:13px" aria-hidden="false">City</label></span></span><span class="form-address-line form-address-state-line jsTest-address-lineField ">
+                                                  <span class="form-sub-label-container" style="vertical-align:top"><input type="text" id="input_13_state" name="state" class="form-textbox form-address-state" data-defaultvalue="" autoComplete="section-input_13 address-level1" value="" data-component="state" aria-labelledby="label_13 sublabel_13_state" required="" />
+                                                  <label class="form-sub-label" for="input_13_state" id="sublabel_13_state" style="min-height:13px" aria-hidden="false">State / Province</label></span></span>
+                                                </div>
+                                                <div class="form-address-line-wrapper jsTest-address-line-wrapperField"><span class="form-address-line form-address-zip-line jsTest-address-lineField "><span class="form-sub-label-container" style="vertical-align:top"><input type="text" id="input_13_postal" name="portno" class="form-textbox form-address-postal" data-defaultvalue="" autoComplete="section-input_13 postal-code" value="" data-component="zip" aria-labelledby="label_13 sublabel_13_postal" required="" />
+                                                  <label class="form-sub-label" for="input_13_postal" id="sublabel_13_postal" style="min-height:13px" aria-hidden="false">Postal / Zip Code</label></span></span>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </li>
+                                          <!--types of donation-->
+                                          <li class="form-line" data-type="control_radio" id="id_14"><label class="form-label form-label-top form-label-auto validate[required, Type of Donation]" id="label_14" for="input_14" aria-hidden="false"> Type of Donation </label>
+                                            <div id="cid_14" class="form-input-wide" data-layout="full">
+                                              <div class="form-multiple-column" data-columncount="2" role="group" aria-labelledby="label_14" data-component="radio">
+                                                <span class="form-radio-item"><span class="dragger-item"></span>
+                                                <input type="radio" aria-describedby="label_14" class="form-radio" id="input_14_0" name="type_of_donation" value="Financial Donations" />
+                                                <label id="label_input_14_0" for="input_14_0">Financial Donations</label></span>
+                                                <span class="form-radio-item">
+                                                <span class="dragger-item"></span>
+                                                <input type="radio" aria-describedby="label_14" class="form-radio" id="input_14_1" name="type_of_donation" value="Clothing" />
+                                                <label id="label_input_14_1" for="input_14_1">Clothing</label></span> 
+                                                <span class="form-radio-item" style="clear:left"><span class="dragger-item"></span>
+                                                <input type="radio" aria-describedby="label_14" class="form-radio" id="input_14_2" name="type_of_donation" value="Shoes and Bags" />
+                                                <label id="label_input_14_2" for="input_14_2">Shoes and Bags</label></span>
+                                                <span class="form-radio-item"><span class="dragger-item"></span>
+                                                <input type="radio" aria-describedby="label_14" class="form-radio" id="input_14_3" name="type_of_donation" value="Kitchenware" />
+                                                <label id="label_input_14_3" for="input_14_3">Kitchenware</label></span>
+                                                <span class="form-radio-item" style="clear:left"><span class="dragger-item"></span>
+                                                <input type="radio" aria-describedby="label_14" class="form-radio" id="input_14_4" name="type_of_donation" value="Books" />
+                                                <label id="label_input_14_4" for="input_14_4">Books</label></span><span class="form-radio-item"> 
+                                                <span class="dragger-item"></span>
+                                                <input type="radio" aria-describedby="label_14" class="form-radio" id="input_14_5" name="type_of_donation" value="Toys and Games" />
+                                                <label id="label_input_14_5" for="input_14_5">Toys and Games</label></span>
+                                                <span class="form-radio-item" style="clear:left"><span class="dragger-item"></span>
+                                                <input type="radio" aria-describedby="label_14" class="form-radio" id="input_14_6" name="type_of_donation" value="Arts" />
+                                                <label id="label_input_14_6" for="input_14_6">Arts</label></span><span class="form-radio-item">
+                                                <span class="dragger-item"></span>
+                                                <input type="radio" aria-describedby="label_14" class="form-radio" id="input_14_7" name="type_of_donation" value="Linens" />
+                                                <label id="label_input_14_7" for="input_14_7">Linens</label></span>
+                                                <span class="form-radio-item" style="clear:left"><span class="dragger-item"></span>
+                                                <input type="radio" aria-describedby="label_14" class="form-radio" id="input_14_8" name="type_of_donation" value="Hygiene Essentials" />
+                                                <label id="label_input_14_8" for="input_14_8">Hygiene Essentials</label></span>
+                                                <span class="form-radio-item"><span class="dragger-item"></span>
+                                                <input type="radio" aria-describedby="label_14" class="form-radio" id="input_14_9" name="type_of_donation" value="Sporting Goods" />
+                                                <label id="label_input_14_9" for="input_14_9">Sporting Goods</label></span>
+                                                <span class="form-radio-item" style="clear:left"><span class="dragger-item"></span>
+                                                <input type="radio" aria-describedby="label_14" class="form-radio" id="input_14_10" name="type_of_donation" value="Furniture" />
+                                                <label id="label_input_14_10" for="input_14_10">Furniture</label></span>
+                                                <span class="form-radio-item"><span class="dragger-item"></span>
+                                                <input type="radio" aria-describedby="label_14" class="form-radio" id="input_14_11" name="type_of_donation" value="  Other" />
+                                                <label id="label_input_14_11" for="input_14_11">Other</label></span>
+                                              </div>
+                                            </div>
+                                          </li>
+                                          <!--what would you like to do-->
+                                          <li class="form-line" data-type="control_textbox" id="id_15"><label class="form-label form-label-top form-label-auto" id="label_15" for="input_15" aria-hidden="false"> What would you like to donate? </label>
+                                            <div id="cid_15" class="form-input-wide" data-layout="half">
+                                                <input type="text" id="input_15" name="whatWould" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_15" /> </div>
+                                          </li>
+                                          <!--note-->
+                                          <li class="form-line" data-type="control_textarea" id="id_16"><label class="form-label form-label-top form-label-auto" id="label_16" for="input_16" aria-hidden="false"> Notes </label>
+                                            <div id="cid_16" class="form-input-wide" data-layout="full">
+                                                <textarea id="input_16" class="form-textarea" name="notes" style="width:648px;height:100px" data-component="textarea" aria-labelledby="label_16"></textarea> </div>
+                                          </li>
+                                          <li class="form-line" data-type="control_buttonsubmit" id="id_37">
+                                            <div id="cid_37" class="form-input-wide" data-layout="full">
+                                              <div data-align="auto" class=" form-buttons-auto   jsTest-button-wrapperField">
+                                                <button id="input_37" type="submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">Submit
+                                                </button>
+                                              </div>
+                                            </div>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </form>
+                                  </div>
+                                  <div class="tab-pane fade" id="nav-cloth_s2" role="tabpanel" aria-labelledby="nav-cloth-tab">
+                                    <form class="jotform-form" action=""{% url 'userdonation' %}" method="post" enctype="multipart/form-data" name="form_232714804509456" id="232714804509456" accept-charset="utf-8" autocomplete="on" >
+                                      {% csrf_token %}
+                                      <input type="hidden" name="formType" value="cloth">
+                                      <div role="main" class="">
+                                        <ul class="page-sections">
+                                          <!--name-->
+                                          <li class="form-line" data-type="control_fullname" id="id_3"><label class="form-label form-label-top form-label-auto" id="label_3" for="first_3" aria-hidden="false"> Name </label>
+                                            <div id="cid_3" class="form-input-wide" data-layout="full">
+                                              <div data-wrapper-react="true">
+                                                <span class="form-sub-label-container" style="vertical-align:top" data-input-type="first">
+                                                  <input type="text" id="first_3" name="first" class="form-textbox" data-defaultvalue="" autoComplete="section-input_3 given-name" size="10" value="" data-component="first" aria-labelledby="label_3 sublabel_3_first" />
+                                                  <label class="form-sub-label" for="first_3" id="sublabel_3_first" style="min-height:13px" aria-hidden="false">First Name</label>
+                                                </span>
+                                                <span class="form-sub-label-container" style="vertical-align:top" data-input-type="last">
+                                                    <input type="text" id="last_3" name="last" class="form-textbox" data-defaultvalue="" autoComplete="section-input_3 family-name" size="15" value="" data-component="last" aria-labelledby="label_3 sublabel_3_last" />
+                                                    <label class="form-sub-label" for="last_3" id="sublabel_3_last" style="min-height:13px" aria-hidden="false">Last Name</label>
+                                                  </span>
+                                              </div>
+                                            </div>
+                                          </li>
+                                          <!--email-->
+                                          <li class="form-line form-line-column form-col-1" data-type="control_email" id="id_4"><label class="form-label form-label-top form-label-auto" id="label_4" for="input_4" aria-hidden="false"> Email </label>
+                                            <div id="cid_4" class="form-input-wide" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top"><input type="email" id="input_4" name="email" class="form-textbox validate[Email]" data-defaultvalue="" style="width:310px" size="310" value="" data-component="email" aria-labelledby="label_4 sublabel_input_4" /><label class="form-sub-label" for="input_4" id="sublabel_input_4" style="min-height:13px" aria-hidden="false">example@example.com</label></span> </div>
+                                          </li>
+                                          <!--phone-->
+                                          <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_5"><label class="form-label form-label-top" id="label_5" for="input_5_area" aria-hidden="true"> Phone Number<span class="form-required">*</span></label>
+                                            <div id="cid_5" class="form-input-wide" data-layout="half">
+                                              <div data-wrapper-react="true"><span class="form-sub-label-container" style="vertical-align:top" data-input-type="areaCode">
+                                                <input type="tel" id="input_5_area" name="phonecode" class="form-textbox validation[required, Phone NUmber]" data-defaultvalue="" autoComplete="section-input_5 tel-area-code" value="" data-component="areaCode" aria-labelledby="label_5 sublabel_5_area" />
+                                                <span class="phone-separate" aria-hidden="true"> -</span><label class="form-sub-label" for="input_5_area" id="sublabel_5_area" style="min-height:13px" aria-hidden="false">Area Code</label></span><span class="form-sub-label-container" style="vertical-align:top" data-input-type="phone">
+                                                    <input type="tel" id="input_5_phone" name="phonenumber" class="form-textbox" data-defaultvalue="" autoComplete="section-input_5 tel-local" value="" data-component="phone" aria-labelledby="label_5 sublabel_5_phone" />
+                                                    <label class="form-sub-label" for="input_5_phone" id="sublabel_5_phone" style="min-height:13px" aria-hidden="false">Phone Number</label></span></div>
+                                            </div>
+                                          </li>
+                                          <!--condition of the dress-->
+                                          <li class="form-line form-line-column form-col-1" data-type="control_dropdown" id="id_6">
+                                              <label class="form-label form-label-top form-label-auto" id="label_6" for="input_6" aria-hidden="false"> Condition of the dress? </label>
+                                              <div id="cid_6" class="form-input-wide" data-layout="half"> 
+                                                <select class="form-dropdown" id="input_6" name="condition" style="width:310px" data-component="dropdown" aria-label="Condition of the dress? ">
+                                                  <option value="">Please Select</option>
+                                                  <option value="Brand New">Brand New</option>
+                                                  <option value="Very Good Condition ">Very Good Condition </option>
+                                                  <option value="Good Condition ">Good Condition </option>
+                                                  <option value="Average Condition ">Average Condition </option>
+                                                  <option value="Bad Condition">Bad Condition</option>
+                                                </select> 
+                                              </div>
+                                          </li>
+                                          <!--type of the dress-->
+                                          <li class="form-line form-line-column form-col-2" data-type="control_dropdown" id="id_10">
+                                              <label class="form-label form-label-top form-label-auto" id="label_10" for="input_10" aria-hidden="false"> Type of the dress? </label>
+                                              <div id="cid_10" class="form-input-wide" data-layout="half"> 
+                                                <select class="form-dropdown" id="input_10" name="type_of_dress" style="width:310px" data-component="dropdown" aria-label="Type of the dress? ">
+                                                  <option value="">Please Select</option>
+                                                  <option value="Wedding Dress">Wedding Dress</option>
+                                                  <option value="Bridesmaid Dress">Bridesmaid Dress</option>
+                                                  <option value="Flower Girl Dress">Flower Girl Dress</option>
+                                                  <option value="Vow Renewal Outfit">Vow Renewal Outfit</option>
+                                                  <option value="Christening Dress">Christening Dress</option>
+                                                  <option value="Holy Communion Dress">Holy Communion Dress</option>
+                                                  <option value="Formal Dress">Formal Dress</option>
+                                                  <option value="Prom Dress">Prom Dress</option>
+                                                  <option value="Evening Dress">Evening Dress</option>
+                                                </select> 
+                                              </div>
+                                          </li>
+                                          <!--size of dress-->
+                                          <li class="form-line form-line-column form-col-2" data-type="control_dropdown" id="id_10">
+                                            <label class="form-label form-label-top form-label-auto" id="label_10" for="input_10" aria-hidden="false"> Size of the dress? </label>
+                                            <div id="cid_10" class="form-input-wide" data-layout="half"> 
+                                              <select class="form-dropdown" id="input_10" name="size" style="width:310px" data-component="dropdown" aria-label="Size of the dress?">
+                                                <option value="">Please Select</option>
+                                                <option value="Size 4">Size 4</option>
+                                                <option value="Size 6">Size 6</option>
+                                                <option value="Size 8">Size 8</option>
+                                                <option value="Size 10">Size 10</option>
+                                                <option value="Size 12">Size 12</option>
+                                                <option value="Size 14">Size 14</option>
+                                                <option value="Size 16">Size 16</option>
+                                                <option value="Size 18">Size 18</option>
+                                                <option value="Size 20">Size 20</option>
+                                                <option value="Size 22">Size 22</option>
+                                                <option value="Size 24">Size 24</option>
+                                                <option value="Size 26">Size 26</option>
+                                                <option value="Size 28">Size 28</option>
+                                                <option value="Size 30">Size 30</option>
+                                                <option value="Size 32">Size 32</option>
+                                                <option value="Child 0-5">Child 0-5</option>
+                                                <option value="Child 5-16">Child 5-16</option>
+                                                <option value="Small">Small</option>
+                                                <option value="Medium">Medium</option>
+                                                <option value="Large">Large</option>
+                                                <option value="XL">XL</option>
+                                                <option value="XXL">XXL</option>
+                                                <option value="XXXL">XXXL</option>
+                                                <option value="XXXXL">XXXXL</option>
+                                                <option value="Unknown">Unknown</option>
+                                                <option value="Other">Other</option>
+                                              </select> 
+                                            </div>
+                                          </li>
+                                          {% comment %} <li class="form-line" data-type="control_radio" id="id_11">
+                                            <label class="form-label form-label-top form-label-auto" id="label_11" for="input_11" aria-hidden="false"> Size of the dress? </label>
+                                            <div id="cid_11" class="form-input-wide" data-layout="full">
+                                              <div class="form-multiple-column" data-columncount="3" role="group" aria-labelledby="label_11" data-component="radio">
+                                                <span class="form-radio-item">
+                                                  <span class="dragger-item"></span>
+                                                  <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_0" name="size" value="Size 4" />
+                                                  <label id="label_input_11_0" for="input_11_0">Size 4</label>
+                                                </span>
+                                                <span class="form-radio-item">
+                                                  <span class="dragger-item"></span>
+                                                  <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_1" name="size" value="Size 6" />
+                                                  <label id="label_input_11_1" for="input_11_1">Size 6</label>
+                                                </span>
+                                                <span class="form-radio-item"><span class="dragger-item"></span>
+                                                  <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_2" name="size" value="Size 8" />
+                                                  <label id="label_input_11_2" for="input_11_2">Size 8</label>
+                                                </span>
+                                                <span class="form-radio-item" style="clear:left">
+                                                  <span class="dragger-item"></span>
+                                                  <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_3" name="size" value="Size 10" />
+                                                  <label id="label_input_11_3" for="input_11_3">Size 10</label>
+                                                </span>
+                                                <span class="form-radio-item">
+                                                  <span class="dragger-item"></span>
+                                                  <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_4" name="size" value="Size 12" />
+                                                  <label id="label_input_11_4" for="input_11_4">Size 12</label>
+                                                </span>
+                                                <span class="form-radio-item">
+                                                  <span class="dragger-item"></span>
+                                                  <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_5" name="size" value="Size 11" />
+                                                  <label id="label_input_11_5" for="input_11_5">Size 14</label>
+                                                </span>
+                                                <span class="form-radio-item" style="clear:left">
+                                                  <span class="dragger-item"></span>
+                                                  <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_6" name="size" value="Size 16" /> 
+                                                  <label id="label_input_11_6" for="input_11_6">Size 16</label>
+                                                </span>
+                                                <span class="form-radio-item">
+                                                  <span class="dragger-item"></span>
+                                                  <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_7" name="size" value="Size 18" />
+                                                  <label id="label_input_11_7" for="input_11_7">Size 18</label>
+                                                </span>
+                                                <span class="form-radio-item">
+                                                  <span class="dragger-item"></span>
+                                                  <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_8" name="size" value="Size 20" />
+                                                  <label id="label_input_11_8" for="input_11_8">Size 20</label>
+                                                </span>
+                                                <span class="form-radio-item" style="clear:left">
+                                                  <span class="dragger-item"></span>
+                                                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_9" name="size" value="Size 22" /><label id="label_input_11_9" for="input_11_9">Size 22</label></span><span class="form-radio-item"><span class="dragger-item"></span><input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_10" name="q11_whatIs11" value="Size 24" /><label id="label_input_11_10" for="input_11_10">Size 24</label></span><span class="form-radio-item"><span class="dragger-item"></span>
+                                                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_11" name="size" value="Size 26" /><label id="label_input_11_11" for="input_11_11">Size 26</label></span><span class="form-radio-item" style="clear:left"><span class="dragger-item"></span>
+                                                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_12" name="size" value="Size 28" /><label id="label_input_11_12" for="input_11_12">Size 28</label></span><span class="form-radio-item"><span class="dragger-item"></span>
+                                                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_13" name="size" value="Size 30" /><label id="label_input_11_13" for="input_11_13">Size 30</label></span><span class="form-radio-item"><span class="dragger-item"></span>
+                                                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_14" name="size" value="Size 32" /><label id="label_input_11_14" for="input_11_14">Size 32</label></span><span class="form-radio-item" style="clear:left"><span class="dragger-item"></span>
+                                                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_15" name="size" value="Child 0-5" /><label id="label_input_11_15" for="input_11_15">Child 0-5</label></span><span class="form-radio-item"><span class="dragger-item"></span>
+                                                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_16" name="size" value="Child 5-16" /><label id="label_input_11_16" for="input_11_16">Child 5-16</label></span><span class="form-radio-item"><span class="dragger-item"></span>
+                                                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_17" name="size" value="Small" /><label id="label_input_11_17" for="input_11_17">Small</label></span><span class="form-radio-item" style="clear:left"><span class="dragger-item"></span>
+                                                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_18" name="size" value="Medium" /><label id="label_input_11_18" for="input_11_18">Medium</label></span><span class="form-radio-item"><span class="dragger-item"></span>
+                                                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_19" name="size" value="Large" /><label id="label_input_11_19" for="input_11_19">Large</label></span><span class="form-radio-item"><span class="dragger-item"></span>
+                                                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_20" name="size" value="XL" /><label id="label_input_11_20" for="input_11_20">XL</label></span><span class="form-radio-item" style="clear:left"><span class="dragger-item"></span>
+                                                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_21" name="size" value="XXL" /><label id="label_input_11_21" for="input_11_21">XXL</label></span><span class="form-radio-item"><span class="dragger-item"></span>
+                                                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_22" name="size" value="XXXL" /><label id="label_input_11_22" for="input_11_22">XXXL</label></span><span class="form-radio-item"><span class="dragger-item"></span>
+                                                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_23" name="size" value="XXXXL" /><label id="label_input_11_23" for="input_11_23">XXXXL</label></span><span class="form-radio-item" style="clear:left"><span class="dragger-item"></span>
+                                                <input type="radio" aria-describedby="label_11" class="form-radio" id="input_11_24" name="size" value="Unknown" /><label id="label_input_11_24" for="input_11_24">Unknown</label></span><span class="form-radio-item formRadioOther">
+                                                <input type="radio" class="form-radio-other form-radio" name="size" id="other_11" value="other" tabindex="0" aria-label="Other" /><label id="label_other_11" style="text-indent:0" for="other_11">Other</label><span id="other_11_input" class="other-input-container" style="display:none">
+                                                <input type="text" class="form-radio-other-input form-textbox" name="size" data-otherhint="Other" size="15" id="input_11" data-placeholder="Please type another option here" placeholder="Please type another option here" /></span></span></div>
+                                            </div>
+                                          </li> {% endcomment %}
+                                          <!--photo of dress-->
+                                          <li class="form-line" data-type="control_fileupload" id="id_12"><label class="form-label form-label-top form-label-auto" id="label_12" for="input_12" aria-hidden="false"> Please upload the photos of the dress. </label>
+                                            <div id="cid_12" class="form-input-wide" data-layout="full">
+                                              <div class="jfQuestion-fields" data-wrapper-react="true">
+                                                <div class="jfField isFilled">
+                                                  <div class="jfUpload-wrapper">
+                                                    <div class="jfUpload-container">
+                                                      <div class="jfUpload-button-container">
+                                                        <div class="jfUpload-button" aria-hidden="true" tabindex="0" style="display:none" data-version="v2">Browse Files<div class="jfUpload-heading forDesktop">Drag and drop files here</div>
+                                                          <div class="jfUpload-heading forMobile" name="image " >Choose a file</div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="jfUpload-files-container">
+                                                      <div class="validate[multipleUpload]"><input type="file" id="input_12" name="image" multiple="" class="form-upload-multiple" data-imagevalidate="yes" data-file-accept="pdf, doc, docx, xls, xlsx, csv, txt, rtf, html, zip, mp3, wma, mpg, flv, avi, jpg, jpeg, png, gif" data-file-maxsize="10854" data-file-minsize="0" data-file-limit="0" data-component="fileupload" aria-label="Browse Files" /></div>
+                                                    </div>
+                                                  </div>
+                                                  <div data-wrapper-react="true"></div>
+                                                </div><span style="display:none" class="cancelText">Cancel</span><span style="display:none" class="ofText">of</span>
+                                              </div>
+                                            </div>
+                                          </li> 
+                                          <!--description-->
+                                          <li class="form-line" data-type="control_textarea" id="id_13"><label class="form-label form-label-top form-label-auto" id="label_13" for="input_13" aria-hidden="false"> Is there any information that you would like to add? </label>
+                                            <div id="cid_13" class="form-input-wide" data-layout="full"> <textarea id="input_13" class="form-textarea" name="note" style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_13"></textarea> </div>
+                                          </li>
+                                          <!--submit-->
+                                          <li class="form-line" data-type="control_button" id="id_14">
+                                            <div id="cid_14" class="form-input-wide" data-layout="full">
+                                              <div data-align="auto" class="form-buttons-auto   jsTest-button-wrapperField"><button id="input_14" type="submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">Submit</button></div>
+                                            </div>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </form>
+                                  </div>
+                                  <div class="tab-pane fade" id="nav-food_s2" role="tabpanel" aria-labelledby="nav-food-tab" action="{% url 'userdonation' %}">
+                                    <form class="jotform-form" method="post" name="form_232715261826456" id="232715261826456" accept-charset="utf-8" autocomplete="on" action="{% url 'userdonation' %}">
+                                      {% csrf_token %}
+                                      <input type="hidden" name="formType" value="food">
+                                      <div role="main" class="">
+                                        <ul class="form-sectionn ">
+                                          <!--Name-->
+                                          <li class="form-line" data-type="control_fullname" id="id_19">
+                                            <label class="form-label form-label-top form-label-auto" id="label_19" for="first_19" aria-hidden="false"> Name </label>
+                                            <div id="cid_19" class="form-input-wide" data-layout="full">
+                                              <div data-wrapper-react="true">
+                                                <span class="form-sub-label-container" style="vertical-align:top" data-input-type="first">
+                                                  <input type="text" id="first_19" name="firstname" class="form-textbox" data-defaultvalue="" autoComplete="section-input_19 given-name" size="10" value="" data-component="first" aria-labelledby="label_19 sublabel_19_first" />
+                                                  <label class="form-sub-label" for="first_19" id="sublabel_19_first" style="min-height:13px" aria-hidden="false">First Name</label>
+                                                </span>
+                                                <span class="form-sub-label-container" style="vertical-align:top" data-input-type="last">
+                                                  <input type="text" id="last_19" name="lastname" class="form-textbox" data-defaultvalue="" autoComplete="section-input_19 family-name" size="15" value="" data-component="last" aria-labelledby="label_19 sublabel_19_last" />
+                                                  <label class="form-sub-label" for="last_19" id="sublabel_19_last" style="min-height:13px" aria-hidden="false">Last Name</label>
+                                                </span>
+                                              </div>
+                                            </div>
+                                          </li>
+                                          <!--email-->
+                                          <li class="form-line form-line-column form-col-1" data-type="control_email" id="id_20">
+                                            <label class="form-label form-label-top form-label-auto" id="label_20" for="input_20" aria-hidden="false"> Email </label>
+                                            <div id="cid_20" class="form-input-wide" data-layout="half">
+                                              <span class="form-sub-label-container" style="vertical-align:top">
+                                                <input type="email" id="input_20" name="email" class="form-textbox validate[Email]" data-defaultvalue="" style="width:310px" size="310" value="" data-component="email" aria-labelledby="label_20 sublabel_input_20" />
+                                                <label class="form-sub-label" for="input_20" id="sublabel_input_20" style="min-height:13px" aria-hidden="false"></label>
+                                              </span>
+                                            </div>
+                                          </li>
+                                          <!--Phone-->
+                                          <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_21">
+                                            <label class="form-label form-label-top" id="label_21" for="input_21_area" aria-hidden="true"> Phone Number<span class="form-required">*</span></label>
+                                            <div id="cid_21" class="form-input-wide" data-layout="half">
+                                              <div data-wrapper-react="true">
+                                                <span class="form-sub-label-container" style="vertical-align:top" data-input-type="areaCode">
+                                                  <input type="tel" id="input_21_area" name="phonecode" class="form-textbox validation[required, Phone NUmber]" data-defaultvalue="" autoComplete="section-input_21 tel-area-code" value="" data-component="areaCode" aria-labelledby="label_21 sublabel_21_area" />
+                                                  <span class="phone-separate" aria-hidden="true"> -</span>
+                                                  <label class="form-sub-label" for="input_21_area" id="sublabel_21_area" style="min-height:13px" aria-hidden="false">Area Code</label>
+                                                </span>
+                                                <span class="form-sub-label-container" style="vertical-align:top" data-input-type="phone">
+                                                  <input type="tel" id="input_21_phone" name="phonenumber" class="form-textbox" data-defaultvalue="" autoComplete="section-input_21 tel-local" value="" data-component="phone" aria-labelledby="label_21 sublabel_21_phone" />
+                                                  <label class="form-sub-label" for="input_21_phone" id="sublabel_21_phone" style="min-height:13px" aria-hidden="false">Phone Number</label>
+                                                </span>
+                                              </div>
+                                            </div>
+                                          </li>
+                                          <!--Organization Name-->
+                                          <li class="form-line" data-type="control_textbox" id="id_23">
+                                            <label class="form-label form-label-top form-label-auto" id="label_23" for="input_23" aria-hidden="false"> Organization Name </label>
+                                            <div id="cid_23" class="form-input-wide" data-layout="half"> 
+                                              <input type="text" id="input_23" name="organization" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_23" /> 
+                                            </div>
+                                          </li>
+                                          <!--organization Mission-->
+                                          <li class="form-line" data-type="control_textarea" id="id_24">
+                                            <label class="form-label form-label-top form-label-auto" id="label_24" for="input_24" aria-hidden="false"> Organization Mission </label>
+                                            <div id="cid_24" class="form-input-wide" data-layout="full"> 
+                                              <textarea id="input_24" class="form-textarea" name="organizationmission" style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_24"></textarea> 
+                                            </div>
+                                          </li>
+                                          <!--Date & Time Needed-->
+                                          <li class="form-line allowTime" data-type="control_datetime" id="id_29">
+                                            <label class="form-label form-label-top form-label-auto" id="label_29" for="lite_mode_29" aria-hidden="false"> Date &amp; Time Needed </label>
+                                            <div id="cid_29" class="form-input-wide" data-layout="full">
+                                              <div data-wrapper-react="true" class="extended">
+                                                <span class="form-sub-label-container" style="vertical-align:top">
+                                                  <input type="text" class="form-textbox validate[limitDate, validateLiteDate]" id="lite_mode_29" name="date" size="12" data-maxlength="12" maxLength="12" data-age="" value="" data-format="mmddyyyy" data-seperator="-" placeholder="MM-DD-YYYY" data-placeholder="MM-DD-YYYY" autoComplete="off" aria-labelledby="label_29 sublabel_29_litemode" />
+                                                  <img class=" newDefaultTheme-dateIcon icon-liteMode" alt="Pick a Date" id="input_29_pick" src="https://cdn.jotfor.ms/images/calendar.png" data-component="datetime" aria-hidden="true" data-allow-time="Yes" data-version="v2" />
+                                                  <label class="form-sub-label" for="lite_mode_29" id="sublabel_29_litemode" style="min-height:13px" aria-hidden="false">Date</label>
+                                                </span>
+                                                <span class="allowTime-container timeAMPM">
+                                                  <div data-wrapper-react="true">
+                                                    <span class="form-sub-label-container hasAMPM" style="vertical-align:top">
+                                                      <input type="text" class="time-dropdown form-textbox validate[time]" id="input_29_timeInput" name="hour" placeholder="HH : MM" aria-labelledby="label_29 sublabel_29_hour" data-mask="hh:MM" value="" data-version="v2" />
+                                                      <label data-seperate-translate="true" class="form-sub-label" for="input_29_timeInput" id="sublabel_29_hour" style="min-height:13px" aria-hidden="false">Hour Minutes</label>
+                                                    </span>
+                                                    <span class="form-sub-label-container" style="vertical-align:top">
+                                                      <select class="time-dropdown form-dropdown" id="input_29_ampm" name="ampm" data-component="time-ampm" aria-labelledby="label_29 sublabel_29_ampm">
+                                                        <option value="AM">AM</option>
+                                                        <option selected="" value="PM">PM</option>
+                                                      </select>
+                                                      <label class="form-sub-label" for="input_29_ampm" id="sublabel_29_ampm" style="border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap" aria-hidden="false">AM/PM Option</label>
+                                                    </span>
+                                                  </div>
+                                                </span>
+                                              </div>
+                                            </div>
+                                          </li>
+                                          <!--Pick Up Location-->
+                                          <li class="form-line" data-type="control_address" id="id_30" data-compound-hint=",,,,Please Select,,Please Select,">
+                                            <label class="form-label form-label-top form-label-auto" id="label_30" for="input_30_addr_line1" aria-hidden="false"> Pick Up Location </label>
+                                            <div id="cid_30" class="form-input-wide" data-layout="full">
+                                              <div summary="" class="form-address-table jsTest-addressField">
+                                                <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
+                                                  <span class="form-address-line form-address-street-line jsTest-address-lineField">
+                                                    <span class="form-sub-label-container" style="vertical-align:top">
+                                                      <input type="text" id="input_30_addr_line1" name="pickup_address" class="form-textbox form-address-line" data-defaultvalue="" autoComplete="section-input_30 address-line1" value="" data-component="address_line_1" aria-labelledby="label_30 sublabel_30_addr_line1" required="" />
+                                                      <label class="form-sub-label" for="input_30_addr_line1" id="sublabel_30_addr_line1" style="min-height:13px" aria-hidden="false">Street Address</label>
+                                                    </span>
+                                                  </span>
+                                                </div>
+                                                <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
+                                                  <span class="form-address-line form-address-street-line jsTest-address-lineField">
+                                                    <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
+                                                      <span class="form-address-line form-address-city-line jsTest-address-lineField ">
+                                                        <span class="form-sub-label-container" style="vertical-align:top">
+                                                          <input type="text" id="input_30_city" name="pickup_city" class="form-textbox form-address-city" data-defaultvalue="" autoComplete="section-input_30 address-level2" value="" data-component="city" aria-labelledby="label_30 sublabel_30_city" required="" />
+                                                          <label class="form-sub-label" for="input_30_city" id="sublabel_30_city" style="min-height:13px" aria-hidden="false">City</label>
+                                                        </span>
+                                                      </span>
+                                                      <span class="form-address-line form-address-state-line jsTest-address-lineField ">
+                                                        <span class="form-sub-label-container" style="vertical-align:top">
+                                                          <input type="text" id="input_30_state" name="pickup_state" class="form-textbox form-address-state" data-defaultvalue="" autoComplete="section-input_30 address-level1" value="" data-component="state" aria-labelledby="label_30 sublabel_30_state" required="" />
+                                                          <label class="form-sub-label" for="input_30_state" id="sublabel_30_state" style="min-height:13px" aria-hidden="false">State / Province</label>
+                                                        </span>
+                                                      </span>
+                                                    </div>
+                                                  </span>
+                                                  <span class="form-address-line form-address-street-line jsTest-address-lineField">
+                                                    <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
+                                                      <span class="form-address-line form-address-zip-line jsTest-address-lineField ">
+                                                        <span class="form-sub-label-container" style="vertical-align:top">
+                                                          <input type="text" id="input_30_postal" name="pickup_postal" class="form-textbox form-address-postal" data-defaultvalue="" autoComplete="section-input_30 postal-code" value="" data-component="zip" aria-labelledby="label_30 sublabel_30_postal" required="" />
+                                                          <label class="form-sub-label" for="input_30_postal" id="sublabel_30_postal" style="min-height:13px" aria-hidden="false">Postal / Zip Code</label>
+                                                        </span>
+                                                      </span>
+                                                    </div>
+                                                  </span>
+                                              </div>
+                                            </div>
+                                          </li>
+                                          <li class="form-line" data-type="control_button" id="id_34">
+                                              <div id="cid_34" class="form-input-wide" data-layout="full">
+                                                <div data-align="auto" class="form-buttons-auto   jsTest-button-wrapperField">
+                                                  <button id="input_34" type="submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">Submit</button></div>
+                                              </div>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </form>
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+      </div>
+    </div>
+</div>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+document.getElementById('rzp-button1').onclick = function(e){
+  e.preventDefault();
+  var options = {
+    "key": "rzp_test_izLKitcUJEXjP9", // Enter the Key ID generated from the Dashboard
+    "amount": (document.getElementById('donation_amount').value * 100), 
+    "currency": "INR",
+    "name": "HopeLink Connect",
+    "description": "NGO",
+    "image": "https://example.com/your_logo",
+    "order_id": "{{razorpay_order_id}}",
+    "prefill": {
+        "name": "Urvi Patel",
+        "email": "urvi@example.com",
+        "contact": "9000090000"
+    },
+    "notes": {
+        "address": "Razorpay Corporate Office"
+    },
+    "theme": {
+        "color": "#3399cc"
+    }
+  };
+  var rzp2 = new Razorpay(options);
+  rzp2.open();
+}
+</script>
+{% endblock %}

@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');
+
+
+        /* body
+        {
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+         
+            font-family: 'Open Sans', sans-serif;
+            background-color: rgb(255, 255, 255);
+            overflow: hidden;
+        } */
+        .darksoul-section
+        {
+          
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            /* height: 100%; */
+            height: 550px;
+         
+        }
+        .darksoul-left
+        {
+           
+            width: 40%;
+            height: 50%;
+            display: flex;
+            flex-direction: row;
+            align-items: end;
+            
+           
+        }
+        .darksoul-right
+        {
+          
+            margin: auto;
+            width: 60%;
+            height: 100%;
+            display: flex;
+            transform: rotate(30deg);
+           
+        }
+        .darksoul-container
+        {
+            margin: auto;
+            width: 45%;
+            height: 70%;
+            box-shadow: 0px 19px 48px 4px rgb(15,23,43);
+            border-radius: 55px;
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(15,23,43);
+            
+            
+
+        }
+       
+        .darksoul-header
+        {
+            width: 100%;
+            margin: auto;
+            height: 20%;
+            display: flex;
+        }
+        .darksoul-l-h1
+        {
+           
+
+            color: #FEA116; 
+            font-size: 60px;
+            width: fit-content;
+            height: fit-content;
+            animation-name: steady-l;
+            animation-iteration-count: 1;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+           
+        }
+        .darksoul-r-h1
+        {
+            color: rgb(0, 0, 0);
+            font-size: 60px;
+            width: fit-content;
+            height: fit-content;
+         color:  #FEA116;
+            animation-name: steady-r;
+            animation-iteration-count: 1;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+        }
+        .darksoul-h2
+        {
+            color: rgb(0, 0, 0);
+            margin: auto;
+        }
+        .darksoul-content
+        {
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            height: 60%;
+            width: 100%;
+            
+        }
+        .darksoul-signup-content
+        {
+            display: none;
+            margin: auto;
+            
+            flex-direction: column;
+            height: 100%;
+            width: 80%;
+            transform: rotate(-30deg);
+            padding-top: 35%;
+            padding-bottom: 35%;
+        }
+        svg
+        {
+            margin: auto;
+        }
+        
+        .svg:hover
+        {
+            transform: translateY(-10px);
+            transition: 1s;
+            cursor: pointer;
+        }
+        svg:hover g
+        {
+            fill: rgb(0,0,0);
+        }
+        .darksoul-logo
+        {
+            margin: auto;
+            display: flex;
+            
+        }
+        .darksoul-form
+        {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 60%;
+            align-items: center;
+            justify-content: space-around;
+            margin: auto;
+            transform: rotate(-30deg);
+            
+        }
+        .darksoul-input
+        {
+            
+            width: 80%;
+            height: 50px;
+            border: none;
+            outline: none;
+            border-radius: 15px;
+            background-color:#FEA116;
+            color: white;
+            font-weight: bolder;
+            font-family: 'Open Sans', sans-serif;
+            text-indent: 15px;
+            
+        }
+        ::placeholder 
+        {
+            color: rgb(15,23,43);
+            
+        }
+        .darksoul-in{
+            color: #fff;
+        }
+        .darksoul-in:hover{
+            color: #fff;
+        }
+        .darksoul-input[type='texy']
+        {
+            color: white;
+        }
+        .darksoul-input[type='text']:focus
+        {
+            background-color: rgb(255, 255, 255);
+          
+            color: rgb(15,23,43);
+            width: 40%;
+            transition: 0.5s;
+            
+        }
+        .darksoul-in{
+            color: #fff;
+        }
+        .darksoul-input[type='password']
+        {
+            color: white;
+        }
+        .darksoul-input[type='password']:focus
+        {
+            background-color: rgb(255, 255, 255);
+            color: rgb(15,23,43);
+            width: 40%;
+            transition: 0.5s;
+         
+            
+        }
+        .darksoul-footer
+        {
+            width: 80%;
+            margin: auto;
+            display: flex;
+            height: 42%;
+
+        }
+        .darksoul-btn
+        {
+            margin: auto;
+            margin-right: 2px;
+            width: fit-content;
+            height: 50px;
+            padding: 8px 20px 8px 20px;
+            background-color: #FEA116;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Open Sans', sans-serif;
+            color: rgb(15,23,43);
+            transform: rotate(-30deg);
+            zoom: 1.3;
+            
+        }
+        .darksoul-btn:hover
+        {
+            cursor: pointer;
+            color: rgb(15,23,43);
+        }
+       
+        @keyframes spin {
+            100% { transform:rotateY(360deg); } 
+            /* form
+            {
+                transform: rotate(30deg);
+                transform: rotateY(0deg)
+            }
+            to
+            {
+                transform: rotateY(180deg) rotate(30deg);
+                background-color: rgba(255, 204, 0, 0.714);
+                box-shadow: 0px 0px 400px 2px rgb(255, 204, 0);
+            } */
+        }
+        @keyframes spin-b{
+            0% { transform:rotateY(360deg); } 
+            100% { transform:rotateY(0deg); }
+            /* form
+            {
+                transform: rotate(30deg);
+                transform: rotateY(0deg)
+            }
+            to
+            {
+                transform: rotateY(180deg) rotate(30deg);
+                background-color: rgba(255, 204, 0, 0.714);
+                box-shadow: 0px 0px 400px 2px rgb(255, 204, 0);
+            } */
+        }
+        @keyframes slide 
+        {
+            0% { margin-left: 0px;}
+            100%{ margin-left: 250px;}
+        }
+        @keyframes back 
+        {
+            0% { margin-left: 250px;}
+            100%{ margin-left: 0px;}
+        }
+        @keyframes rotate360-l {
+from {transform: scale(0.4)translateX(300%);}
+to{transform: scale(1.3) translateY(90%) translateX(50%);}
+        }
+        @keyframes rotate360-b-l {
+from {transform: scale(1.3) translateY(90%) translateX(50%);}
+to{transform: scale(0.4)translateX(300%);}
+        }
+        @keyframes rotate360-r {
+from {transform: scale(0.4)translateX(500px);}
+to{transform: scale(1) translateY(100px) translateX(300px);}
+        }
+        @keyframes rotate360-b-r {
+from {transform: scale(1) translateY(100px) translateX(300px);}
+to{transform: scale(0.4) translateX(500px);}
+        }
+        @keyframes steady-l {
+from {transform: scale(1.3) translateY(90%) translateX(50%);}
+to {transform: scale(1.3) translateY(90%) translateX(50%);}
+        }
+        @keyframes steady-r {
+from {transform: scale(0.4) translateX(500px);}
+to {transform: scale(0.4) translateX(500px);}
+        }
+        .darksoul-btn-small
+        {
+            outline: none;
+            border: none;
+            background-color: transparent;
+            color:#FEA116;
+            font-size: 60px;
+            width: fit-content;
+            height: fit-content;
+            font-family: 'Open Sans', sans-serif;
+            cursor: pointer;
+        }
+        .register button {
+            color: #000 !important;
+        }
+        .login {
+            z-index: 99;
+        }

@@ -1,0 +1,26 @@
+{% load static %}
+
+ <!-- Navbar & Hero Start -->
+ <div class="container-xxl position-relative p-0">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
+        <a href="" class="navbar-brand p-0">
+            <h3 class="text-primary m-0"><img src="{% static 'img/logo1_1.png' %}">HopeLink Connect</h3>
+            <!-- <img src="img/logo.png" alt="Logo"> -->
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0 pe-4">
+                <a href="{% url 'home' %}"class="nav-item nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}">Home</a>
+                <a href="{% url 'about' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}">About</a>
+                <a href="{% url 'gallery' %}"class="nav-item nav-link {% if request.resolver_match.url_name == 'gallery' %}active{% endif %}">Gallery</a>
+                <a href="{% url 'intant' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'intant' %}active{% endif %}">Internship</a>
+                <a href="{% url 'login' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'login' %}active{% endif %}">Login</a>
+                <a href="{% url 'contact' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}">Contact</a>
+            </div>
+            <a href="{% url 'event' %}" class="btn btn-primary py-2 px-4">Book An Event Now</a>
+            
+            
+        </div>
+    </nav>

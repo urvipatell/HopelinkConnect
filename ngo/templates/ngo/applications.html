@@ -1,0 +1,143 @@
+{% extends 'adminbase.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
+    <div class="container-fluid py-1 px-3">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;"><h5>Pages/</h5></a></li>
+            <li aria-current="page"><h5>Internship</h5></li>
+          </ol>
+          <h2 class="font-weight-bolder mb-0">Internship</h2>
+      </nav>
+      <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+        <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+          <div class="input-group input-group-outline">
+            <label class="form-label"></label>
+          </div>
+        </div>
+        <ul class="navbar-nav  justify-content-end">
+          <li class="nav-item d-flex align-items-center">
+            <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
+              <i class="fa fa-sign-out me-sm-1"></i>
+              <a href="{% url 'login' %}"><span class="d-sm-inline d-none"><h5>Logout</h5></span></a>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    
+
+    <table class="custom-table internship-table">
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Age</th>
+            <th>Current Role</th>
+            <th>Internship Experience</th>
+            <th>Gender</th>
+            <th>Why Choose NGO</th>
+            <th>Areas of Interest</th>
+            <th>Additional Skills</th>
+        </tr>
+        {% for application in internship_applications %}
+            <tr>
+                <td>{{ application.full_name }}</td>
+                <td>{{ application.email }}</td>
+                <td>{{ application.phone_number }}</td>
+                <td>{{ application.age }}</td>
+                <td>{{ application.current_role }}</td>
+                <td>{{ application.internship_experience }}</td>
+                <td>{{ application.gender }}</td>
+                <td>{{ application.why_choose_ngo }}</td>
+                <td>{{ application.areas_of_interest }}</td>
+                <td>{{ application.additional_skills }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <style>
+        /* General table styles */
+        .custom-table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+    
+        .custom-table th, .custom-table td {
+            border: 1px solid #dddddd;
+            padding: 8px;
+            text-align: left;
+        }
+    
+        .custom-table th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+    
+        .custom-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    
+        .custom-table tr:hover {
+            background-color: #e2e2e2;
+        }
+    
+        /* Additional styling for specific event types */
+        .custom-table.social-table th {
+            background-color: #ff9900; /* Adjust the color as needed */
+        }
+    
+        .custom-table.impact-table th {
+            background-color: #4caf50; /* Adjust the color as needed */
+        }
+    
+        .custom-table.health-table th {
+            background-color: #2196F3; /* Adjust the color as needed */
+        }
+    
+        .custom-table.scholarship-table th {
+            background-color: #f44336; /* Adjust the color as needed */
+        }
+    
+        /* Adjust colors for table headers of other event types */
+    
+        /* Style table headers */
+        .custom-table th {
+            background-color: #ed7014;
+            color: #ffff;
+              font-weight: bold;
+              border-color:#000;
+          }
+    
+        /* Style alternating rows */
+        .custom-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+            color:#000;
+        }
+    
+        .custom-table tr:hover {
+            background-color: #e2e2e2;
+            color:#000;
+        }
+    
+        /* Style hyperlinks within tables (e.g., email addresses) */
+        .custom-table a {
+            color: #0073e6; /* Adjust the link color as needed */
+            text-decoration: none;
+        }
+    
+        .custom-table a:hover {
+            text-decoration: underline;
+        }
+    
+    </style>
+</div>
+{% endblock %}

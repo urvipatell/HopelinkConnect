@@ -1,0 +1,51 @@
+<!-- customer_profile.html -->
+{% extends 'profile_base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- dashboard inner -->
+<div class="midde_cont">
+    <div class="container-fluid">
+       <div class="row column_title">
+          <div class="col-md-12">
+             <div class="page_title">
+                <h2>Profile</h2>
+             </div>
+          </div>
+       </div>
+<div class="row column1">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+       <div class="white_shd full margin_bottom_30">
+          <div class="full graph_head">
+             <div class="heading1 margin_0">
+                <h2>User profile</h2>
+             </div>
+          </div>
+          <div class="full price_table padding_infor_info">
+             <div class="row">
+                <!-- user profile section --> 
+                <!-- profile image -->
+                <div class="col-lg-12">
+                   <div class="full dis_flex center_text">
+                      <div class="profile_img"><img width="180" class="rounded-circle" src="{{ profile.image.url }}" /></div>
+                        <div class="profile_contant">
+                            <div class="contact_inner">
+                            <h3>{{ profile.name }}</h3>
+                            <p><strong> UserNmae: </strong>{{ profile.username }}</p>
+                            <p><strong> Email: </strong>{{ profile.email }}</p>
+                            <p><strong> Phone No: </strong>{{ profile.phonenumber }}r</p>
+                            <p><strong> DOB: </strong>{{ profile.dob }}</p>
+                            <p><strong> Gender: </strong>{{ profile.gender }}</p>
+                            <p><strong> Status : </strong>{{ profile.forwhom }}</p>
+                            </div>
+                      </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
