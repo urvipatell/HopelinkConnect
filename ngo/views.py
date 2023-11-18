@@ -40,6 +40,18 @@ def admin_dashboard (request):
     return render(request, 'ngo/admin_dashboard.html',context)
 
 def admin_newMember(request): #new member 
+    if request.method == 'POST':
+        
+        form_id = request.POST.get('form_id')
+        status = request.POST.get('status')  # 'approve' or 'reject'
+
+        donation = get_object_or_404(FoodDonation, id=form_id)
+      
+
+        # Update the status of the donation.
+        donation.status = status
+        donation.save()
+
     new_member = NewMember.objects.all()
     context = {
         'new_member': new_member
