@@ -524,17 +524,12 @@ def staff_deshbord (request):
     money_total = MoneyDonation.objects.count()
     totalMember = NewMember.objects.count()
     oldMember = NewMember.objects.filter(member_type = "Old").count()
-    newMember = NewMember.objects.filter(member_type = "Child").count()
+    childMember = NewMember.objects.filter(member_type = "Child").count()
 
-    print(f"Education Total: {education_total}")
-    print(f"Cloth Total: {cloth_total}")
-    print(f"Food Total: {food_total}")
-    print(f"Money Total: {money_total}")
-    print(f"Old: {oldMember}")
 
     # Calculate the grand total of all donations
-    grand_total = education_total + cloth_total + food_total + money_total
-    print(f"Grand Total: {grand_total}")
+    grand_total = education_total + cloth_total + food_total 
+  
 
     context = {
         'education_total': education_total,
@@ -544,7 +539,7 @@ def staff_deshbord (request):
         'grand_total': grand_total,
         'totalMember': totalMember,
         'oldMember': oldMember,
-        'newMember': newMember
+        'childMember':childMember
     }
 
 

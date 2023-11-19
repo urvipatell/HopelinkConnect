@@ -107,13 +107,13 @@
                 <input type="text" id="Name" name="Name" placeholder="Enter the Name" required><br>
     
                 <label for="dropdown">Type Of The New Member:</label>
-                <select id="dropdown" name="gender" required>
+                <select id="dropdown" name="dropdown" required>
                     <option value="Child">Child</option>
                     <option value="Old">Old</option>
                 </select>
                 <br>
                 <label for="dropdown">Gender:</label>
-                <select id="dropdown" name="dropdown" required>
+                <select id="dropdown" name="gender" required>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                 </select>
@@ -153,29 +153,30 @@
                  </div>
               </div>
            </div>
-     <table class="custom-table">
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Gender</th>
-            <th>Age </th>
-            <th>Description</th>
-            <th>Date and Time</th>
-            <th>Image</th>
-            
-          
-            <!-- Add more table headers for other fields -->
-        </tr>
-        {% for new_member in new_member %}
+           <table class="custom-table">
             <tr>
-                <td>{{ new_member.name }}</td>
-                <td>{{ new_member.member_type }}</td>
-                <td>{{ new_member.age }}</td>
-                <td>{{ new_member.age }}</td>
-                <td>{{ new_member.description  }}</td>
-                <td>{{ new_member.arriving_datetime }}</td>
-                <td><img src="{{ new_member.uploaded_file.url }}" width="200px" height="200px"/></td>
-                <!-- Add more table cells for other fields -->
+                <th>Name</th>
+                <th>Type</th>
+                <th>Gender</th> 
+                <th>Age </th>
+                <th>Description</th>
+                <th>Date and Time</th>
+                <th>Image</th>
+                <th>Status</th> <!-- Add a new column for status -->
+                <th>Actions</th> <!-- Add a new column for actions -->
+              
+                <!-- Add more table headers for other fields -->
+            </tr>
+            {% for new_member in new_member %}
+                <tr>
+                    <td>{{ new_member.name }}</td>
+                    <td>{{ new_member.member_type }}</td>
+                    <td>{{ new_member.gender }}</td>
+                    <td>{{ new_member.age }}</td>
+                    <td>{{ new_member.description  }}</td>
+                    <td>{{ new_member.arriving_datetime }}</td>
+                    <td><img src="{{ new_member.uploaded_file.url }}" width="200px" height="200px"/></td>
+    
             </tr>
         {% endfor %}
     </table>
