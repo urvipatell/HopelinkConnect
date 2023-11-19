@@ -23,9 +23,11 @@ urlpatterns = [
     path('userdonation', views.user_donation, name="userdonation"),
     path('userdeshbord', views.user_deshbord, name="userdeshbord"),
     path('userfeedback', views.user_feedback, name="userfeedback"),
-    path('newmember', views.new_member, name="newmember"),
+    
     path('user_notification/', views.user_notification, name='user_notification'),
     path('fetch_notifications/', views.fetch_notifications, name='fetch_notifications'),
+
+    path('newmember', views.new_member, name="newmember"),
     path('staffdeshbord', views.staff_deshbord, name="staffdeshbord"),
     path('staffdonationre', views.staff_donation, name="staffdonationre"),
     path('staffindex', views.staff_index, name="staffindex"),
@@ -37,4 +39,12 @@ urlpatterns = [
     path('staffprofile', views.staff_profile, name="staffprofile"),
     path('staffproject', views.staff_project, name="staffproject"),
     path('staffevent', views.staffevent, name="staffevent"),
+    path('stafffooddonation', views.staff_fooddonation, name="stafffooddonation"),
+    path('staffedudonation', views.staff_edudonation, name="staffedudonation"),
+    path('staffclothdonation', views.staff_clothdonation, name="staffclothdonation"),
+    path('staffimpactstory', views.staff_impactstory, name="staffimpactstory"),
+    path('staffhealthcare', views.staff_healthcare, name="staffhealthcare"),
+    path('staffsocialactivity', views.staff_socialactivity, name="staffsocialactivity"),
+    path('staffscholarship', views.staff_scholarship, name="staffscholarship"),
+    
 ]   

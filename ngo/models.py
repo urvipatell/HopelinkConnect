@@ -92,6 +92,7 @@ class SocialEvent(models.Model):
         ],
         default="Pending",
         )
+    
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
@@ -355,11 +356,20 @@ class Feedback(models.Model):
 class NewMember(models.Model):
     name = models.CharField(max_length=100)
     member_type = models.CharField(max_length=50)
+    gender = models.CharField(max_length=50)
     age = models.IntegerField()
     arriving_datetime = models.DateTimeField()
     description = models.CharField(max_length=50)
     uploaded_file = models.ImageField(upload_to='new_members/')
-
+    status = models.CharField(
+        max_length=255,
+        choices=[
+            ("Pending", "Pending"),
+            ("Approved", "Approved"),
+            ("Rejected", "Rejected"),
+        ],
+        default="Pending",
+        )
     def __str__(self):
         return self.member_type
 

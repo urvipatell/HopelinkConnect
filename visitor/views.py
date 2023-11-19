@@ -1,4 +1,5 @@
 
+from audioop import reverse
 from collections import UserDict
 from multiprocessing import connection
 from pyexpat.errors import messages
@@ -592,6 +593,7 @@ def staff_media (request):
         )
         
         eventimage.save()
+        return redirect(reverse('staffmediagallery'))
 
     health_camp_images = EventImage.objects.filter(event='Health Camp')
     social_activity_images = EventImage.objects.filter(event='Social Activity')
@@ -725,6 +727,7 @@ def new_member(request):
     if request.method == 'POST':
         name = request.POST.get('Name')
         member_type = request.POST.get('dropdown')
+        gender = request.POST.get('gender')
         age = request.POST.get('age')
         arriving_datetime = request.POST.get('datetime')
         description = request.POST.get('description')  # Use '' as a default value
@@ -734,10 +737,69 @@ def new_member(request):
         new_member = NewMember(
         name=name,
         member_type=member_type,
+        gender=gender,
         age=age,
         arriving_datetime=arriving_datetime,
         description=description,
         uploaded_file = uploaded_file
         )
         new_member.save()
-    return render(request, 'staff/ngo_member.html')
+        return redirect(reverse('newmember'))
+
+    new_member = NewMember.objects.filter(status='Approved').order_by('-id')
+
+    return render(request, 'staff/ngo_member.html',{'new_member': new_member })
+
+
+
+
+
+
+
+def staff_fooddonation(request):
+    
+    food_donation = FoodDonation.objects.filter(status='Approved').order_by('-id')
+
+    return render(request, 'staff/staff_fooddonation.html', {'food_donation': food_donation})
+
+def staff_edudonation(request):
+    
+   education_donations = EducationDonation.objects.filter(status='Approved').order_by('-id')
+
+   return render(request, 'staff/staff_edudonation.html', {'education_donations': education_donations})
+
+def staff_clothdonation(request):
+    
+   cloth_donation = clothDonation.objects.filter(status='Approved').order_by('-id')
+
+   return render(request, 'staff/staff_clothdonation.html', {'cloth_donation': cloth_donation})
+
+
+
+
+
+
+
+def staff_healthcare(request):
+    
+   health_camps = HealthCamp.objects.filter(status='Approved').order_by('-id')
+
+   return render(request, 'staff/staff_healthcare.html', {'health_camps': health_camps})
+
+def staff_socialactivity(request):
+    
+   social_events = SocialEvent.objects.filter(status='Approved').order_by('-id')
+
+   return render(request, 'staff/staff_Socialactivity.html', {'social_events': social_events})
+
+def staff_scholarship(request):
+    
+   scholarship_applications = ScholarshipApplication.objects.filter(status='Approved').order_by('-id')
+
+   return render(request, 'staff/staff_scholarship.html', {'scholarship_applications ': scholarship_applications })
+
+def staff_impactstory(request):
+    
+   user_stories = UserStory.objects.filter(status='Approved').order_by('-id')
+
+   return render(request, 'staff/staff_impactstory.html', {'user_stories': user_stories })

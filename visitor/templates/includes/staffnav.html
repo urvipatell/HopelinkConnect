@@ -30,35 +30,34 @@
                 <li>
                   <a href="{% url 'newmember' %}"  aria-expanded="false" ><i class="fa fa-diamond yellow_color"></i> <span>Add Members</span></a>
                   </li>
-                <li>
-                   <a href="{%url 'staff_money_do'%}"  aria-expanded="false" ><i class="fa fa-diamond yellow_color"></i> <span>Donations</span></a>
-                   </li>
-                   <li>
-                     <a href="{%url 'staffevent'%}"  aria-expanded="false" ><i class="fa fa-file yellow_color "></i> <span>Event</span></a>
-                     </li>
-                   <li>
+                  <li>
+                     <a href="#element" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-diamond purple_color"></i> <span>Donations</span></a>
+                     <ul class="collapse list-unstyled" id="element">
+                        <li><a href="{%url 'stafffooddonation'%}">> <span>Food Donation</span></a></li>
+                        <li><a href="{%url 'staffedudonation'%}">> <span>Education Donation</span></a></li>
+                        <li><a href="{%url 'staffclothdonation'%}">> <span>Cloth Donation </span></a></li>
+                     </ul>
+                  </li>
+                  
+                  <li>
+                     <a href="#event" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-diamond purple_color"></i> <span>Event</span></a>
+                     <ul class="collapse list-unstyled" id="event">
+                        <li><a href="{%url 'staffsocialactivity'%}">> <span>Social Event</span></a></li>
+                        <li><a href="{%url 'staffimpactstory'%}">> <span>Impact Stories</span></a></li>
+                        <li><a href="{%url 'staffhealthcare'%}">> <span>Healthcamp</span></a></li>
+                        <li><a href="{%url 'staffscholarship'%}">> <span>Scholarship</span></a></li>
+                     </ul>
+                  </li>
+
+                     <li>
                       <a href="{%url 'staffnotification'%}"  aria-expanded="false" ><i class="fa fa-bell fa-custom yellow_color"></i> <span>Notification</span></a>
                       </li>
                       <li>
-                         <a href="{%url 'staffmediagallery'%}"  aria-expanded="false" ><i class="fa fa-image yellow_color"></i> <span>Media Gallery</span></a>
-                         </li>
+                      <a href="{%url 'staffmediagallery'%}"  aria-expanded="false" ><i class="fa fa-image yellow_color"></i> <span>Media Gallery</span></a>
+                     </li>
                        
                       
-                {% comment %} <li><a href="{%url 'staffdonationre'%}"><i class="fa fa-table yellow_color"></i> <span>Donation Receive </span></a></li>
-                
-                 
-                <li class="active">
-                   <a href="#additional_page" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-clone yellow_color"></i> <span>Additional Pages</span></a>
-                   <ul class="collapse list-unstyled" id="additional_page">
-                      <li>
-                         <a href="{%url 'staffprofile'%}">> <span>Profile</span></a>
-                      </li>
-                      <li>
-                         <a href="{%url 'staffproject'%}">> <span>Projects</span></a>
-                      </li>
-                      
-                   </ul> {% endcomment %}
-                </li>
+               
                 <li><a href="{% url 'staffmap' %}"><i class="fa fa-map yellow_color"></i> <span>Map</span></a></li>
                 </ul>
           </div>

@@ -1,0 +1,149 @@
+{% extends 'staffbase.html' %}
+{% load static %}
+{% block content %}
+<div class="midde_cont">
+   <div class="container-fluid">
+      <div class="row column_title">
+         <div class="col-md-12">
+            <div class="page_title">
+               <h2>Donation</h2>
+            </div>
+         </div>
+      </div>
+
+    </section>
+   
+    <section>
+        <div class="midde_cont">
+           <div class="container-fluid">
+              <div class="row column_title">
+                 <div class="col-md-12">
+                    <div class="page_title">
+                       <h2>cloth_donation</h2>
+                    </div>
+                 </div>
+              </div>
+        
+        <!-- Display the cloth donation data in a similar way -->
+        <table class="custom-table cloth-table">
+           <tr>
+              <th> Name</th>
+              <th>Phone Number</th>
+                
+                 <th>Email</th>
+                 <th>Condition</th>
+                 <th>Type of Dress</th>
+                 <th>Size</th>
+                 <th>Note</th>
+                 <th>Images</th>
+                 
+           </tr>
+           {% for cloth_donation in cloth_donation %}
+                 <tr>
+                    <td>{{ cloth_donation.name }} </td>
+                    <td>{{ cloth_donation.phone_code }} {{ cloth_donation.phone_number }}</td>
+                    <td>{{ cloth_donation.email }}</td>
+                    <td>{{ cloth_donation.condition }}</td>
+                    <td>{{ cloth_donation.type_of_dress }}</td>
+                    <td>{{ cloth_donation.size }}</td>
+                    <td>{{ cloth_donation.note }}</td>
+                    <td><img src="{{ cloth_donation.image.url}}" width="200px" height="200px"/></td>
+                   
+                 </tr>
+           {% endfor %}
+        </table>
+     </section>
+  
+    <style>
+        /* General table styles */
+        .custom-table {
+           border-collapse: collapse;
+           width: 100%;
+           margin-bottom: 20px;
+           border-radius: 10px;
+           overflow: hidden;
+           box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+     
+        .custom-table th, .custom-table td {
+           border: 1px solid #dddddd;
+           padding: 8px;
+           text-align: left;
+        }
+     
+        .custom-table th {
+           background-color: #f2f2f2;
+           color: #333;
+        }
+     
+        .custom-table tr:nth-child(even) {
+           background-color: #053b67;
+        }
+     
+        .custom-table tr:hover {
+           background-color: #e2e2e2;
+        }
+     
+        /* Additional styling for specific event types */
+        .custom-table.money-table th {
+           background-color: #e2e2e2; /* Adjust the color as needed */
+        }
+     
+        /* Style table headers */
+        .custom-table th {
+           background-color: #053b67;
+           color: #ffff;
+           font-weight: bold;
+        }
+     
+        /* Style alternating rows */
+        .custom-table tr:nth-child(even) {
+           background-color: #ffff;
+        }
+     
+        .custom-table tr:hover {
+           background-color: #e2e2e2;
+        }
+     </style>
+     
+     <script>
+     function approveForm(form_type, form_id, action) {
+        // Define the URL and status
+        var url = '/update-donation-status/';
+        var status = action === 'approve' ? 'Approved' : 'Rejected';
+     
+        // Send an AJAX request to update the status
+        $.ajax({
+           url: url,
+           type: 'POST',
+           data: {
+              'form_type': form_type,
+              'form_id': form_id,
+              'status': status,
+           },
+           success: function (response) {
+              if (response.success) {
+                    alert('Form ' + status.toLowerCase() + ' successfully.');
+                    // Optionally, you can update the status on the page
+                    updateStatusOnPage(form_id, status);
+              } else {
+                    alert('Failed to ' + status.toLowerCase() + ' form.');
+              }
+           },
+           error: function () {
+              alert('An error occurred while processing your request.');
+           }
+        });
+     }
+     
+     // Function to update the status on the page
+     function updateStatusOnPage(form_id, status) {
+        var statusElement = document.getElementById('status-' + form_id);
+        if (statusElement) {
+           statusElement.innerHTML = status;
+        }
+     }
+     </script>
+     {% endblock %}
+     
+     

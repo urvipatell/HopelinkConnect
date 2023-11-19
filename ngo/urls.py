@@ -8,11 +8,9 @@ urlpatterns = [
     path('adminNewmember', views.admin_newMember, name="adminNewmember"),
     path('admintable', views.admin_tables, name="admintable"),
     path('adminsignup', views.admin_signup, name="adminsignup"),
-    path('all_donation/', views.all_donation, name='all_donation'),
-    path('all_events/', views.all_events, name='all_events'),
     path('applications/', views.applications, name='applications'),
     path('calendar/', views.calendar, name='calendar'), 
-    path('approve_donation/', views.approve_donation, name='approve_donation'),
+  
     path('admin_notifications/', views.admin_notifications, name='admin_notifications'),   
     path('admin_edudonation/', views.admin_edudonation, name='admin_edudonation'),   
     path('admin_moneydonation/', views.admin_money, name='admin_moneydonation'),   

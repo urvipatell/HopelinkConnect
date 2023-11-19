@@ -36,10 +36,13 @@
         <tr>
             <th>Name</th>
             <th>Type</th>
+            <th>Gender</th>
             <th>Age </th>
             <th>Description</th>
             <th>Date and Time</th>
             <th>Image</th>
+            <th>Status</th> <!-- Add a new column for status -->
+            <th>Actions</th> <!-- Add a new column for actions -->
           
             <!-- Add more table headers for other fields -->
         </tr>
@@ -47,10 +50,26 @@
             <tr>
                 <td>{{ new_member.name }}</td>
                 <td>{{ new_member.member_type }}</td>
+                <td>{{ new_member.gender }}</td>
                 <td>{{ new_member.age }}</td>
                 <td>{{ new_member.description  }}</td>
                 <td>{{ new_member.arriving_datetime }}</td>
                 <td><img src="{{ new_member.uploaded_file.url }}" width="200px" height="200px"/></td>
+                <td id="status-{{ new_member.id }}">{{ new_member.status }}</td>
+              <td>
+                <form action="{% url 'adminNewmember' %}" method="post">
+                  {% csrf_token %}
+                  <input type="hidden" name="form_id" value="{{new_member.id}}" />
+                  <input type="hidden" name="status" value="Approved" />
+                  <button type="submit" class="btn btn-success">Approve</button>
+                </form>
+                <form action="{% url 'adminNewmember' %}" method="post">
+                  {% csrf_token %}
+                  <input type="hidden" name="form_id" value="{{new_member.id}}" />
+                  <input type="hidden" name="status" value="Rejected" />
+                  <button type="submit" class="btn btn-danger">Reject</button>
+                </form>
+              </td>
             </tr>
         {% endfor %}
     </table>

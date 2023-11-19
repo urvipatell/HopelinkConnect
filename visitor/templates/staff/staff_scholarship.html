@@ -11,106 +11,7 @@
              </div>
           </div>
        </div>
-    <!-- Social Events Table -->
-    <div class="midde_cont">
-        <div class="container-fluid">
-           <div class="row column_title">
-              <div class="col-md-12">
-                 <div class="page_title">
-                    <h2>Social Event</h2>
-                 </div>
-              </div>
-           </div>
-    <table class="custom-table">
-        <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Event Types</th>
-            <th>Activity Time</th>
-            <th>Activity Date</th>
-            <th>Address</th>
-            <!-- Add more table headers for other fields -->
-        </tr>
-        {% for social_event in social_events %}
-            <tr>
-                <td>{{ social_event.first_name }} {{ social_event.last_name }}</td>
-                <td>{{ social_event.email }}</td>
-                <td>{{ social_event.phone_number }}</td>
-                <td>{{ social_event.type_of_event }}</td>
-                <td>{{ social_event.activity_time }}</td>
-                <td>{{ social_event.activity_date }}</td>
-                <td>{{ social_event.address_line1 }}, {{ social_event.city }}, {{ social_event.state }} {{ social_event.postal_code }}</td>
-                <!-- Add more table cells for other fields -->
-            </tr>
-        {% endfor %}
-    </table>
-
-    <div class="midde_cont">
-        <div class="container-fluid">
-           <div class="row column_title">
-              <div class="col-md-12">
-                 <div class="page_title">
-                    <h2>Impact Story</h2>
-                 </div>
-              </div>
-           </div>
-    <table class="custom-table">
-        <tr>
-            <th>Name</th>
-            <th>Story Name</th>
-            <th>User Story</th>
-            <th>Notes</th>
-            <!-- Add more table headers for other fields -->
-        </tr>
-        {% for user_story in user_stories %}
-            <tr>
-                <td>{{ user_story.name }}</td>
-                <td>{{ user_story.story_name }}</td>
-                <td>{{ user_story.user_story }}</td>
-                <td>{{ user_story.notes }}</td>
-                <!-- Add more table cells for other fields -->
-            </tr>
-        {% endfor %}
-    </table>
-
-    <div class="midde_cont">
-        <div class="container-fluid">
-           <div class="row column_title">
-              <div class="col-md-12">
-                 <div class="page_title">
-                    <h2>Healthcamp Event</h2>
-                 </div>
-              </div>
-           </div>
-    <table class="custom-table">
-        <tr>
-            <th>Doctor Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Event Types</th>
-            <th>Time</th>
-            <th>Date</th>
-            <th>Address</th>
-            <!-- Add more table headers for other fields -->
-        </tr>
-        {% for health_camps in health_camps %}
-            <tr>
-                <td>{{ health_camp.nameofdoctor }}</td>
-                <td>{{ health_camp.email }}</td>
-                <td>{{ health_camp.phonenumberarea }} {{ health_camp.phonenumber }}</td>
-                <td>{{ health_camp.types1 }}, {{ health_camp.types2 }}, {{ health_camp.types3 }}, {{ health_camp.types4 }}, {{ health_camp.types5 }}</td>
-                <td>{{ health_camp.timeinput }} {{ health_camp.ampm }}</td>
-                <td>{{ health_camp.date }}</td>
-                <td>{{ health_camp.addrline1 }}, {{ health_camp.addresscity }}, {{ health_camp.addressstate }} {{ health_camp.addresspostal }}</td>
-                <td id="status-{{ food_donation.id }}">{{ food_donation.status }}</td>
-                <!-- Add more table cells for other fields -->
-            </tr>
-        {% endfor %}
-    </table>
-
-    <!-- Scholarship Applications Table -->
-    <div class="midde_cont">
+       <div class="midde_cont">
         <div class="container-fluid">
            <div class="row column_title">
               <div class="col-md-12">
@@ -149,6 +50,7 @@
             </tr>
         {% endfor %}
     </table>
+
     <style>
         /* General table styles */
         .custom-table {
