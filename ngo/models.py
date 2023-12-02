@@ -44,7 +44,8 @@ class intantship(models.Model):
     
     def __str__(self): 
         return self.full_name
-
+    
+#baki
 class MoneyDonation(models.Model):
     # Name
     formType = models.CharField(max_length=255)
@@ -297,7 +298,7 @@ class Notification(models.Model):
     is_read = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.user
+        return self.timestamp.strftime("%Y-%m-%d %H:%M:%S")
 
 
 

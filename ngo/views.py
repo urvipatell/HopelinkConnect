@@ -113,7 +113,7 @@ def admin_fooddonation(request):
         form_id = request.POST.get('form_id')
         status = request.POST.get('status')  # 'approve' or 'reject'
 
-        if form_type == 'education':
+        if form_type == 'food':
             donation = get_object_or_404(FoodDonation, id=form_id)
         else:
             return JsonResponse({'success': False})
