@@ -3,7 +3,7 @@ from audioop import reverse
 from collections import UserDict
 from multiprocessing import connection
 from pyexpat.errors import messages
-from django.shortcuts import *
+from django.shortcuts import redirect,render
 from django.contrib.auth.models import User
 from ngo.models import *
 from .models import *
@@ -101,7 +101,6 @@ def login (request):
         messages.error(request, "Invalid login credentials. Please try again.")
     return render(request, 'visitor/login.html')
 
-
 def registration(request):
     if request.method == 'POST':
         # Extract form data
@@ -118,32 +117,32 @@ def registration(request):
         # Check if a user with the same username already exists
         if signup.objects.filter(username=username).exists():
             messages.error(request, 'Username already exists. Please choose a different username.')
-            return redirect('registration')
+        else:
+            # Create a user profile associated with the user
+            profile = signup.objects.create(
+                username=username,
+                email=email,
+                password=password,
+                name=name,
+                phonecode=phonecode,
+                phonenumber=phonenumber,
+                gender=gender,
+                image=image,
+                forwhom=forwhom
+            )
+            user_profile = signup.objects.get(username=username)
+            request.session['username'] = user_profile.username
+            request.session['profileImage'] = user_profile.image.url
 
-        # Create a user profile associated with the user
-        profile = signup.objects.create(
-            username=username,
-            email=email,
-            password=password,
-            name=name,
-            phonecode=phonecode,
-            phonenumber=phonenumber,
-            gender=gender,
-            image=image,
-            forwhom=forwhom
-        )
-        user_profile = signup.objects.get(username=username)
-        request.session['username'] = user_profile.username
-        request.session['profileImage'] = user_profile.image.url
-        
-        if forwhom == 'u':
-            # Redirect to the user dashboard
-            return redirect('userdeshbord')
-        elif forwhom == 's':
-            # Redirect to the staff dashboard
-            return redirect('staffdeshbord')
+            if forwhom == 'u':
+                # Redirect to the user dashboard
+                return redirect('userdeshbord')
+            elif forwhom == 's':
+                # Redirect to the staff dashboard
+                return redirect('staffdeshbord')
 
     return render(request, 'visitor/registration.html')
+
 
 def user_profile(request):
     username = request.session.get('username')

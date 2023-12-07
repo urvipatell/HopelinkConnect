@@ -1,8 +1,5 @@
 {% extends 'base.html' %}
-
 {% load static %}
-
-
 {% block content %}
 
 <div class="container-xxl py-5 bg-dark hero-header mb-5">
@@ -19,7 +16,6 @@
   </div> 
 </div>
 <!-- Navbar & Hero End -->
-
     <div class="container registration">
       <header>Signup Form</header>
       <div class="progress-bar">
@@ -55,7 +51,7 @@
     </div>
       <div class="form-outer">
         <form method= "POST" action="{% url 'registration' %}" enctype="multipart/form-data">
-             {% csrf_token %}
+        {% csrf_token %}
           <div class="page slide-page">
             
             <div class="field">
@@ -84,8 +80,8 @@
             <div class="field">
               <div class="label" style="position: absolute; ">Phone Number</div>
               <div class="phone-inputs" style="display: flex; ">
-                  <input type="text" name="phonecode" id="countrycode" maxlength="4" pattern="^\+\d{1,4}$" required style="width: 40%; margin-right: 5px;">
-                  <input type="tel" name="phonenumber" id="phonenumber" maxlength="10" pattern="^\d{10}$" required style="width: 100%;">
+                  <input type="text" name="phonecode" id="countrycode" maxlength="4" required style="width: 40%; margin-right: 5px;">
+                  <input type="tel" name="phonenumber" id="phonenumber" maxlength="10"  required style="width: 100%;">
               </div>
             
           </div>

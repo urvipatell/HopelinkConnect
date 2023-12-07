@@ -22,8 +22,6 @@ class signup(models.Model):
     def __str__(self):
         return self.username
     
-
-
 class intantship(models.Model):
     full_name = models.CharField(max_length=255)
     email = models.EmailField()
