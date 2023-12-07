@@ -12,7 +12,7 @@ class signup(models.Model):
     name = models.CharField(max_length=100)
     gender = models.CharField(max_length=1, choices=[('M', 'Male'), ('F', 'Female'), ('O', 'Other')])
     email = models.EmailField()
-    countrycode= models.CharField(max_length=4)
+    phonecode= models.CharField(max_length=4)
     phonenumber = models.CharField(max_length=10)
     image = models.ImageField(upload_to='user_images/')
     username = models.CharField(max_length=100, unique=True)

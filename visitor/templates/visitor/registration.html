@@ -4,7 +4,7 @@
 
 
 {% block content %}
-<z
+
 <div class="container-xxl py-5 bg-dark hero-header mb-5">
     <div class="container text-center my-5 pt-5 pb-4">
         <h1 class="display-3 text-white mb-3 animated slideInDown">Registration</h1>
@@ -84,9 +84,10 @@
             <div class="field">
               <div class="label" style="position: absolute; ">Phone Number</div>
               <div class="phone-inputs" style="display: flex; ">
-                  <input type="text" name="countrycode" id="countrycode" maxlength="4" pattern="^\+\d{1,4}$" required style="width: 40%; margin-right: 5px;">
+                  <input type="text" name="phonecode" id="countrycode" maxlength="4" pattern="^\+\d{1,4}$" required style="width: 40%; margin-right: 5px;">
                   <input type="tel" name="phonenumber" id="phonenumber" maxlength="10" pattern="^\d{10}$" required style="width: 100%;">
               </div>
+            
           </div>
             <div class="field btns">
               <button class="prev-1 prev">Previous</button>
@@ -137,3 +138,7 @@
     </div>
   
     {% endblock %}
+  {% comment %} <div class="field">
+                <div class="label">Phone Number</div>
+                <input type="number" name="phonenumber" id="phonenumber" maxlength="13" pattern="^((\+91[0-9]{10}))$" required>
+              </div> {% endcomment %}

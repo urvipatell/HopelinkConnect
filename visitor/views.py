@@ -109,7 +109,7 @@ def registration(request):
         username = request.POST.get('username')
         email = request.POST.get('email')
         password = request.POST.get('password')
-        countrycode=request.POST.get('countrycode')
+        phonecode = request.POST.get('phonecode')
         phonenumber = request.POST.get('phonenumber')
         gender = request.POST.get('gender')
         image = request.FILES.get('image')
@@ -126,7 +126,7 @@ def registration(request):
             email=email,
             password=password,
             name=name,
-            countrycode=countrycode,
+            phonecode=phonecode,
             phonenumber=phonenumber,
             gender=gender,
             image=image,
@@ -283,7 +283,7 @@ def user_donation(request):
             username = userDetails.username
             name = userDetails.name
             email = userDetails.email
-            phone_code = request.POST['phonecode']
+            phone_code = userDetails.phonecode
             phone_number = userDetails.phonenumber
             condition = request.POST['condition']
             type_of_dress = request.POST['type_of_dress']
