@@ -5,7 +5,7 @@ from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from ngo.models import *
 from .models import *
-from .models import Notification
+
 
 
 # Create your views here.

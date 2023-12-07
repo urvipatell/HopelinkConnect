@@ -8,6 +8,16 @@ from django.utils import timezone
 # Create your models here.
 # Return the username attribute for displaying the object.
 
+class ContactUs(models.Model):
+    name = models.CharField(max_length=255)
+    email = models.CharField(max_length=255)
+    subject = models.CharField(max_length=255)
+    message = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.email
+    
+
 class signup(models.Model):
     name = models.CharField(max_length=100)
     gender = models.CharField(max_length=1, choices=[('M', 'Male'), ('F', 'Female'), ('O', 'Other')])
@@ -48,9 +58,8 @@ class intantship(models.Model):
 class MoneyDonation(models.Model):
     # Name
     formType = models.CharField(max_length=255)
-    first_name = models.CharField(max_length=255)
-    last_name = models.CharField(max_length=255)
-    # Phone Number
+    username = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
     ph_code = models.CharField(max_length=3)
     phone_number = models.CharField(max_length=10)
     # Email
@@ -70,9 +79,10 @@ class MoneyDonation(models.Model):
     
 
 class SocialEvent(models.Model):
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
+    username = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
     email = models.EmailField()
+    phone_code = models.CharField(max_length=5)
     phone_number = models.CharField(max_length=20)
     type_of_event = models.CharField(max_length=255)  # Assuming this field can contain a description of the event
     activity_time = models.CharField(max_length=20)
@@ -98,7 +108,11 @@ class SocialEvent(models.Model):
         return f"{self.first_name} {self.last_name}"
     
 class UserStory(models.Model):
-    name = models.CharField(max_length=255)
+    username = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    phone_code = models.CharField(max_length=5)
+    phone_number = models.CharField(max_length=20)
     story_name = models.CharField(max_length=255)
     user_story = models.TextField()
     notes = models.TextField()
@@ -116,21 +130,15 @@ class UserStory(models.Model):
     def __str__(self):
         return self.name
     
-class ContactUs(models.Model):
-    name = models.CharField(max_length=255)
-    email = models.CharField(max_length=255)
-    subject = models.CharField(max_length=255)
-    message = models.CharField(max_length=255)
 
-    def __str__(self):
-        return self.email
-    
 class HealthCamp(models.Model):
+    username = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    phone_code = models.CharField(max_length=5)
+    phone_number = models.CharField(max_length=20)
     nameofdoctor = models.CharField(max_length=255)
     nameoforg = models.CharField(max_length=255, blank=True, null=True)
-    email = models.EmailField()
-    phonenumberarea = models.CharField(max_length=10, blank=True, null=True)
-    phonenumber = models.CharField(max_length=10, blank=True, null=True)
     types1 = models.CharField(max_length=255, blank=True, null=True)
     types2 = models.CharField(max_length=255, blank=True, null=True)
     types3 = models.CharField(max_length=255, blank=True, null=True)
@@ -158,12 +166,13 @@ class HealthCamp(models.Model):
         return self.nameofdoctor
     
 class ScholarshipApplication(models.Model):
-    firstname = models.CharField(max_length=255)
+    username = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    phone_code = models.CharField(max_length=5)
+    phone_number = models.CharField(max_length=20)
     nameoforg = models.CharField(max_length=255, blank=True, null=True)
     nameofscholarship = models.CharField(max_length=255)
-    email = models.EmailField()
-    area = models.CharField(max_length=10, blank=True, null=True)
-    phonenumber = models.CharField(max_length=10, blank=True, null=True)
     typeofscholarship = models.CharField(max_length=255)
     date = models.CharField(max_length=2)
     addrline1 = models.CharField(max_length=255)
@@ -188,9 +197,8 @@ class ScholarshipApplication(models.Model):
 class EducationDonation(models.Model):
     # Name
     formType = models.CharField(max_length=255)
-    first_name = models.CharField(max_length=255)
-    last_name = models.CharField(max_length=255)
-    # Phone Number
+    username = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
     ph_code = models.CharField(max_length=3)
     phone_number = models.CharField(max_length=10)
     # Email
@@ -262,8 +270,8 @@ class clothDonation(models.Model):
     
 
 class FoodDonation(models.Model):
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
+    username = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
     email = models.EmailField()
     phone_code = models.CharField(max_length=5)
     phone_number = models.CharField(max_length=20)

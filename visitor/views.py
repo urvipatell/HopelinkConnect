@@ -1,4 +1,3 @@
-
 from audioop import reverse
 from collections import UserDict
 from multiprocessing import connection
@@ -248,11 +247,11 @@ def user_donation(request):
     if request.method == 'POST':
         # Extract data from the form
         if request.POST.get('formType') == 'education':
-            first_name = request.POST.get('firstname')
-            last_name = request.POST.get('lastname')
-            ph_code = request.POST.get('phonecode')
-            phone_number = request.POST.get('phonenumber')
-            email = request.POST.get('email')
+            username = userDetails.username
+            name = userDetails.name
+            email = userDetails.email
+            phonecode = userDetails.phonecode
+            phone_number = userDetails.phonenumber
             address = request.POST.get('address')
             city = request.POST.get('city')
             state = request.POST.get('state')
@@ -263,11 +262,11 @@ def user_donation(request):
 
             # Create a new Donation object and save it to the database
             education = EducationDonation(
-                first_name=first_name,
-                last_name=last_name,
-                ph_code=ph_code,
-                phone_number=phone_number,
+                username = userDetails.username,
+                name=name,
                 email=email,
+                phonecode=phonecode,
+                phone_number=phone_number,
                 address=address,
                 city=city,
                 state=state,
@@ -282,7 +281,7 @@ def user_donation(request):
             username = userDetails.username
             name = userDetails.name
             email = userDetails.email
-            phone_code = userDetails.phonecode
+            phonecode = userDetails.phonecode
             phone_number = userDetails.phonenumber
             condition = request.POST['condition']
             type_of_dress = request.POST['type_of_dress']
@@ -295,7 +294,7 @@ def user_donation(request):
             username = userDetails.username,
             name=name,
             email=email,
-            phone_code=phone_code,
+            phonecode=phonecode,
             phone_number=phone_number,
             condition=condition,
             type_of_dress=type_of_dress,
@@ -306,11 +305,11 @@ def user_donation(request):
             cloth.save()
 
         elif request.POST.get('formType') == "food" :   
-            firstname = request.POST['firstname']
-            lastname = request.POST['lastname']
-            email = request.POST['email']
-            phonecode = request.POST['phonecode']
-            phonenumber = request.POST['phonenumber']
+            username = userDetails.username
+            name = userDetails.name
+            email = userDetails.email
+            phonecode = userDetails.phonecode
+            phone_number = userDetails.phonenumber
             organization = request.POST['organization']
             organizationmission = request.POST['organizationmission']
             date = request.POST['date']
@@ -323,11 +322,11 @@ def user_donation(request):
 
         # Create a new Donation object and save it to the database
             Food= FoodDonation(
-            first_name=firstname,
-            last_name=lastname,
+            username = userDetails.username,
+            name=name,
             email=email,
-            phone_code=phonecode,
-            phone_number=phonenumber,
+            phonecode=phonecode,
+            phone_number=phone_number,
             organization_name=organization,
             organization_mission=organizationmission,
             date_needed=date,
@@ -347,11 +346,11 @@ def user_donation(request):
             payment = client.order.create({'amount': amount, 'currency': 'INR',
                                         'payment_capture': '1'})
             razorpay_order_id = payment['id']
-            first_name = request.POST.get('firstname')
-            last_name = request.POST.get('lastname')
-            ph_code = request.POST.get('phonecode')
-            phone_number = request.POST.get('phonenumber')
-            email = request.POST.get('email')
+            username = userDetails.username
+            name = userDetails.name
+            email = userDetails.email
+            phonecode = userDetails.phonecode
+            phone_number = userDetails.phonenumber
             address = request.POST.get('address')
             city = request.POST.get('city')
             state = request.POST.get('state')
@@ -361,11 +360,11 @@ def user_donation(request):
             
             # Create a new Donation object and save it to the database
             money = MoneyDonation(
-                first_name=first_name,
-                last_name=last_name,
-                ph_code=ph_code,
-                phone_number=phone_number,
+                username = userDetails.username,
+                name=name,
                 email=email,
+                phonecode=phonecode,
+                phone_number=phone_number,
                 address=address,
                 city=city,
                 state=state,
@@ -378,16 +377,19 @@ def user_donation(request):
             money.save()            
     return render(request, 'user/user_donation.html', {'userDetails': userDetails})
 
+@csrf_exempt
 def user_event (request):
-    print(request.method)
+    username = request.session.get('username')
+    userDetails = signup.objects.filter(username=username).first()
     if request.method == 'POST':
+      
         # Extract data from the form
         if request.POST.get('formType') == 'social':
-            first_name = request.POST.get('firstname')
-            last_name = request.POST.get('lastname')
-            email = request.POST.get('email')
-            phone_area = request.POST.get('phonenumberarea')
-            phone_number = request.POST.get('phonenumber')
+            username = userDetails.username
+            name = userDetails.name
+            email = userDetails.email
+            phonecode = userDetails.phonecode
+            phone_number = userDetails.phonenumber
             type1 = request.POST.get('type1')
             type2 = request.POST.get('type2')
             type3 = request.POST.get('type3')
@@ -405,10 +407,11 @@ def user_event (request):
 
             # Create a new SocialEvent instance and save it to the database
             social_event = SocialEvent(
-            first_name=first_name,
-            last_name=last_name,
+            username = userDetails.username,
+            name=name,
             email=email,
-            phone_number=f"{phone_area} {phone_number}",
+            phonecode=phonecode,
+            phone_number=phone_number,
             type_of_event=f"{type1}, {type2}, {type3}, {type4}, {type5}",
             activity_time=f"{time_input} {ampm}",
             activity_date=date,
@@ -422,14 +425,22 @@ def user_event (request):
             social_event.save()
 
         elif request.POST.get('formType') == "impact" :
-            name = request.POST.get('storyid')
+            username = userDetails.username
+            name = userDetails.name
+            email = userDetails.email
+            phonecode = userDetails.phonecode
+            phone_number = userDetails.phonenumber
             story_name = request.POST.get('storyname')
             user_story = request.POST.get('userstory')
             notes = request.POST.get('notes')
             
             # Create a UserStory instance and save it to the database
             user_story_instance = UserStory(
+                username = userDetails.username,
                 name=name,
+                email=email,
+                phonecode=phonecode,
+                phone_number=phone_number,
                 story_name=story_name,
                 user_story=user_story,
                 notes=notes
@@ -437,11 +448,13 @@ def user_event (request):
             user_story_instance.save()
         
         elif request.POST.get('formType') == "healthcamp" :
+            username = userDetails.username
+            name = userDetails.name
+            email = userDetails.email
+            phonecode = userDetails.phonecode
+            phone_number = userDetails.phonenumber
             nameofdoctor = request.POST.get('nameofdoctor')
             nameoforg = request.POST.get('nameoforg')
-            email = request.POST.get('email')
-            phonenumberarea = request.POST.get('phonenumberarea')
-            phonenumber = request.POST.get('phonenumber')
             types1 = request.POST.get('types1')
             types2 = request.POST.get('types2')
             types3 = request.POST.get('types3')
@@ -460,9 +473,11 @@ def user_event (request):
             healthcamp= HealthCamp(
                 nameofdoctor=nameofdoctor,
                 nameoforg=nameoforg,
+                username = userDetails.username,
+                name=name,
                 email=email,
-                phonenumberarea=phonenumberarea,
-                phonenumber=phonenumber,
+                phonecode=phonecode,
+                phone_number=phone_number,
                 types1=types1,
                 types2=types2,
                 types3=types3,
@@ -480,12 +495,13 @@ def user_event (request):
             healthcamp.save()
 
         elif request.POST.get('formType') == "scholarship" :
-            firstname = request.POST.get('firstname')
+            username = userDetails.username
+            name = userDetails.name
+            email = userDetails.email
+            phonecode = userDetails.phonecode
+            phone_number = userDetails.phonenumber
             nameoforg = request.POST.get('nameoforg', '')
             nameofscholarship = request.POST.get('nameofscholarship')
-            email = request.POST.get('email')
-            area = request.POST.get('area', '')
-            phonenumber = request.POST.get('phonenumber', '')
             typeofscholarship = request.POST.get('typeofscholarship')
             date = request.POST.get('date')
             addrline1 = request.POST.get('addrline1')
@@ -496,12 +512,13 @@ def user_event (request):
 
             # Create a new ScholarshipApplication object and save it
             application = ScholarshipApplication(
-                firstname=firstname,
                 nameoforg=nameoforg,
                 nameofscholarship=nameofscholarship,
+                username = userDetails.username,
+                name=name,
                 email=email,
-                area=area,
-                phonenumber=phonenumber,
+                phonecode=phonecode,
+                phone_number=phone_number,
                 typeofscholarship=typeofscholarship,
                 date=date,
                 addrline1=addrline1,
@@ -511,7 +528,7 @@ def user_event (request):
                 benefit=benefit
             )
             application.save()
-    return render(request, 'user/user_event.html')
+    return render(request, 'user/user_event.html',{'userDetails': userDetails})
 
 
 
