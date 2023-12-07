@@ -4,7 +4,7 @@
 
 
 {% block content %}
-
+<z
 <div class="container-xxl py-5 bg-dark hero-header mb-5">
     <div class="container text-center my-5 pt-5 pb-4">
         <h1 class="display-3 text-white mb-3 animated slideInDown">Registration</h1>
@@ -54,7 +54,7 @@
       </div>
     </div>
       <div class="form-outer">
-        <form method="post" action="{% url 'registration' %}" enctype="multipart/form-data">
+        <form method= "POST" action="{% url 'registration' %}" enctype="multipart/form-data">
              {% csrf_token %}
           <div class="page slide-page">
             
@@ -62,7 +62,7 @@
               <div class="label">Full Name</div>
               <input type="text" name="name" id="name">
             </div>
-            <div class="field">
+            <div class="field"> 
               <div class="label">Gender</div>
               <select name="gender" id="gender">
                 <option value="M">Male</option>
@@ -70,10 +70,6 @@
                 <option value="O">Other</option>
               </select>
             </div> 
-          
-        
-            
-
             <div class="field">
               <button class="firstNext next">Next</button>
             </div>
@@ -86,9 +82,12 @@
               <input type="email" name="email" id="email">
             </div>
             <div class="field">
-              <div class="label">Phone Number</div>
-              <input type="number" name="phonenumber" id="phonenumber" maxlength="13" pattern="^((\+91[0-9]{10}))$" required>
-            </div>
+              <div class="label" style="position: absolute; ">Phone Number</div>
+              <div class="phone-inputs" style="display: flex; ">
+                  <input type="text" name="countrycode" id="countrycode" maxlength="4" pattern="^\+\d{1,4}$" required style="width: 40%; margin-right: 5px;">
+                  <input type="tel" name="phonenumber" id="phonenumber" maxlength="10" pattern="^\d{10}$" required style="width: 100%;">
+              </div>
+          </div>
             <div class="field btns">
               <button class="prev-1 prev">Previous</button>
               <button class="next-1 next">Next</button>
@@ -136,6 +135,5 @@
         </form>
       </div>
     </div>
-    
-
+  
     {% endblock %}
