@@ -42,7 +42,7 @@
           </tr>
           {% for food_donation in food_donation %}
                 <tr>
-                   <td>{{ food_donation.first_name }} {{ food_donation.last_name }}</td>
+                   <td>{{ food_donation.name }} </td>
                    <td>{{ food_donation.phone_code }} {{ food_donation.phone_number }}</td>
                    <td>{{ food_donation.email }}</td>
                    <td>{{ food_donation.pickup_address }}</td>
@@ -52,7 +52,7 @@
                    <td>{{ food_donation.organization_name }}</td>
                    <td>{{ food_donation.organization_mission }}</td>
                    <td>{{ food_donation.date_needed|date:"Y-m-d " }}</td>
-                   <td>{{ food_donation.time_needed|time:"h:i:s" }}</td>
+                   <td>{{ food_donation.time_needed }}</td>
                      
                 </tr>
           {% endfor %}

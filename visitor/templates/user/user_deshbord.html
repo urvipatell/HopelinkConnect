@@ -1,163 +1,214 @@
-
 {% extends 'profile_base.html' %}
-
 {% load static %}
-
 {% block content %}
 {% csrf_token %}
-               <!-- dashboard inner -->
-               <div class="midde_cont">
-                <div class="container-fluid">
-                   <div class="row column_title">
-                      <div class="col-md-12">
-                         <div class="page_title">
-                            <h2>Dashboard</h2>
-                         </div>
-                      </div>
-                   </div>
-                   <div class="row column1">
-                      <div class="col-md-6 col-lg-3">
-                         <div class="full counter_section margin_bottom_30">
-                            <div class="couter_icon">
-                               <div> 
-                                  <i class="fa fa-money yellow_color"></i>
-                               </div>
-                            </div>
-                            <div class="counter_no">
-                               <div>
-                                  <p class="total_no">{{moneyDonation.total}}</p>
-                                  <p class="head_couter">Money Donation</p>
-                               </div>
-                            </div>
-                         </div>
-                      </div>
-                      <div class="col-md-6 col-lg-3">
-                         <div class="full counter_section margin_bottom_30">
-                            <div class="couter_icon">
-                               <div> 
-                                  <i class="fa fa-graduation-cap yellow_color"></i>
-                               </div>
-                            </div>
-                            <div class="counter_no">
-                               <div>
-                                  <p class="total_no">{{educationDonation}}</p>
-                                  <p class="head_couter">Education Donation</p>
-                               </div>
-                            </div>
-                         </div>
-                      </div>
-                      <div class="col-md-6 col-lg-3">
-                         <div class="full counter_section margin_bottom_30">
-                            <div class="couter_icon">
-                               <div> 
-                                  <i class="fa fa-shopping-bag yellow_color"></i>
-                               </div>
-                            </div>
-                            <div class="counter_no">
-                               <div>
-                                  <p class="total_no">{{clothDonation}}</p>
-                                  <p class="head_couter">Cloth Donation</p>
-                               </div>
-                            </div>
-                         </div>
-                      </div>
-                      <div class="col-md-6 col-lg-3">
-                         <div class="full counter_section margin_bottom_30">
-                            <div class="couter_icon">
-                               <div> 
-                                  <i class="fa fa-cutlery yellow_color"></i>
-                               </div>
-                            </div>
-                            <div class="counter_no">
-                               <div>
-                                  <p class="total_no">{{foodDonation}}</p>
-                                  <p class="head_couter">food Donation</p>
-                               </div>
-                            </div>
-                         </div>
-                      </div>
-                   </div>
-                   
-                   <!-- end graph -->
-                   {% comment %} <div class="row column3">
-                     <div class="midde_cont">
-                        <div class="container-fluid">
-                           <div class="row column_title">
-                              <div class="col-md-12">
-                                 <div class="page_title">
-                                    <h2>Dashboard</h2>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="row column1">
-                              <div class="col-md-6 col-lg-3">
-                                 <div class="full counter_section margin_bottom_30">
-                                    <div class="couter_icon">
-                                       <div> 
-                                          <i class="fa fa-user yellow_color"></i>
-                                       </div>
-                                    </div>
-                                    <div class="counter_no">
-                                       <div>
-                                          <p class="total_no">2500</p>
-                                          <p class="head_couter"></p>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="col-md-6 col-lg-3">
-                                 <div class="full counter_section margin_bottom_30">
-                                    <div class="couter_icon">
-                                       <div> 
-                                          <i class="fa fa-clock-o blue1_color"></i>
-                                       </div>
-                                    </div>
-                                    <div class="counter_no">
-                                       <div>
-                                          <p class="total_no">123.50</p>
-                                          <p class="head_couter">Average Time</p>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="col-md-6 col-lg-3">
-                                 <div class="full counter_section margin_bottom_30">
-                                    <div class="couter_icon">
-                                       <div> 
-                                          <i class="fa fa-cloud-download green_color"></i>
-                                       </div>
-                                    </div>
-                                    <div class="counter_no">
-                                       <div>
-                                          <p class="total_no">1,805</p>
-                                          <p class="head_couter">Collections</p>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="col-md-6 col-lg-3">
-                                 <div class="full counter_section margin_bottom_30">
-                                    <div class="couter_icon">
-                                       <div> 
-                                          <i class="fa fa-comments-o red_color"></i>
-                                       </div>
-                                    </div>
-                                    <div class="counter_no">
-                                       <div>
-                                          <p class="total_no">54</p>
-                                          <p class="head_couter">Comments</p>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
+<div class="midde_cont">
+   <div class="container-fluid">
+      <div class="row column_title">
+         <div class="col-md-12">
+            <div class="page_title">
+               <h2>Dashboard</h2>
+            </div>
+         </div>
+      </div>
+      <div class="midde_cont">
+         <div class="container-fluid">
+            <div class="row column_title">
+               <div class="col-md-12">
+                  <div class="page_title">
+                     <h2>Donation</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="row column1">
+         <div class="col-md-6 col-lg-3">
+            <div class="full counter_section margin_bottom_30">
+               <div class="couter_icon">
+                  <div> 
+                     <i class="fa fa-money yellow_color"></i>
+                  </div>
+               </div>
+               <div class="counter_no">
+                  <div>
+                     <p class="total_no">{{moneyDonation.total}}</p>
+                     <p class="head_couter">Money Donation</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-6 col-lg-3">
+            <div class="full counter_section margin_bottom_30">
+               <div class="couter_icon">
+                  <div> 
+                     <i class="fa fa-graduation-cap yellow_color"></i>
+                  </div>
+               </div>
+               <div class="counter_no">
+                  <div>
+                     <p class="total_no">{{educationDonation}}</p>
+                     <p class="head_couter">Education Donation</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-6 col-lg-3">
+            <div class="full counter_section margin_bottom_30">
+               <div class="couter_icon">
+                  <div> 
+                     <i class="fa fa-shopping-bag yellow_color"></i>
+                  </div>
+               </div>
+               <div class="counter_no">
+                  <div>
+                     <p class="total_no">{{clothDonation}}</p>
+                     <p class="head_couter">Cloth Donation</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-6 col-lg-3">
+            <div class="full counter_section margin_bottom_30">
+               <div class="couter_icon">
+                  <div> 
+                     <i class="fa fa-cutlery yellow_color"></i>
+                  </div>
+               </div>
+               <div class="counter_no">
+                  <div>
+                     <p class="total_no">{{foodDonation}}</p>
+                     <p class="head_couter">food Donation</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="midde_cont">
+         <div class="container-fluid">
+            <div class="row column_title">
+               <div class="col-md-12">
+                  <div class="page_title">
+                     <h2>Events</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="row column1">
+         <div class="col-md-6 col-lg-3">
+            <div class="full counter_section margin_bottom_30">
+               <div class="couter_icon">
+                  <div> 
+                     <i class="fa fa-users yellow_color"></i>
+                  </div>
+               </div>
+               <div class="counter_no">
+                  <div>
+                     <p class="total_no">{{socialEvent}}</p>
+                     <p class="head_couter"> Social Event</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-6 col-lg-3">
+            <div class="full counter_section margin_bottom_30">
+               <div class="couter_icon">
+                  <div> 
+                     <i class="fa fa-user yellow_color"></i>
+                  </div>
+               </div>
+               <div class="counter_no">
+                  <div>
+                     <p class="total_no">{{userStory}}</p>
+                     <p class="head_couter">Impact Story</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-6 col-lg-3">
+            <div class="full counter_section margin_bottom_30">
+               <div class="couter_icon">
+                  <div> 
+                     <i class="fa fa-stethoscope yellow_color"></i>
+                  </div>
+               </div>
+               <div class="counter_no">
+                  <div>
+                     <p class="total_no">{{healthCamp}}</p>
+                     <p class="head_couter">Health camp</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-6 col-lg-3">
+            <div class="full counter_section margin_bottom_30">
+               <div class="couter_icon">
+                  <div> 
+                     <i class="fa fa-book yellow_color"></i>
+                  </div>
+               </div>
+               <div class="counter_no">
+                  <div>
+                     <p class="total_no">{{scholarshipApplication}}</p>
+                     <p class="head_couter"> Scholarship</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="midde_cont">
+         <div class="container-fluid">
+            <div class="row column_title">
+               <div class="col-md-12">
+                  <div class="page_title">
+                     <h2>Money Invoice</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="row column1">
+         <div class="col-md-12">
+            <div class="white_shd full margin_bottom_30">
+               <div class="full price_table padding_infor_info">
+                  <div class="row">
+                     <div class="col-lg-12">
+                        <div class="table-responsive-sm">
+                           <table class="table table-striped projects">
+                              <thead class="thead-dark">
+                                 <tr>
+                                    <th>No</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Mobile</th>
+                                    <th>Amount</th>
+                                    <th>Invoice</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 {% for allMoneyDonation in allMoneyDonation %}
+                                 <tr>
+                                    <td>{{ forloop.counter }}</td>
+                                    <td>{{ allMoneyDonation.name }}</td>
+                                    <td>{{ allMoneyDonation.email }}</td>
+                                    <td>{{ allMoneyDonation.ph_code }} - {{ allMoneyDonation.phone_number }}</td>
+                                    <td>{{allMoneyDonation.currency}}. {{ allMoneyDonation.donation_amount }}</td>
+                                    <td>
+                                       <button type="button" class="btn btn-success btn-xs">Download</button>
+                                    </td>
+                                 </tr>
+                                 {% endfor %}
+                              </tbody>
+                           </table>
                         </div>
                      </div>
-                  </div> {% endcomment %}
-                   
-                      
-             
- <!-- end dashboard inner -->                           
- {% endblock %}
-
- 
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- end row -->
+      </div>
+   </div>
+</div>
+{% endblock %}

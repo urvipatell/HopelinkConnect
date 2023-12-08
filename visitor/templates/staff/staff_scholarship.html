@@ -34,19 +34,17 @@
             <th>Benefit</th>
             <!-- Add more table headers for other fields -->
         </tr>
-        {% for scholarship_application in scholarship_applications %}
-            <tr>
-                <td>{{ scholarship_application.firstname }}</td>
-                <td>{{ scholarship_application.nameoforg }}</td>
-                <td>{{ scholarship_application.nameofscholarship }}</td>
-                <td>{{ scholarship_application.email }}</td>
-                <td>{{ scholarship_application.area }}</td>
-                <td>{{ scholarship_application.phonenumber }}</td>
-                <td>{{ scholarship_application.typeofscholarship }}</td>
-                <td>{{ scholarship_application.date }}</td>
-                <td>{{ scholarship_application.addrline1 }}, {{ scholarship_application.addresscity }}, {{ scholarship_application.addresstate }} {{ scholarship_application.addresspostal }}</td>
-                <td>{{ scholarship_application.benefit }}</td>
-                <!-- Add more table cells for other fields -->
+        {% for scholarship_applications in scholarship_applications %}
+        <tr>
+            <td>{{ scholarship_applications.name }}</td>
+            <td>{{ scholarship_applications.nameoforg }}</td>
+            <td>{{ scholarship_applications.nameofscholarship }}</td>
+            <td>{{ scholarship_applications.email }}</td>
+            <td>{{ scholarship_applications.phone_code }} - {{ scholarship_applications.phone_number }}</td>
+            <td>{{ scholarship_applications.typeofscholarship }}</td>
+            <td>{{ scholarship_applications.date }}</td>
+            <td>{{ scholarship_applications.addrline1 }}, {{ scholarship_applications.addresscity }}, {{ scholarship_applications.addresstate }} {{ scholarship_applications.addresspostal }}</td>
+            <td>{{ scholarship_applications.benefit }}</td>
             </tr>
         {% endfor %}
     </table>

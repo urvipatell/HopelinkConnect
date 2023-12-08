@@ -66,11 +66,11 @@
                                             <div id="cid_25" class="form-input-wide" data-layout="half">
                                               <div data-wrapper-react="true">
                                                 <span class="form-sub-label-container" style="vertical-align:top" data-input-type="areaCode">
-                                                  <input type="tel" id="input_25_area" name="ph_code" class="form-textbox validate[required, Phone Number]" attern="[0-9]{10}" title="Please enter a 10-digit phone number" data-defaultvalue="" autoComplete="section-input_25 tel-area-code"  value="{{userDetails.phonecode}}" data-component="areaCode" aria-labelledby="label_25 sublabel_25_area" />
+                                                  <input type="tel" id="input_25_area" name="ph_code" class="form-textbox validate[required, Phone Number]" attern="[0-9]{10}" title="Please enter a 10-digit phone number" data-defaultvalue="" autoComplete="section-input_25 tel-area-code"  value="{{userDetails.phonecode}}" data-component="areaCode" aria-labelledby="label_25 sublabel_25_area" Disabled />
                                                 <span class="phone-separate" aria-hidden="true"> -</span>
                                                 <label class="form-sub-label" for="input_25_area" id="sublabel_25_area" style="min-height:13px" aria-hidden="false">Area Code</label></span>
                                                 <span class="form-sub-label-container" style="vertical-align:top" data-input-type="phone">
-                                                  <input type="tel" id="input_25_phone" attern="[0-9]{10}" title="Please enter a 10-digit phone number" name="phonenumber" class="form-textbox" data-defaultvalue="" autoComplete="section-input_25 tel-local"  value="{{userDetails.phonenumber}}" data-component="phone" aria-labelledby="label_25 sublabel_25_phone" />
+                                                  <input type="tel" id="input_25_phone" attern="[0-9]{10}" title="Please enter a 10-digit phone number" name="phonenumber" class="form-textbox" data-defaultvalue="" autoComplete="section-input_25 tel-local"  value="{{userDetails.phonenumber}}" data-component="phone" aria-labelledby="label_25 sublabel_25_phone" Disabled />
                                                   <label class="form-sub-label" for="input_25_phone" id="sublabel_25_phone" style="min-height:13px" aria-hidden="false">Phone Number</label></span></div>
                                             </div>
                                           </li>
@@ -161,12 +161,12 @@
                                             <div id="cid_26" class="form-input-wide" data-layout="half">
                                               <div data-wrapper-react="true">
                                                 <span class="form-sub-label-container" style="vertical-align:top" data-input-type="areaCode">
-                                                  <input type="tel" id="input_26_area" name="ph_code" class="form-textbox validation[required, Phone NUmber]" data-defaultvalue="" autoComplete="section-input_26 tel-area-code" value="{{userDetails.phonecode}}" data-component="areaCode" aria-labelledby="label_26 sublabel_26_area" />
+                                                  <input type="tel" id="input_26_area" name="ph_code" class="form-textbox validation[required, Phone NUmber]" data-defaultvalue="" autoComplete="section-input_26 tel-area-code" value="{{userDetails.phonecode}}" data-component="areaCode" aria-labelledby="label_26 sublabel_26_area" Disabled />
                                                   <span class="phone-separate" aria-hidden="true"> -</span>
                                                   <label class="form-sub-label" for="input_26_area" id="sublabel_26_area" style="min-height:13px" aria-hidden="false">Area Code</label>
                                                 </span>
                                                 <span class="form-sub-label-container" style="vertical-align:top" data-input-type="phone">
-                                                  <input type="tel" id="input_26_phone" name="phonenumber" class="form-textbox" data-defaultvalue="" autoComplete="section-input_26 tel-local" value="{{userDetails.phonenumber}}" data-component="phone" aria-labelledby="label_26 sublabel_26_phone" />
+                                                  <input type="tel" id="input_26_phone" name="phonenumber" class="form-textbox" data-defaultvalue="" autoComplete="section-input_26 tel-local" value="{{userDetails.phonenumber}}" data-component="phone" aria-labelledby="label_26 sublabel_26_phone" Disabled />
                                                   <label class="form-sub-label" for="input_26_phone" id="sublabel_26_phone" style="min-height:13px" aria-hidden="false">Phone Number</label>
                                                 </span>
                                               </div>
@@ -243,7 +243,7 @@
                                           </li>
                                           <!--what would you like to do-->
                                           <li class="form-line" data-type="control_textbox" id="id_15"><label class="form-label form-label-top form-label-auto" id="label_15" for="input_15" aria-hidden="false"> What would you like to donate? </label>
-                                            <div id="cid_15" class="form-input-wide" data-layout="half">
+                                            <div id="cid_15" class="form-input-wide" data-layout="full">
                                                 <input type="text" id="input_15" name="whatWould" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_15" /> </div>
                                           </li>
                                           <!--note-->
@@ -285,12 +285,16 @@
                                             </div>
                                           </li>
                                           <!--phone-->
-                                          <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_5"><label class="form-label form-label-top" id="label_5" for="input_5_area" aria-hidden="true"> Phone Number<span class="form-required">*</span></label>
+                                          <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_5">
+                                            <label class="form-label form-label-top" id="label_5" for="input_5_area" aria-hidden="true"> Phone Number
+                                              <span class="form-required">*</span>
+                                            </label>
                                             <div id="cid_5" class="form-input-wide" data-layout="half">
-                                              <div data-wrapper-react="true"><span class="form-sub-label-container" style="vertical-align:top" data-input-type="areaCode">
-                                                <input type="tel" id="input_5_area" name="phone_code" class="form-textbox validation[required, Phone NUmber]" data-defaultvalue="" autoComplete="section-input_5 tel-area-code" value="{{userDetails.phonecode}}" data-component="areaCode" aria-labelledby="label_5 sublabel_5_area" />
-                                                <span class="phone-separate" aria-hidden="true"> -</span>
-                                                  <label class="form-sub-label" for="input_5_area" id="sublabel_5_area" style="min-height:13px" aria-hidden="false">Area Code</label>
+                                              <div data-wrapper-react="true">
+                                                <span class="form-sub-label-container" style="vertical-align:top" data-input-type="areaCode">
+                                                  <input type="tel" id="input_5_area" name="phone_code" class="form-textbox validation[required, Phone NUmber]" data-defaultvalue="" autoComplete="section-input_5 tel-area-code" value="{{userDetails.phonecode}}" data-component="areaCode" aria-labelledby="label_5 sublabel_5_area" Disabled />
+                                                    <span class="phone-separate" aria-hidden="true"> -</span>
+                                                    <label class="form-sub-label" for="input_5_area" id="sublabel_5_area" style="min-height:13px" aria-hidden="false">Area Code</label>
                                                 </span>
                                                 <span class="form-sub-label-container" style="vertical-align:top" data-input-type="phone">
                                                   <input type="tel" id="input_5_phone" name="phonenumber" class="form-textbox" data-defaultvalue="" autoComplete="section-input_5 tel-local" value="{{userDetails.phonenumber}}" data-component="phone" aria-labelledby="label_5 sublabel_5_phone" Disabled />
@@ -300,7 +304,7 @@
                                             </div>
                                           </li>
                                           <!--condition of the dress-->
-                                          <li class="form-line form-line-column form-col-1" data-type="control_dropdown" id="id_6">
+                                          <li class="form-line form-line-column form-col-2" data-type="control_dropdown" id="id_6" style="float: left">
                                               <label class="form-label form-label-top form-label-auto" id="label_6" for="input_6" aria-hidden="false"> Condition of the dress? </label>
                                               <div id="cid_6" class="form-input-wide" data-layout="half"> 
                                                 <select class="form-dropdown" id="input_6" name="condition" style="width:310px" data-component="dropdown" aria-label="Condition of the dress? ">
@@ -314,7 +318,7 @@
                                               </div>
                                           </li>
                                           <!--type of the dress-->
-                                          <li class="form-line form-line-column form-col-2" data-type="control_dropdown" id="id_10">
+                                          <li class="form-line form-line-column form-col-2" data-type="control_dropdown" id="id_10" style="float: right">
                                               <label class="form-label form-label-top form-label-auto" id="label_10" for="input_10" aria-hidden="false"> Type of the dress? </label>
                                               <div id="cid_10" class="form-input-wide" data-layout="half"> 
                                                 <select class="form-dropdown" id="input_10" name="type_of_dress" style="width:310px" data-component="dropdown" aria-label="Type of the dress? ">
@@ -332,7 +336,7 @@
                                               </div>
                                           </li>
                                           <!--size of dress-->
-                                          <li class="form-line form-line-column form-col-2" data-type="control_dropdown" id="id_10">
+                                          <li class="form-line form-line-column form-col-2" data-type="control_dropdown" id="id_10" style="float: left">
                                             <label class="form-label form-label-top form-label-auto" id="label_10" for="input_10" aria-hidden="false"> Size of the dress? </label>
                                             <div id="cid_10" class="form-input-wide" data-layout="half"> 
                                               <select class="form-dropdown" id="input_10" name="size" style="width:310px" data-component="dropdown" aria-label="Size of the dress?">
@@ -368,7 +372,8 @@
                                           </li>
                                           
                                           <!--photo of dress-->
-                                          <li class="form-line" data-type="control_fileupload" id="id_12"><label class="form-label form-label-top form-label-auto" id="label_12" for="input_12" aria-hidden="false"> Please upload the photos of the dress. </label>
+                                          <li class="form-line form-line-column form-col-2" data-type="control_fileupload" id="id_12" style="float: right">
+                                            <label class="form-label form-label-top form-label-auto" id="label_12" for="input_12" aria-hidden="false"> Please upload the photos of the dress. </label>
                                             <div id="cid_12" class="form-input-wide" data-layout="full">
                                               <div class="jfQuestion-fields" data-wrapper-react="true">
                                                 <div class="jfField isFilled">
@@ -431,12 +436,12 @@
                                             <div id="cid_21" class="form-input-wide" data-layout="half">
                                               <div data-wrapper-react="true">
                                                 <span class="form-sub-label-container" style="vertical-align:top" data-input-type="areaCode">
-                                                  <input type="tel" id="input_21_area" name="phone_code" class="form-textbox validation[required, Phone NUmber]" data-defaultvalue="" autoComplete="section-input_21 tel-area-code" value="{{userDetails.phonecode}}" data-component="areaCode" aria-labelledby="label_21 sublabel_21_area" />
+                                                  <input type="tel" id="input_21_area" name="phone_code" class="form-textbox validation[required, Phone NUmber]" data-defaultvalue="" autoComplete="section-input_21 tel-area-code" value="{{userDetails.phonecode}}" data-component="areaCode" aria-labelledby="label_21 sublabel_21_area" Disabled />
                                                   <span class="phone-separate" aria-hidden="true"> -</span>
                                                   <label class="form-sub-label" for="input_21_area" id="sublabel_21_area" style="min-height:13px" aria-hidden="false">Area Code</label>
                                                 </span>
                                                 <span class="form-sub-label-container" style="vertical-align:top" data-input-type="phone">
-                                                  <input type="tel" id="input_21_phone" name="phonenumber" class="form-textbox" data-defaultvalue="" autoComplete="section-input_21 tel-local" value="{{userDetails.phonenumber}}" data-component="phone" aria-labelledby="label_21 sublabel_21_phone" />
+                                                  <input type="tel" id="input_21_phone" name="phonenumber" class="form-textbox" data-defaultvalue="" autoComplete="section-input_21 tel-local" value="{{userDetails.phonenumber}}" data-component="phone" aria-labelledby="label_21 sublabel_21_phone" Disabled />
                                                   <label class="form-sub-label" for="input_21_phone" id="sublabel_21_phone" style="min-height:13px" aria-hidden="false">Phone Number</label>
                                                 </span>
                                               </div>

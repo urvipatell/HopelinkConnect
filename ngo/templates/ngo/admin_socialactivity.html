@@ -46,9 +46,9 @@
         </tr>
         {% for social_events in social_events %}
             <tr>
-                <td>{{ social_events.first_name }} {{ social_events.last_name }}</td>
+                <td>{{ social_events.name }} </td>
                 <td>{{ social_events.email }}</td>
-                <td>{{ social_events.phone_number }}</td>
+                <td>{{ social_events.phone_code }} - {{ social_events.phone_number }}</td>
                 <td>{{ social_events.type_of_event }}</td>
                 <td>{{ social_events.activity_time }}</td>
                 <td>{{ social_events.activity_date }}</td>

@@ -79,6 +79,7 @@ class MoneyDonation(models.Model):
     
 
 class SocialEvent(models.Model):
+    formType = models.CharField(max_length=255)
     username = models.CharField(max_length=100)
     name = models.CharField(max_length=100)
     email = models.EmailField()
@@ -105,9 +106,10 @@ class SocialEvent(models.Model):
     
 
     def __str__(self):
-        return f"{self.first_name} {self.last_name}"
+        return f"{self.name}"
     
 class UserStory(models.Model):
+    formType = models.CharField(max_length=255)
     username = models.CharField(max_length=100)
     name = models.CharField(max_length=100)
     email = models.EmailField()
@@ -132,6 +134,7 @@ class UserStory(models.Model):
     
 
 class HealthCamp(models.Model):
+    formType = models.CharField(max_length=255)
     username = models.CharField(max_length=100)
     name = models.CharField(max_length=100)
     email = models.EmailField()
@@ -166,6 +169,7 @@ class HealthCamp(models.Model):
         return self.nameofdoctor
     
 class ScholarshipApplication(models.Model):
+    formType = models.CharField(max_length=255)
     username = models.CharField(max_length=100)
     name = models.CharField(max_length=100)
     email = models.EmailField()
@@ -191,7 +195,7 @@ class ScholarshipApplication(models.Model):
         )
 
     def __str__(self):
-        return self.firstname
+        return self.name
 
 
 class EducationDonation(models.Model):
@@ -327,11 +331,6 @@ class CalendarEvent(models.Model):  # Renamed to CalendarEvent
     def __str__(self):
         return self.title
 
-
-
-
-
-
 class EventImage(models.Model):
     event_choices = (
         ('Social Activity', 'Social Activity'),
@@ -346,9 +345,6 @@ class EventImage(models.Model):
 
     def __str__(self):
         return self.event
-    
-
-   
 
 class Feedback(models.Model):
     name = models.CharField(max_length=100)
@@ -362,7 +358,6 @@ class Feedback(models.Model):
     def __str__(self):
         return self.email
     
-
 class NewMember(models.Model):
     name = models.CharField(max_length=100)
     member_type = models.CharField(max_length=50)

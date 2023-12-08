@@ -49,11 +49,11 @@
     </tr>
     {% for scholarship_applications in scholarship_applications %}
         <tr>
-            <td>{{ scholarship_applications.firstname }}</td>
+            <td>{{ scholarship_applications.name }}</td>
             <td>{{ scholarship_applications.nameoforg }}</td>
             <td>{{ scholarship_applications.nameofscholarship }}</td>
             <td>{{ scholarship_applications.email }}</td>
-            <td>{{ scholarship_applications.area }} - {{ scholarship_applications.phonenumber }}</td>
+            <td>{{ scholarship_applications.phone_code }} - {{ scholarship_applications.phone_number }}</td>
             <td>{{ scholarship_applications.typeofscholarship }}</td>
             <td>{{ scholarship_applications.date }}</td>
             <td>{{ scholarship_applications.addrline1 }}, {{ scholarship_applications.addresscity }}, {{ scholarship_applications.addresstate }} {{ scholarship_applications.addresspostal }}</td>

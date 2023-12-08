@@ -34,6 +34,8 @@
  <table class="custom-table">
      <tr>
          <th>Name</th>
+         <th>Email</th>
+         <th>Phone</th>
          <th>Story Name</th>
          <th>User Story</th>
          <th>Notes</th>
@@ -44,6 +46,8 @@
      {% for user_stories in user_stories %}
          <tr>
              <td>{{ user_stories.name }}</td>
+             <td>{{ user_stories.email }}</td>
+             <td>{{ user_stories.phone_code }} - {{ user_stories.phone_number }}</td>
              <td>{{ user_stories.story_name }}</td>
              <td>{{ user_stories.user_story }}</td>
              <td>{{ user_stories.notes }}</td>

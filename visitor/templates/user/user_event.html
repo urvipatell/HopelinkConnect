@@ -60,11 +60,13 @@
                                           </div>
                                         </li>
                                         <!--phone-->
-                                        <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_5"><label class="form-label form-label-top" id="label_5" for="input_5_area" aria-hidden="true"> Phone Number<span class="form-required">*</span></label>
+                                        <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_5" style="float:left">
+                                          <label class="form-label form-label-top" id="label_5" for="input_5_area" aria-hidden="true"> Phone Number<span class="form-required">*</span></label>
                                           <div id="cid_5" class="form-input-wide" data-layout="half">
-                                            <div data-wrapper-react="true"><span class="form-sub-label-container" style="vertical-align:top" data-input-type="areaCode">
-                                              <input type="tel" id="input_5_area" name="phonecode" class="form-textbox validation[required, Phone NUmber]" data-defaultvalue="" autoComplete="section-input_5 tel-area-code" value="{{userDetails.phonecode}}" data-component="areaCode" aria-labelledby="label_5 sublabel_5_area" />
-                                              <span class="phone-separate" aria-hidden="true"> -</span>
+                                            <div data-wrapper-react="true">
+                                              <span class="form-sub-label-container" style="vertical-align:top" data-input-type="areaCode" >
+                                                <input type="tel" id="input_5_area" name="phone_code" class="form-textbox validation[required, Phone NUmber]" data-defaultvalue="" autoComplete="section-input_5 tel-area-code" value="{{userDetails.phonecode}}" data-component="areaCode" aria-labelledby="label_5 sublabel_5_area" Disabled />
+                                                <span class="phone-separate" aria-hidden="true"> -</span>
                                                 <label class="form-sub-label" for="input_5_area" id="sublabel_5_area" style="min-height:13px" aria-hidden="false">Area Code</label>
                                               </span>
                                               <span class="form-sub-label-container" style="vertical-align:top" data-input-type="phone">
@@ -74,7 +76,30 @@
                                             </div>
                                           </div>
                                         </li>
-                                       
+                                        <!--Activity Time-->
+                                        <li class="form-line form-line-column form-col-1" data-type="control_time" id="id_57" style="float:left">
+                                          <label class="form-label form-label-top" id="label_57" for="input_57_hourSelect" aria-hidden="false"> Activity Date & Time </label>
+                                          <div id="cid_57" class="form-input-wide" data-layout="half">
+                                            <div data-wrapper-react="true">
+                                              <span class="form-sub-label-container" style="vertical-align:top" data-input-type="datetime" >
+                                                <input type="text" name="date" class="form-textbox validate[limitDate, validateLiteDate]" data-component="datetime" id="lite_mode_50" size="12" data-maxlength="12" maxLength="12" data-age="" value="" data-format="mmddyyyy" data-seperator="-" placeholder="YYYY-MM-DD" data-placeholder="MM-DD-YYYY" autoComplete="off" aria-labelledby="label_50" />
+                                                <img class=" newDefaultTheme-dateIcon icon-liteMode" alt="Pick a Date" id="input_50_pick" src="https://cdn.jotfor.ms/images/calendar.png" data-component="datetime" aria-hidden="true" data-allow-time="No" data-version="v2" />
+                                                <label class="form-sub-label" for="lite_mode_50" id="sublabel_50_litemode" style="min-height:13px" aria-hidden="false">Date</label>
+                                              </span>
+                                              <span class="form-sub-label-container hasAMPM" style="vertical-align:top" data-input-type="time">
+                                                <input type="text" class="time-dropdown form-textbox validate[time]" id="input_57_timeInput" name="timeinput" data-component="time" placeholder="HH : MM" aria-labelledby="label_57 sublabel_57_hour" data-mask="hh:MM" data-version="v2" />
+                                                <label data-seperate-translate="true" class="form-sub-label" for="input_57_timeInput" id="sublabel_57_hour" style="min-height:13px" aria-hidden="false">Hour Minutes</label>
+                                              </span>
+                                              <span class="form-sub-label-container" style="vertical-align:top" data-input-type="time-ampm">
+                                                <select class="time-dropdown form-dropdown" id="input_57_ampm" name="ampm" data-component="time-ampm" aria-labelledby="label_57 sublabel_57_ampm">
+                                                  <option selected="" value="AM">AM</option>
+                                                  <option value="PM">PM</option>
+                                                </select>
+                                                <label class="form-sub-label" for="input_57_ampm" id="sublabel_57_ampm" style="border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap" aria-hidden="false">AM/PM Option</label>
+                                              </span>
+                                            </div>
+                                          </div>
+                                        </li>
                                         <!--type of event-->
                                         <li class="form-line" data-type="control_matrix" id="id_55">
                                           <label class="form-label form-label-top form-label-auto" id="label_55" for="input_55" aria-hidden="false"> Type Of Event </label>
@@ -118,42 +143,6 @@
                                             </table>
                                           </div>
                                         </li>
-                                        <!--Activity Time-->
-                                        <li class="form-line form-line-column form-col-1" data-type="control_time" id="id_57">
-                                          <label class="form-label form-label-top" id="label_57" for="input_57_hourSelect" aria-hidden="false"> Activity Time </label>
-                                          <div id="cid_57" class="form-input-wide" data-layout="half">
-                                            <div data-wrapper-react="true">
-                                              <div class="time-wrapper">
-                                                <span class="form-sub-label-container hasAMPM" style="vertical-align:top">
-                                                  <input type="text" class="time-dropdown form-textbox validate[time]" id="input_57_timeInput" name="timeinput" placeholder="HH : MM" aria-labelledby="label_57 sublabel_57_hour" data-mask="hh:MM" data-version="v2" />
-                                                  <label data-seperate-translate="true" class="form-sub-label" for="input_57_timeInput" id="sublabel_57_hour" style="min-height:13px" aria-hidden="false">Hour Minutes</label>
-                                                </span>
-                                              </div>
-                                              <div class="time-wrapper">
-                                                <span class="form-sub-label-container" style="vertical-align:top">
-                                                  <select class="time-dropdown form-dropdown" id="input_57_ampm" name="ampm" data-component="time-ampm" aria-labelledby="label_57 sublabel_57_ampm">
-                                                    <option selected="" value="AM">AM</option>
-                                                    <option value="PM">PM</option>
-                                                  </select>
-                                                  <label class="form-sub-label" for="input_57_ampm" id="sublabel_57_ampm" style="border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap" aria-hidden="false">AM/PM Option</label>
-                                                </span>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </li>
-                                        <!--date time-->
-                                        <li class="form-line form-line-column form-col-2" data-type="control_datetime" id="id_50">
-                                          <label class="form-label form-label-top form-label-auto" id="label_50" for="lite_mode_50" aria-hidden="false"> Activity Date </label>
-                                          <div id="cid_50" class="form-input-wide" data-layout="half">
-                                            <div data-wrapper-react="true">
-                                              <span class="form-sub-label-container" style="vertical-align:top">
-                                                <input type="text" name="date" class="form-textbox validate[limitDate, validateLiteDate]" id="lite_mode_50" size="12" data-maxlength="12" maxLength="12" data-age="" value="" data-format="mmddyyyy" data-seperator="-" placeholder="YYYY-MM-DD" data-placeholder="MM-DD-YYYY" autoComplete="off" aria-labelledby="label_50" />
-                                                <img class=" newDefaultTheme-dateIcon icon-liteMode" alt="Pick a Date" id="input_50_pick" src="https://cdn.jotfor.ms/images/calendar.png" data-component="datetime" aria-hidden="true" data-allow-time="No" data-version="v2" />
-                                                <label class="form-sub-label is-empty" for="lite_mode_50" id="sublabel_50_litemode" style="min-height:13px" aria-hidden="false"></label>
-                                              </span>
-                                            </div>
-                                          </div>
-                                        </li>
                                         <!--Address-->
                                         <li class="form-line" data-type="control_address" id="id_59" data-compound-hint=",,,,Please Select,,Please Select,">
                                           <label class="form-label form-label-top form-label-auto" id="label_59" for="input_59_addr_line1" aria-hidden="false"> Address </label>
@@ -192,8 +181,15 @@
                                             </div>
                                           </div>
                                         </li>
+                                        <!--description-->
+                                        <li class="form-line form-line-column form-col-2 jf-required" data-type="control_textarea" id="id_33" style="float:left">
+                                          <label class="form-label form-label-top form-label-auto" id="label_33" for="input_33" aria-hidden="false"> Description<span class="form-required">*</span> </label>
+                                          <div id="cid_33" class="form-input-wide jf-required" data-layout="full"> 
+                                              <textarea id="input_33" class="form-textarea validate[required]" name="description" style="width:648px;height:163px" data-component="textarea" required="" aria-labelledby="label_33"></textarea> </div>
+                                        </li>
                                         <!--file upload-->
-                                        <li class="form-line" data-type="control_fileupload" id="id_61"><label class="form-label form-label-top form-label-auto" id="label_61" for="input_61" aria-hidden="false"> File Upload </label>
+                                        <li class="form-line form-line-column form-col-2" data-type="control_fileupload" id="id_61" style="float:right">
+                                          <label class="form-label form-label-top form-label-auto" id="label_61" for="input_61" aria-hidden="false"> File Upload </label>
                                           <div id="cid_61" class="form-input-wide" data-layout="full">
                                             <div class="jfQuestion-fields" data-wrapper-react="true">
                                               <div class="jfField isFilled">
@@ -214,12 +210,6 @@
                                             </div>
                                           </div>
                                         </li>
-                                        <!--description-->
-                                        <li class="form-line form-line-column form-col-1 jf-required" data-type="control_textarea" id="id_33">
-                                          <label class="form-label form-label-top form-label-auto" id="label_33" for="input_33" aria-hidden="false"> Description<span class="form-required">*</span> </label>
-                                          <div id="cid_33" class="form-input-wide jf-required" data-layout="full"> 
-                                              <textarea id="input_33" class="form-textarea validate[required]" name="description" style="width:648px;height:163px" data-component="textarea" required="" aria-labelledby="label_33"></textarea> </div>
-                                        </li>
                                         <!--submit-->
                                         <li class="form-line" data-type="control_button" id="id_24">
                                           <div id="cid_24" class="form-input-wide" data-layout="full">
@@ -234,7 +224,6 @@
                                   <!--socialactivity ends-->
                                 </div>
                                 <div class="tab-pane fade" id="nav-impactstories_s2" role="tabpanel" aria-labelledby="nav-impactstories-tab">
-                                <!--impactstories starts-->
                                   <form class="jotform-form" action="{% url 'userevent' %}" method="post" enctype="multipart/form-data" name="form_232711695219459" id="232711695219459" accept-charset="utf-8" autocomplete="on">
                                     {% csrf_token %}
                                     <input type="hidden" name="formType" value="impact">   
@@ -256,10 +245,11 @@
                                               </div>
                                             </li>
                                             <!--phone-->
-                                            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_5"><label class="form-label form-label-top" id="label_5" for="input_5_area" aria-hidden="true"> Phone Number<span class="form-required">*</span></label>
+                                            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_5" style="float:left">
+                                              <label class="form-label form-label-top" id="label_5" for="input_5_area" aria-hidden="true"> Phone Number<span class="form-required">*</span></label>
                                               <div id="cid_5" class="form-input-wide" data-layout="half">
-                                                <div data-wrapper-react="true"><span class="form-sub-label-container" style="vertical-align:top" data-input-type="areaCode">
-                                                  <input type="tel" id="input_5_area" name="phonecode" class="form-textbox validation[required, Phone NUmber]" data-defaultvalue="" autoComplete="section-input_5 tel-area-code" value="{{userDetails.phonecode}}" data-component="areaCode" aria-labelledby="label_5 sublabel_5_area" />
+                                                <div data-wrapper-react="true"><span class="form-sub-label-container" style="vertical-align:top" data-input-type="areaCode"> 
+                                                  <input type="tel" id="input_5_area" name="phone_code" class="form-textbox validation[required, Phone NUmber]" data-defaultvalue="" autoComplete="section-input_5 tel-area-code" value="{{userDetails.phonecode}}" data-component="areaCode" aria-labelledby="label_5 sublabel_5_area" Disabled />
                                                   <span class="phone-separate" aria-hidden="true"> -</span>
                                                     <label class="form-sub-label" for="input_5_area" id="sublabel_5_area" style="min-height:13px" aria-hidden="false">Area Code</label>
                                                   </span>
@@ -272,8 +262,12 @@
                                             </li>
                                      
                                         <!--story name-->
-                                        <li class="form-line" data-type="control_textbox" id="id_15"><label class="form-label form-label-top form-label-auto" id="label_15" for="input_15" aria-hidden="false"> Story Name </label>
-                                        <div id="cid_15" class="form-input-wide" data-layout="half"> <input type="text" id="input_15" name="storyname" data-type="input-textbox" class="form-textbox" data-defaultvalue="" placeholder="Story Name" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_15" /> </div>
+                                        <li class="form-line form-line-column form-col-2" data-type="control_textbox" id="id_15" style="float:right">
+                                          <label class="form-label form-label-top form-label-auto" id="label_15" for="input_15" aria-hidden="false"> Story Name </label>
+                                          <div id="cid_15" class="form-input-wide" data-layout="half"> 
+                                            <input type="text" id="input_15" name="storyname" data-type="input-textbox" class="form-textbox" data-defaultvalue="" placeholder="Story Name" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_15" /> 
+                                            <label class="form-sub-label" for="input_5_phone" id="sublabel_5_phone" style="min-height:13px" aria-hidden="false">Story Name</label>
+                                          </div>
                                         </li>
                                         <!--user story-->
                                         <li class="form-line" data-type="control_textarea" id="id_16"><label class="form-label form-label-top form-label-auto" id="label_16" for="input_16" aria-hidden="false"> User Story </label>
@@ -293,9 +287,7 @@
                                       </ul>
                                     </div>
                                   </form>
-                                <!--impactstories ends-->
                                 </div>
-                                <!--healthcamp starts-->
                                 <div class="tab-pane fade" id="nav-healthcamp_s2" role="tabpanel" aria-labelledby="nav-healthcamp-tab">
                                   <form class="jotform-form" action="{% url 'userevent' %}" method="post" enctype="multipart/form-data" name="form_232714804509456" id="232714804509456" accept-charset="utf-8" autocomplete="on">
                                     {% csrf_token %}
@@ -317,16 +309,41 @@
                                           </div>
                                         </li>
                                         <!--phone-->
-                                        <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_5"><label class="form-label form-label-top" id="label_5" for="input_5_area" aria-hidden="true"> Phone Number<span class="form-required">*</span></label>
+                                        <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_5" style="float:left">
+                                          <label class="form-label form-label-top" id="label_5" for="input_5_area" aria-hidden="true"> Phone Number<span class="form-required">*</span></label>
                                           <div id="cid_5" class="form-input-wide" data-layout="half">
                                             <div data-wrapper-react="true"><span class="form-sub-label-container" style="vertical-align:top" data-input-type="areaCode">
-                                              <input type="tel" id="input_5_area" name="phonecode" class="form-textbox validation[required, Phone NUmber]" data-defaultvalue="" autoComplete="section-input_5 tel-area-code" value="{{userDetails.phonecode}}" data-component="areaCode" aria-labelledby="label_5 sublabel_5_area" />
+                                              <input type="tel" id="input_5_area" name="phone_code" class="form-textbox validation[required, Phone NUmber]" data-defaultvalue="" autoComplete="section-input_5 tel-area-code" value="{{userDetails.phonecode}}" data-component="areaCode" aria-labelledby="label_5 sublabel_5_area" Disabled />
                                               <span class="phone-separate" aria-hidden="true"> -</span>
                                                 <label class="form-sub-label" for="input_5_area" id="sublabel_5_area" style="min-height:13px" aria-hidden="false">Area Code</label>
                                               </span>
                                               <span class="form-sub-label-container" style="vertical-align:top" data-input-type="phone">
                                                 <input type="tel" id="input_5_phone" name="phonenumber" class="form-textbox" data-defaultvalue="" autoComplete="section-input_5 tel-local" value="{{userDetails.phonenumber}}" data-component="phone" aria-labelledby="label_5 sublabel_5_phone" Disabled />
                                                 <label class="form-sub-label" for="input_5_phone" id="sublabel_5_phone" style="min-height:13px" aria-hidden="false">Phone Number</label>
+                                              </span>
+                                            </div>
+                                          </div>
+                                        </li>
+                                        <!--Activity Time-->
+                                        <li class="form-line form-line-column form-col-1" data-type="control_time" id="id_57" style="float:left">
+                                          <label class="form-label form-label-top" id="label_57" for="input_57_hourSelect" aria-hidden="false"> Activity Date & Time </label>
+                                          <div id="cid_57" class="form-input-wide" data-layout="half">
+                                            <div data-wrapper-react="true">
+                                              <span class="form-sub-label-container" style="vertical-align:top" data-input-type="datetime" >
+                                                <input type="text" name="date" class="form-textbox validate[limitDate, validateLiteDate]" id="lite_mode_50" size="12" data-maxlength="12" maxLength="12" data-age="" value="" data-format="yyyymmdd" data-seperator="-" placeholder="YYYY-MM-DD" data-placeholder="YYYY-MM-DD" autoComplete="off" aria-labelledby="label_50" />
+                                                <img class=" newDefaultTheme-dateIcon icon-liteMode" alt="Pick a Date" id="input_50_pick" src="https://cdn.jotfor.ms/images/calendar.png" data-component="datetime" aria-hidden="true" data-allow-time="No" data-version="v2" />
+                                                <label class="form-sub-label" for="lite_mode_50" id="sublabel_50_litemode" style="min-height:13px" aria-hidden="false">Date</label>
+                                              </span>
+                                              <span class="form-sub-label-container hasAMPM" style="vertical-align:top" data-input-type="time">
+                                                <input type="text" class="time-dropdown form-textbox validate[time]" id="input_57_timeInput" name="timeinput" placeholder="HH : MM" aria-labelledby="label_57 sublabel_57_hour" data-mask="hh:MM" value="" data-version="v2" />
+                                                <label data-seperate-translate="true" class="form-sub-label" for="input_57_timeInput" id="sublabel_57_hour" style="min-height:13px" aria-hidden="false">Hour Minutes</label>
+                                              </span>
+                                              <span class="form-sub-label-container" style="vertical-align:top" data-input-type="time-ampm">
+                                                <select class="time-dropdown form-dropdown" id="input_57_ampm" name="ampm" data-component="time-ampm" aria-labelledby="label_57 sublabel_57_ampm">
+                                                  <option selected="" value="AM">AM</option>
+                                                  <option value="PM">PM</option>
+                                                </select>
+                                                <label class="form-sub-label" for="input_57_ampm" id="sublabel_57_ampm" style="border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap" aria-hidden="false">AM/PM Option</label>
                                               </span>
                                             </div>
                                           </div>
@@ -351,9 +368,8 @@
                                               </span>
                                             </div>
                                         </li>
-                                      
                                         <!--table-->
-                                        <li class="form-linee form-line-column form-col-3"width="100%" data-type="control_matrix" id="id_55">
+                                        <li class="form-line"width="100%" data-type="control_matrix" id="id_55">
                                             <label class="form-label form-label-top form-label-auto" id="label_55" for="input_55" aria-hidden="false"> Types Of Health Checkup </label>
                                             <div id="cid_55" class="form-input-wide" data-layout="full">
                                             <table summary="" aria-labelledby="label_55" cellPadding="4" cellSpacing="0" class="form-matrix-table" data-component="matrix">
@@ -388,40 +404,6 @@
                                       
                                               </tr>
                                             </table>
-                                          </div>
-                                        </li>
-                                        <!--Arriving Time-->
-                                        <li class="form-line form-line-column form-col-1" data-type="control_time" id="id_57"><label class="form-label form-label-top" id="label_57" for="input_57_hourSelect" aria-hidden="false"> Arriving Time </label>
-                                          <div id="cid_57" class="form-input-wide" data-layout="half">
-                                            <div data-wrapper-react="true">
-                                              <div class="time-wrapper">
-                                                <span class="form-sub-label-container hasAMPM" style="vertical-align:top">
-                                                  <input type="text" class="time-dropdown form-textbox validate[time]" id="input_57_timeInput" name="timeinput" placeholder="HH : MM" aria-labelledby="label_57 sublabel_57_hour" data-mask="hh:MM" value="" data-version="v2" />
-                                                  <label data-seperate-translate="true" class="form-sub-label" for="input_57_timeInput" id="sublabel_57_hour" style="min-height:13px" aria-hidden="false">Hour Minutes</label>
-                                                </span>
-                                              </div>
-                                              <div class="time-wrapper">
-                                                <span class="form-sub-label-container" style="vertical-align:top">
-                                                  <select class="time-dropdown form-dropdown" id="input_57_ampm" name="ampm" data-component="time-ampm" aria-labelledby="label_57 sublabel_57_ampm">
-                                                    <option selected="" value="AM">AM</option>
-                                                    <option value="PM">PM</option>
-                                                  </select>
-                                                </span>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </li>
-                                        <!--Arriving Date-->
-                                        <li class="form-line form-linee-column form-col-6" data-type="control_datetime" id="id_50">
-                                          <label class="form-label form-label-top form-label-auto" id="label_50" for="lite_mode_50" aria-hidden="false"> Arriving Date </label>
-                                          <div id="cid_50" class="form-input-wide" data-layout="half">
-                                            <div data-wrapper-react="true">
-                                              <span class="form-sub-label-container" style="vertical-align:top">
-                                                <input type="text" name="date" class="form-textbox validate[limitDate, validateLiteDate]" id="lite_mode_50" size="12" data-maxlength="12" maxLength="12" data-age="" value="" data-format="mmddyyyy" data-seperator="-" placeholder="MM-DD-YYYY" data-placeholder="MM-DD-YYYY" autoComplete="off" aria-labelledby="label_50" />
-                                                <img class=" newDefaultTheme-dateIcon icon-liteMode" alt="Pick a Date" id="input_50_pick" src="https://cdn.jotfor.ms/images/calendar.png" data-component="datetime" aria-hidden="true" data-allow-time="No" data-version="v2" />
-                                                <label class="form-sub-label is-empty" for="lite_mode_50" id="sublabel_50_litemode" style="min-height:13px" aria-hidden="false"></label>
-                                              </span>
-                                            </div>
                                           </div>
                                         </li>
                                         <!--address-->
@@ -463,7 +445,7 @@
                                           </div>
                                         </li>
                                         <!--description-->
-                                        <li class="form-line form-line-column form-col-1 jf-required" data-type="control_textarea" id="id_33"><label class="form-label form-label-top form-label-auto" id="label_33" for="input_33" aria-hidden="false"> Description<span class="form-required">*</span> </label>
+                                        <li class="form-line jf-required" data-type="control_textarea" id="id_33"><label class="form-label form-label-top form-label-auto" id="label_33" for="input_33" aria-hidden="false"> Description<span class="form-required">*</span> </label>
                                           <div id="cid_33" class="form-input-wide jf-required" data-layout="full"> 
                                             <textarea id="input_33" class="form-textarea validate[required]" name="description" style="width:648px;height:163px" data-component="textarea" required="" aria-labelledby="label_33"></textarea> </div>
                                         </li>
@@ -479,7 +461,6 @@
                                   </form>
                                   <!--healthcamp ends-->
                                 </div>
-                                <!--scholarship starts-->
                                 <div class="tab-pane fade" id="nav-scholarship_s2" role="tabpanel" aria-labelledby="nav-scholarship-tab">
                                   <form class="jotform-form" action="{% url 'userevent' %}" method="post" enctype="multipart/form-data" name="form_232715261826456" id="232715261826456" accept-charset="utf-8" autocomplete="on">
                                     {% csrf_token %}
@@ -501,10 +482,11 @@
                                           </div>
                                         </li>
                                         <!--phone-->
-                                        <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_5"><label class="form-label form-label-top" id="label_5" for="input_5_area" aria-hidden="true"> Phone Number<span class="form-required">*</span></label>
+                                        <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_5" style="float:left">
+                                          <label class="form-label form-label-top" id="label_5" for="input_5_area" aria-hidden="true"> Phone Number<span class="form-required">*</span></label>
                                           <div id="cid_5" class="form-input-wide" data-layout="half">
                                             <div data-wrapper-react="true"><span class="form-sub-label-container" style="vertical-align:top" data-input-type="areaCode">
-                                              <input type="tel" id="input_5_area" name="phonecode" class="form-textbox validation[required, Phone NUmber]" data-defaultvalue="" autoComplete="section-input_5 tel-area-code" value="{{userDetails.phonecode}}" data-component="areaCode" aria-labelledby="label_5 sublabel_5_area" />
+                                              <input type="tel" id="input_5_area" name="phone_code" class="form-textbox validation[required, Phone NUmber]" data-defaultvalue="" autoComplete="section-input_5 tel-area-code" value="{{userDetails.phonecode}}" data-component="areaCode" aria-labelledby="label_5 sublabel_5_area" Disabled />
                                               <span class="phone-separate" aria-hidden="true"> -</span>
                                                 <label class="form-sub-label" for="input_5_area" id="sublabel_5_area" style="min-height:13px" aria-hidden="false">Area Code</label>
                                               </span>
@@ -515,8 +497,21 @@
                                             </div>
                                           </div>
                                         </li>
+                                        <!--date time-->
+                                        <li class="form-line form-line-column form-col-2" data-type="control_datetime" id="id_50" style="float:right">
+                                          <label class="form-label form-label-top form-label-auto" id="label_50" for="lite_mode_50" aria-hidden="false"> Activity Date </label>
+                                          <div id="cid_50" class="form-input-wide" data-layout="half">
+                                            <div data-wrapper-react="true">
+                                              <span class="form-sub-label-container" style="vertical-align:top">
+                                                <input type="text" name="date" class="form-textbox validate[limitDate, validateLiteDate]" id="lite_mode_50" size="12" data-maxlength="12" maxLength="12" data-age="" value="" data-format="yyyymmdd" data-seperator="-" placeholder="YYYY-MM-DD" data-placeholder="YYYY-MM-DD" autoComplete="off" aria-labelledby="label_50" />
+                                                <img class=" newDefaultTheme-dateIcon icon-liteMode" alt="Pick a Date" id="input_50_pick" src="https://cdn.jotfor.ms/images/calendar.png" data-component="datetime" aria-hidden="true" data-allow-time="No" data-version="v2" />
+                                                <label class="form-sub-label is-empty" for="lite_mode_50" id="sublabel_50_litemode" style="min-height:13px" aria-hidden="false"></label>
+                                              </span>
+                                            </div>
+                                          </div>
+                                        </li>
                                         <!--name of organization-->
-                                        <li class="form-line jf-required" data-type="control_fullname" id="id_2" data-compound-hint="Name,">
+                                        <li class="form-line" data-type="control_fullname" id="id_2" data-compound-hint="Name,">
                                           <label class="form-label form-label-top" id="label_2" for="first_2" aria-hidden="false"> Name Of The Organization </label>
                                           <div id="cid_2" class="form-input-wide jf-required" data-layout="full">
                                             <div data-wrapper-react="true">
@@ -526,7 +521,7 @@
                                             </div>
                                         </li>   
                                         <!--name of scholarship-->
-                                        <li class="form-line jf-required" data-type="control_fullname" id="id_2" data-compound-hint="Name,">
+                                        <li class="form-line" data-type="control_fullname" id="id_2" data-compound-hint="Name,">
                                           <label class="form-label form-label-top" id="label_2" for="first_2" aria-hidden="false"> Name Of The Scholarship </label>
                                           <div id="cid_2" class="form-input-wide jf-required" data-layout="full">
                                             <div data-wrapper-react="true">
@@ -544,19 +539,6 @@
                                               <span class="form-sub-label-container" style="vertical-align:top" data-input-type="first">
                                                 <input type="text" id="first_2" name="typeofscholarship" class="form-textbox validate" data-defaultvalue="" autoComplete="section-input_2 given-name" size="10" value="" placeholder="Type Of Scholarship" data-component="first" aria-labelledby="label_2 sublabel_2_first"  />
                                               </span>        
-                                            </div>
-                                          </div>
-                                        </li>
-                                        <!--date time-->
-                                        <li class="form-line form-line-column form-col-2" data-type="control_datetime" id="id_50">
-                                          <label class="form-label form-label-top form-label-auto" id="label_50" for="lite_mode_50" aria-hidden="false"> Activity Date </label>
-                                          <div id="cid_50" class="form-input-wide" data-layout="half">
-                                            <div data-wrapper-react="true">
-                                              <span class="form-sub-label-container" style="vertical-align:top">
-                                                <input type="text" name="date" class="form-textbox validate[limitDate, validateLiteDate]" id="lite_mode_50" size="12" data-maxlength="12" maxLength="12" data-age="" value="" data-format="mmddyyyy" data-seperator="-" placeholder="MM-DD-YYYY" data-placeholder="MM-DD-YYYY" autoComplete="off" aria-labelledby="label_50" />
-                                                <img class=" newDefaultTheme-dateIcon icon-liteMode" alt="Pick a Date" id="input_50_pick" src="https://cdn.jotfor.ms/images/calendar.png" data-component="datetime" aria-hidden="true" data-allow-time="No" data-version="v2" />
-                                                <label class="form-sub-label is-empty" for="lite_mode_50" id="sublabel_50_litemode" style="min-height:13px" aria-hidden="false"></label>
-                                              </span>
                                             </div>
                                           </div>
                                         </li>

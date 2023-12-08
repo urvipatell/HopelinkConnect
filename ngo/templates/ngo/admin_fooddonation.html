@@ -46,7 +46,7 @@
       </tr>
       {% for food_donation in food_donation %}
           <tr>
-              <td>{{ food_donation.first_name }} {{ food_donation.last_name }}</td>
+              <td>{{ food_donation.name }}</td>
               <td>{{ food_donation.phone_code }} - {{ food_donation.phone_number }}</td>
               <td>{{ food_donation.email }}</td>
               <td>{{ food_donation.pickup_address }}, {{ food_donation.pickup_city }}, {{ food_donation.pickup_state }}, {{ food_donation.pickup_postal_code }}</td>

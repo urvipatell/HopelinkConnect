@@ -46,7 +46,7 @@
         </tr>
         {% for education_donation in education_donations %}
             <tr>
-                <td>{{ education_donation.first_name }} {{ education_donation.last_name }}</td>
+                <td>{{ education_donation.name }}</td>
                 <td>{{ education_donation.ph_code }} - {{ education_donation.phone_number }}</td>
                 <td>{{ education_donation.email }}</td>
                 <td>{{ education_donation.address }}, {{ education_donation.city }}, {{ education_donation.state }}, {{ education_donation.area_code }}</td>

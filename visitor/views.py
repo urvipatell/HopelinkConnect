@@ -233,11 +233,21 @@ def user_deshbord (request):
     educationDonation = EducationDonation.objects.filter(username = username).count()
     cloth = clothDonation.objects.filter(username = username).count()
     foodDonation = FoodDonation.objects.filter(username = username).count()
+    socialEvent = SocialEvent.objects.filter(username = username).count()
+    userStory = UserStory.objects.filter(username = username).count()
+    healthCamp = HealthCamp.objects.filter(username = username).count()
+    scholarshipApplication = ScholarshipApplication.objects.filter(username = username).count()
+    allMoneyDonation = MoneyDonation.objects.filter(username = username).all()
     context = {
         'moneyDonation': moneyDonation,
         'educationDonation': educationDonation,
         'clothDonation': cloth,
-        'foodDonation': foodDonation
+        'foodDonation': foodDonation,
+        'socialEvent': socialEvent,
+        'userStory': userStory, 
+        'healthCamp': healthCamp,
+        'scholarshipApplication': scholarshipApplication,
+        'allMoneyDonation': allMoneyDonation
     }
     return render(request, 'user/user_deshbord.html', context)
 
@@ -405,8 +415,9 @@ def user_event (request):
             username = userDetails.username
             name = userDetails.name
             email = userDetails.email
-            phonecode = userDetails.phonecode
+            phone_code = userDetails.phonecode
             phone_number = userDetails.phonenumber
+            formType = request.POST.get('formType')
             type1 = request.POST.get('type1')
             type2 = request.POST.get('type2')
             type3 = request.POST.get('type3')
@@ -424,10 +435,11 @@ def user_event (request):
 
             # Create a new SocialEvent instance and save it to the database
             social_event = SocialEvent(
+            formType = formType,
             username = userDetails.username,
             name=name,
             email=email,
-            phonecode=phonecode,
+            phone_code=phone_code,
             phone_number=phone_number,
             type_of_event=f"{type1}, {type2}, {type3}, {type4}, {type5}",
             activity_time=f"{time_input} {ampm}",
@@ -442,10 +454,11 @@ def user_event (request):
             social_event.save()
 
         elif request.POST.get('formType') == "impact" :
+            formType = request.POST.get('formType')
             username = userDetails.username
             name = userDetails.name
             email = userDetails.email
-            phonecode = userDetails.phonecode
+            phone_code = userDetails.phonecode
             phone_number = userDetails.phonenumber
             story_name = request.POST.get('storyname')
             user_story = request.POST.get('userstory')
@@ -453,10 +466,11 @@ def user_event (request):
             
             # Create a UserStory instance and save it to the database
             user_story_instance = UserStory(
+                formType = formType,
                 username = userDetails.username,
                 name=name,
                 email=email,
-                phonecode=phonecode,
+                phone_code=phone_code,
                 phone_number=phone_number,
                 story_name=story_name,
                 user_story=user_story,
@@ -465,10 +479,11 @@ def user_event (request):
             user_story_instance.save()
         
         elif request.POST.get('formType') == "healthcamp" :
+            formType = request.POST.get('formType')
             username = userDetails.username
             name = userDetails.name
             email = userDetails.email
-            phonecode = userDetails.phonecode
+            phone_code = userDetails.phonecode
             phone_number = userDetails.phonenumber
             nameofdoctor = request.POST.get('nameofdoctor')
             nameoforg = request.POST.get('nameoforg')
@@ -488,12 +503,13 @@ def user_event (request):
 
             # Create a HealthCamp instance and save it to the database
             healthcamp= HealthCamp(
+                formType = formType,
                 nameofdoctor=nameofdoctor,
                 nameoforg=nameoforg,
                 username = userDetails.username,
                 name=name,
                 email=email,
-                phonecode=phonecode,
+                phone_code=phone_code,
                 phone_number=phone_number,
                 types1=types1,
                 types2=types2,
@@ -515,8 +531,9 @@ def user_event (request):
             username = userDetails.username
             name = userDetails.name
             email = userDetails.email
-            phonecode = userDetails.phonecode
+            phone_code = userDetails.phonecode
             phone_number = userDetails.phonenumber
+            formType = request.POST.get('formType')
             nameoforg = request.POST.get('nameoforg', '')
             nameofscholarship = request.POST.get('nameofscholarship')
             typeofscholarship = request.POST.get('typeofscholarship')
@@ -529,12 +546,13 @@ def user_event (request):
 
             # Create a new ScholarshipApplication object and save it
             application = ScholarshipApplication(
+                formType = formType,
                 nameoforg=nameoforg,
                 nameofscholarship=nameofscholarship,
                 username = userDetails.username,
                 name=name,
                 email=email,
-                phonecode=phonecode,
+                phone_code=phone_code,
                 phone_number=phone_number,
                 typeofscholarship=typeofscholarship,
                 date=date,
