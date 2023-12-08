@@ -228,9 +228,18 @@ def user_gallery (request):
 #     return userDetails
 @login_required
 def user_deshbord (request):
-    return render(request, 'user/user_deshbord.html')
-
-
+    username = request.session.get('username')
+    moneyDonation = MoneyDonation.objects.filter(username = username).aggregate(total=models.Sum('donation_amount'))
+    educationDonation = EducationDonation.objects.filter(username = username).count()
+    cloth = clothDonation.objects.filter(username = username).count()
+    foodDonation = FoodDonation.objects.filter(username = username).count()
+    context = {
+        'moneyDonation': moneyDonation,
+        'educationDonation': educationDonation,
+        'clothDonation': cloth,
+        'foodDonation': foodDonation
+    }
+    return render(request, 'user/user_deshbord.html', context)
 
 def logout(request):
     # logout(request)
@@ -250,8 +259,9 @@ def user_donation(request):
             username = userDetails.username
             name = userDetails.name
             email = userDetails.email
-            phonecode = userDetails.phonecode
+            ph_code = userDetails.phonecode
             phone_number = userDetails.phonenumber
+            formType = request.POST.get('formType')
             address = request.POST.get('address')
             city = request.POST.get('city')
             state = request.POST.get('state')
@@ -262,10 +272,11 @@ def user_donation(request):
 
             # Create a new Donation object and save it to the database
             education = EducationDonation(
+                formType = formType,
                 username = userDetails.username,
                 name=name,
                 email=email,
-                phonecode=phonecode,
+                ph_code=ph_code,
                 phone_number=phone_number,
                 address=address,
                 city=city,
@@ -281,8 +292,9 @@ def user_donation(request):
             username = userDetails.username
             name = userDetails.name
             email = userDetails.email
-            phonecode = userDetails.phonecode
+            phone_code = userDetails.phonecode
             phone_number = userDetails.phonenumber
+            formType = request.POST['formType']
             condition = request.POST['condition']
             type_of_dress = request.POST['type_of_dress']
             size = request.POST['size']
@@ -291,10 +303,11 @@ def user_donation(request):
 
             # Create a new Donation object and save it to the database
             cloth = clothDonation(
+            formType = formType,    
             username = userDetails.username,
             name=name,
             email=email,
-            phonecode=phonecode,
+            phone_code=phone_code,
             phone_number=phone_number,
             condition=condition,
             type_of_dress=type_of_dress,
@@ -308,8 +321,9 @@ def user_donation(request):
             username = userDetails.username
             name = userDetails.name
             email = userDetails.email
-            phonecode = userDetails.phonecode
+            phone_code = userDetails.phonecode
             phone_number = userDetails.phonenumber
+            formType = request.POST['formType']
             organization = request.POST['organization']
             organizationmission = request.POST['organizationmission']
             date = request.POST['date']
@@ -322,10 +336,11 @@ def user_donation(request):
 
         # Create a new Donation object and save it to the database
             Food= FoodDonation(
+            formType = formType,
             username = userDetails.username,
             name=name,
             email=email,
-            phonecode=phonecode,
+            phone_code=phone_code,
             phone_number=phone_number,
             organization_name=organization,
             organization_mission=organizationmission,
@@ -349,8 +364,9 @@ def user_donation(request):
             username = userDetails.username
             name = userDetails.name
             email = userDetails.email
-            phonecode = userDetails.phonecode
+            ph_code = userDetails.phonecode
             phone_number = userDetails.phonenumber
+            formType = request.POST.get('formType')
             address = request.POST.get('address')
             city = request.POST.get('city')
             state = request.POST.get('state')
@@ -360,10 +376,11 @@ def user_donation(request):
             
             # Create a new Donation object and save it to the database
             money = MoneyDonation(
+                formType=formType,
                 username = userDetails.username,
                 name=name,
                 email=email,
-                phonecode=phonecode,
+                ph_code=ph_code,
                 phone_number=phone_number,
                 address=address,
                 city=city,

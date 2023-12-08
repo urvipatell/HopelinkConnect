@@ -75,7 +75,7 @@ class MoneyDonation(models.Model):
     country= models.CharField(max_length=50)
 
     def __str__(self):
-        return f"{self.first_name} {self.last_name}"
+        return f"{self.name}"
     
 
 class SocialEvent(models.Model):
@@ -242,9 +242,10 @@ class EducationDonation(models.Model):
     notes = models.TextField(blank=True)
     
     def __str__(self):
-        return f"{self.first_name} {self.last_name}"
+        return f"{self.name}"
     
 class clothDonation(models.Model):
+    formType = models.CharField(max_length=255)
     username = models.CharField(max_length=100)
     name = models.CharField(max_length=100)
     email = models.EmailField()
@@ -270,6 +271,7 @@ class clothDonation(models.Model):
     
 
 class FoodDonation(models.Model):
+    formType = models.CharField(max_length=255)
     username = models.CharField(max_length=100)
     name = models.CharField(max_length=100)
     email = models.EmailField()
@@ -294,7 +296,7 @@ class FoodDonation(models.Model):
         )
 
     def __str__(self):
-        return f"{self.first_name} {self.last_name}"
+        return f"{self.name}"
 
 
 
