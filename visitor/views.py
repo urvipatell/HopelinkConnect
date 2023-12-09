@@ -806,7 +806,11 @@ def new_member(request):
     return render(request, 'staff/ngo_member.html',{'new_member': new_member })
 
 
+def notification(request):
+    
+  
 
+    return render(request, 'staff/notification.html')
 
 
 

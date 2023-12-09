@@ -47,7 +47,7 @@
                     <td>{{ cloth_donation.type_of_dress }}</td>
                     <td>{{ cloth_donation.size }}</td>
                     <td>{{ cloth_donation.note }}</td>
-                    <td><img src="{{ cloth_donation.image.url}}" width="200px" height="200px"/></td>
+                    <td><img src="{{ cloth_donation.image.url}}" width="100px" height="100px"/></td>
                    
                  </tr>
            {% endfor %}
@@ -55,21 +55,27 @@
      </section>
   
     <style>
+      body {
+         font-family: Inter,arial;
+         font-size: 16px;
+         background-color: #f3f3fe;
+         color: black;
+     }
         /* General table styles */
         .custom-table {
-           border-collapse: collapse;
-           width: 100%;
-           margin-bottom: 20px;
-           border-radius: 10px;
-           overflow: hidden;
-           box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-        }
-     
-        .custom-table th, .custom-table td {
-           border: 1px solid #dddddd;
-           padding: 8px;
-           text-align: left;
-        }
+         border-collapse: collapse;
+         width: 100%;
+         margin-bottom: 20px;
+         border-radius: 10px;
+         overflow: hidden;
+         box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+      }
+   
+      .custom-table th, .custom-table td {
+         border: 1px solid #dddddd;
+         
+         text-align: center;
+      }
      
         .custom-table th {
            background-color: #f2f2f2;

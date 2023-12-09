@@ -1,0 +1,50 @@
+{% extends 'staffbase.html' %}
+
+{% load static %}
+
+
+
+{% block content %}
+                 
+                 
+                 
+                 
+                 <!-- dashboard inner -->
+                    <div class="midde_cont">
+                        <div class="container-fluid">
+                           <div class="row column_title">
+                              <div class="col-md-12">
+                                 <div class="page_title">
+                                    <h2>Notification</h2>
+                                 </div>
+                              </div>
+                           </div>
+                        
+<div class="row column4 graph">
+    <div class="col-md-6">
+       <div class="dash_blog">
+          <div class="dash_blog_inner">
+             <div class="dash_head">
+                <h3><span><i class="fa fa-calendar"></i> Dec 2023</span></h3>
+             </div>
+             <div class="list_cont">
+                <p>Task For {{ request.session.username }}</p>
+             </div>
+             <div class="task_list_main">
+                <ul class="task_list">
+                   <li><a href="#">Meeting about plan for Admin Template 2018</a><br><strong>10:00 AM</strong></li>
+                   <li><a href="#">Create new task for Dashboard</a><br><strong>10:00 AM</strong></li>
+                   <li><a href="#">Meeting about plan for Admin Template 2018</a><br><strong>11:00 AM</strong></li>
+                   <li><a href="#">Create new task for Dashboard</a><br><strong>10:00 AM</strong></li>
+                   <li><a href="#">Meeting about plan for Admin Template 2018</a><br><strong>02:00 PM</strong></li>
+                </ul>
+             </div>
+            
+          </div>
+       </div>
+    </div>
+   
+</div>
+</div>
+</div>
+{% endblock %}

@@ -2,100 +2,99 @@
 {% load static %}
 
 {% block content %}
+
 <div class="container-xxl py-5 bg-dark hero-header mb-5">
     <div class="container text-center my-5 pt-5 pb-4">
         <h1 class="display-3 text-white mb-3 animated slideInDown">Gallery</h1>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb justify-content-center text-uppercase">
-                <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
                 <li class="breadcrumb-item text-white active" aria-current="page">Gallery</li>
             </ol>
         </nav>
     </div>
 </div>
+</div>
+<!-- Navbar & Hero End -->
 
-<!-- Sports Images Carousel -->
-<div class="container-xxl py-5">
+
+<!-- Health Camp -->
+<div class="container-xxl py-1 wow fadeInUp" data-wow-delay="0.1s">
     <div class="container">
         <div class="text-center">
-            <h5 class="section-title ff-secondary text-center text-primary fw-normal">Sports Images</h5>
+            <h5 class="section-title ff-secondary text-center text-primary fw-normal">Images</h5>
+            <h1 class="mb-5">Health Camp</h1>
         </div>
-        <div id="sportsImageSlider" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="{% static 'img/about1.png' %}" alt="Sports Image 1">
+        <div class="owl-carousel testimonial-carousel">
+            {% for image in health_camp_images %}
+                <div class="testimonial-item bg-transparent border rounded p-4">
+                    <img class="img-responsive" src="{{ image.image.url }}" alt="{{ image.description }}" width="250px" height="250px" />
+                    <div class="ps-3 text-center">
+                        <h5 class="mt-1 mb-1">{{ image.description }}</h5>
+                    </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="{% static 'img/about2.png' %}" alt="Sports Image 2">
-                </div>
-                <!-- Add more carousel items for sports images -->
-            </div>
-            <a class="carousel-control-prev" href="#sportsImageSlider" role="button" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#sportsImageSlider" role="button" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </a>
+            {% endfor %}
         </div>
     </div>
 </div>
 
-<!-- Social Images Carousel -->
-<div class="container-xxl py-5">
+<!-- Social Activity -->
+<div class="container-xxl py-1 wow fadeInUp" data-wow-delay="0.1s">
     <div class="container">
         <div class="text-center">
-            <h5 class="section-title ff-secondary text-center text-primary fw-normal">Social Images</h5>
+            <h5 class="section-title ff-secondary text-center text-primary fw-normal">Images</h5>
+            <h1 class="mb-5">Social Activity</h1>
         </div>
-        <div id="socialImageSlider" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="{% static 'img/about3.png' %}" alt="Social Image 1">
+        <div class="owl-carousel testimonial-carousel">
+            {% for image in social_activity_images %}
+                <div class="testimonial-item bg-transparent border rounded p-4">
+                    <img class="img-responsive" src="{{ image.image.url }}" alt="{{ image.description }}" width="250px" height="250px" />
+                    <div class="ps-3 text-center">
+                        <h5 class="mt-1 mb-1">{{ image.description }}</h5>
+                    </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="{% static 'img/s2.png' %}" alt="Social Image 2">
-                </div>
-                <!-- Add more carousel items for social images -->
-            </div>
-            <a class="carousel-control-prev" href="#socialImageSlider" role="button" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#socialImageSlider" role="button" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </a>
+            {% endfor %}
         </div>
     </div>
 </div>
 
-<!-- Health Camp Images Carousel -->
-<div class="container-xxl py-5">
+<!-- Impact Story -->
+<div class="container-xxl py-1 wow fadeInUp" data-wow-delay="0.1s">
     <div class="container">
         <div class="text-center">
-            <h5 class="section-title ff-secondary text-center text-primary fw-normal">Health Camp Images</h5>
+            <h5 class="section-title ff-secondary text-center text-primary fw-normal">Images</h5>
+            <h1 class="mb-5">Impact Story</h1>
         </div>
-        <div id="healthCampImageSlider" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="{% static 'img/about1.png' %}" alt="Health Camp Image 1">
+        <div class="owl-carousel testimonial-carousel">
+            {% for image in impact_story_images %}
+                <div class="testimonial-item bg-transparent border rounded p-4">
+                    <img class="img-responsive" src="{{ image.image.url }}" alt="{{ image.description }}" width="250px" height="250px" />
+                    <div class="ps-3 text-center">
+                        <h5 class="mt-1 mb-1">{{ image.description }}</h5>
+                    </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="{% static 'img/video.jpg' %}" alt="Health Camp Image 2">
-                </div>
-                <!-- Add more carousel items for health camp images -->
-            </div>
-            <a class="carousel-control-prev" href="#healthCampImageSlider" role="button" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#healthCampImageSlider" role="button" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </a>
+            {% endfor %}
         </div>
     </div>
 </div>
 
+<!-- Scholarship -->
+<div class="container-xxl py-1 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="text-center">
+            <h5 class="section-title ff-secondary text-center text-primary fw-normal">Images</h5>
+            <h1 class="mb-5">Scholarship</h1>
+        </div>
+        <div class="owl-carousel testimonial-carousel">
+            {% for image in scholarship_images %}
+                <div class="testimonial-item bg-transparent border rounded p-4">
+                    <img class="img-responsive" src="{{ image.image.url }}" alt="{{ image.description }}" width="250px" height="250px" />
+                    <div class="ps-3 text-center">
+                        <h5 class="mt-1 mb-1">{{ image.description }}</h5>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 {% endblock %}

@@ -29,20 +29,20 @@
           
           </div><ul class="list-unstyled components">
             <li>
-               <a href="{% url 'userhome' %}"   aria-expanded="false" ><i class="fa fa-home yellow_color"></i> <span>Home</span></a>
+               <a href="{% url 'userhome' %}"  style="font-size: 18px;" aria-expanded="false" ><i class="fa fa-home yellow_color"></i> <span>Home</span></a>
                <ul class="collapse list-unstyled" id="userhome"> 
                </ul>
             </li>
 
             <li>
-              <a class="{% if request.resolver_match.url_name == 'userdeshbord' %}active{% endif %}" href="{% url 'userdeshbord' %}" aria-expanded="false" >
+              <a class="{% if request.resolver_match.url_name == 'userdeshbord' %}active{% endif %}" style="font-size: 18px;" href="{% url 'userdeshbord' %}" aria-expanded="false" >
                <i class="fa fa-dashboard {% if request.resolver_match.url_name != 'userdeshbord' %}yellow_color{% endif %} {% if request.resolver_match.url_name == 'userdeshbord' %}white_color{% endif %}"></i> <span>Dashboard</span></a>
               <ul class="collapse list-unstyled" id="dashboard"> 
               </ul>
            </li>
             
             <li>
-              <a href="{% url 'userdonation' %}" class="{% if request.resolver_match.url_name == 'userdonation' %}active{% endif %}"  aria-expanded="false" >
+              <a href="{% url 'userdonation' %}" class="{% if request.resolver_match.url_name == 'userdonation' %}active{% endif %}" style="font-size: 18px;" aria-expanded="false" >
                <i class="fa fa-usd {% if request.resolver_match.url_name != 'userdonation' %}yellow_color{% endif %} {% if request.resolver_match.url_name == 'userdonation' %}white_color{% endif %}"></i> <span>Donation</span></a>
               <ul class="collapse list-unstyled" id="dashboard"> 
               </ul>
@@ -50,21 +50,21 @@
 
            
            <li>
-              <a href="{% url 'userevent' %}" class="{% if request.resolver_match.url_name == 'userevent' %}active{% endif %}" aria-expanded="false" >
+              <a href="{% url 'userevent' %}" class="{% if request.resolver_match.url_name == 'userevent' %}active{% endif %}" style="font-size: 18px;" aria-expanded="false" >
                <i class="fa fa-calendar {% if request.resolver_match.url_name != 'userevent' %}yellow_color{% endif %} {% if request.resolver_match.url_name == 'userevent' %}white_color{% endif %}"></i> <span>Events</span></a>
               <ul class="collapse list-unstyled" id="dashboard"> 
               </ul>
            </li>
            
            <li>
-              <a href="{% url 'userfeedback' %}" class="{% if request.resolver_match.url_name == 'userfeedback' %}active{% endif %}"  aria-expanded="false" >
+              <a href="{% url 'userfeedback' %}" class="{% if request.resolver_match.url_name == 'userfeedback' %}active{% endif %}" style="font-size: 18px;" aria-expanded="false" >
                <i class="fa fa-comments-o {% if request.resolver_match.url_name != 'userfeedback' %}yellow_color{% endif %} {% if request.resolver_match.url_name == 'userfeedback' %}white_color{% endif %}"></i> <span>Feedback</span></a>
               <ul class="collapse list-unstyled" id="dashboard"> 
               </ul>
            </li>
           
             
-            <li><a href="{% url 'usercontact' %}" class="{% if request.resolver_match.url_name == 'usercontact' %}active{% endif %}" >
+            <li><a href="{% url 'usercontact' %}" class="{% if request.resolver_match.url_name == 'usercontact' %}active{% endif %}" style="font-size: 18px;">
                <i class="fa fa-map {% if request.resolver_match.url_name != 'usercontact' %}yellow_color{% endif %} {% if request.resolver_match.url_name == 'usercontact' %}white_color{% endif %}"></i> <span>Map</span></a></li>
             
          </ul>

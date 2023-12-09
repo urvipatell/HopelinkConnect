@@ -27,6 +27,7 @@ urlpatterns = [
     
     path('user_notification/', views.user_notification, name='user_notification'),
     path('fetch_notifications/', views.fetch_notifications, name='fetch_notifications'),
+    path('notification/', views.notification, name='notification'),   
 
     path('newmember', views.new_member, name="newmember"),
     path('staffdeshbord', views.staff_deshbord, name="staffdeshbord"),

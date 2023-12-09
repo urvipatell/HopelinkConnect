@@ -24,47 +24,49 @@
              
              <ul class="list-unstyled components">
                 <li>
-                   <a href="{% url 'staffdeshbord' %}" class="{% if request.resolver_match.url_name == 'staffdeshbord' %}active{% endif %}"  aria-expanded="false" >
+                   <a href="{% url 'staffdeshbord' %}" class="{% if request.resolver_match.url_name == 'staffdeshbord' %}active{% endif %}" style="font-size: 18px;" aria-expanded="false" >
                      <i class="fa fa-dashboard purple_color {% if request.resolver_match.url_name != 'staffdeshbord' %}purple_color{% endif %} {% if request.resolver_match.url_name == 'staffdeshbord' %}white_color{% endif %}"></i> <span>Dashboard</span></a>
                    
                 </li>
                 <li>
-                  <a href="{% url 'newmember' %}" class="{% if request.resolver_match.url_name == 'newmember' %}active{% endif %}" aria-expanded="false" >
+                  <a href="{% url 'newmember' %}" class="{% if request.resolver_match.url_name == 'newmember' %}active{% endif %}"style="font-size: 18px;" aria-expanded="false" >
                      <i class="fa fa-diamond purple_color {% if request.resolver_match.url_name != 'newmember' %}purple_color{% endif %} {% if request.resolver_match.url_name == 'newmember' %}white_color{% endif %}">
                         
                      </i> <span>Add Members</span></a>
                   </li>
                   <li>
-                     <a href="#element"  data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <i class="fa fa-diamond purple_color" ></i> <span>Donations</span></a>
+                     <a href="#element"  data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"style="font-size: 18px;" >
+                        <i class="fa fa-usd purple_color" ></i> <span>Donations</span></a>
                      <ul class="collapse list-unstyled" id="element">
-                        <li><a href="{%url 'stafffooddonation'%}" class="{% if request.resolver_match.url_name == 'stafffooddonation' %}active{% endif %}">> <span>Food Donation</span></a></li>
-                        <li><a href="{%url 'staffedudonation'%}" class="{% if request.resolver_match.url_name == 'staffedudonation' %}active{% endif %}">> <span>Education Donation</span></a></li>
-                        <li><a href="{%url 'staffclothdonation'%}" class="{% if request.resolver_match.url_name == 'staffclothdonation' %}active{% endif %}">> <span>Cloth Donation </span></a></li>
+                        <li><a href="{%url 'stafffooddonation'%}" class="{% if request.resolver_match.url_name == 'stafffooddonation' %}active{% endif %} "style="font-size: 18px;">> <span>Food Donation</span></a></li>
+                        <li><a href="{%url 'staffedudonation'%}" class="{% if request.resolver_match.url_name == 'staffedudonation' %}active{% endif %}"style="font-size: 18px;">> <span>Education Donation</span></a></li>
+                        <li><a href="{%url 'staffclothdonation'%}" class="{% if request.resolver_match.url_name == 'staffclothdonation' %}active{% endif %}"style="font-size: 18px;">> <span>Cloth Donation </span></a></li>
                      </ul>
                   </li>
                   
                   <li>
-                     <a href="#event" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-diamond purple_color"></i> <span>Event</span></a>
+                     <a href="#event" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"style="font-size: 18px;"><i class="fa fa-diamond purple_color"></i> <span>Event</span></a>
                      <ul class="collapse list-unstyled" id="event">
-                        <li><a href="{%url 'staffsocialactivity'%}" class="{% if request.resolver_match.url_name == 'staffsocialactivity' %}active{% endif %}">> <span>Social Event</span></a></li>
-                        <li><a href="{%url 'staffimpactstory'%}" class="{% if request.resolver_match.url_name == 'staffimpactstory' %}active{% endif %}">> <span>Impact Stories</span></a></li>
-                        <li><a href="{%url 'staffhealthcare'%}" class="{% if request.resolver_match.url_name == 'staffhealthcare' %}active{% endif %}">> <span>Healthcamp</span></a></li>
-                        <li><a href="{%url 'staffscholarship'%}" class="{% if request.resolver_match.url_name == 'staffscholarship' %}active{% endif %}">> <span>Scholarship</span></a></li>
+                     
+                           <li><a href="{%url 'staffsocialactivity'%}" class="{% if request.resolver_match.url_name == 'staffsocialactivity' %}active{% endif %}" style="font-size: 16px;">> <span>Social Event</span></a></li>
+                           <li><a href="{%url 'staffimpactstory'%}" class="{% if request.resolver_match.url_name == 'staffimpactstory' %}active{% endif %}" style="font-size: 16px;">> <span>Impact Stories</span></a></li>
+                           <li><a href="{%url 'staffhealthcare'%}" class="{% if request.resolver_match.url_name == 'staffhealthcare' %}active{% endif %}" style="font-size: 16px;">> <span>Healthcamp</span></a></li>
+                           <li><a href="{%url 'staffscholarship'%}" class="{% if request.resolver_match.url_name == 'staffscholarship' %}active{% endif %}" style="font-size: 16px;">> <span>Scholarship</span></a></li>
+                       
                      </ul>
                   </li>
 
                      <li>
-                      <a href="{%url 'staffnotification'%}" class="{% if request.resolver_match.url_name == 'staffnotification' %}active{% endif %}"  aria-expanded="false" >
+                      <a href="{%url 'staffnotification'%}" class="{% if request.resolver_match.url_name == 'staffnotification' %}active{% endif %}" style="font-size: 18px;" aria-expanded="false" >
                         <i class="fa fa-bell fa-custom purple_color {% if request.resolver_match.url_name != 'staffnotification' %}purple_color{% endif %} {% if request.resolver_match.url_name == 'staffnotification' %}white_color{% endif %}"></i> <span>Notification</span></a>
                       </li>
                       <li>
-                      <a href="{%url 'staffmediagallery'%}" class="{% if request.resolver_match.url_name == 'staffmediagallery' %}active{% endif %}" aria-expanded="false" ><i class="fa fa-image purple_color {% if request.resolver_match.url_name != 'staffmediagallery' %}purple_color{% endif %} {% if request.resolver_match.url_name == 'staffmediagallery' %}white_color{% endif %}"></i> <span>Media Gallery</span></a>
+                      <a href="{%url 'staffmediagallery'%}" class="{% if request.resolver_match.url_name == 'staffmediagallery' %}active{% endif %}" style="font-size: 18px;"aria-expanded="false" ><i class="fa fa-image purple_color {% if request.resolver_match.url_name != 'staffmediagallery' %}purple_color{% endif %} {% if request.resolver_match.url_name == 'staffmediagallery' %}white_color{% endif %}"></i> <span>Media Gallery</span></a>
                      </li>
                        
                       
                
-                <li><a href="{% url 'staffmap' %}" class="{% if request.resolver_match.url_name == 'staffmap' %}active{% endif %}"><i class="fa fa-map purple_color {% if request.resolver_match.url_name != 'staffmap' %}purple_color{% endif %} {% if request.resolver_match.url_name == 'staffmap' %}purple_color{% endif %}"></i> <span>Map</span></a></li>
+                <li><a href="{% url 'staffmap' %}" class="{% if request.resolver_match.url_name == 'staffmap' %}active{% endif %}"style="font-size: 18px;"><i class="fa fa-map purple_color {% if request.resolver_match.url_name != 'staffmap' %}purple_color{% endif %} {% if request.resolver_match.url_name == 'staffmap' %}purple_color{% endif %}"></i> <span>Map</span></a></li>
                 </ul>
           </div>
        </nav>
@@ -83,9 +85,8 @@
                    <div class="right_topbar">
                       <div class="icon_info">
                          <ul>
-                            <li><a href="#"><i class="fa fa-bell-o"></i><span class="badge">2</span></a></li>
-                            <li><a href="#"><i class="fa fa-question-circle"></i></a></li>
-                            <li><a href="#"><i class="fa fa-envelope-o"></i><span class="badge">3</span></a></li>
+                            <li><a href="{%url 'notification' %}"><i class="fa fa-bell-o"></i><span class="badge">2</span></a></li>
+                           
                          </ul>
                          <ul class="user_profile_dd">
                             <li>

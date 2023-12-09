@@ -12,7 +12,7 @@ urlpatterns = [
     path('calendar/', views.calendar, name='calendar'), 
     path('user/', views.user, name='user'),   
     path('staff/', views.staff, name='staff'),   
-
+    path('admin_staffnotification/', views.admin_staffnotification, name='admin_staffnotification'),
     path('admin_notifications/', views.admin_notifications, name='admin_notifications'),   
     path('admin_edudonation/', views.admin_edudonation, name='admin_edudonation'),   
     path('admin_moneydonation/', views.admin_money, name='admin_moneydonation'),   
@@ -23,7 +23,7 @@ urlpatterns = [
     path('admin_scholarship/', views.admin_scholarship, name='admin_scholarship'),   
     path('admin_socialactivity/', views.admin_socialactivity, name='admin_socialactivity'),   
     ]
-   
+    
 
 
     

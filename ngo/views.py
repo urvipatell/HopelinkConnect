@@ -22,8 +22,8 @@ def admin_dashboard (request):
 
     # Calculate the grand total of all donations
     grand_total = education_total + cloth_total + food_total + money_total
-    total_users = signup.objects.filter(forwhom='u').count()
-    total_staff = signup.objects.filter(forwhom='s').count()
+    total_users = signup.objects.filter(forwhom='user').count()
+    total_staff = signup.objects.filter(forwhom='staff').count()
 
     context = {
         'education_total': education_total,
@@ -273,6 +273,11 @@ def admin_notifications(request):
             return redirect('admin_notifications')  # Redirect to the admin notifications page or another appropriate page
 
     return render(request, 'ngo/admin_notifications.html')
+
+
+def admin_staffnotification(request):
+    
+    return render(request, 'ngo/admin_Staffnotification.html')
 
 def calendar(request):
     return render(request, 'ngo/calendar.html')
