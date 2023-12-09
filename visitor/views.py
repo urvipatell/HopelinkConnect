@@ -251,6 +251,14 @@ def user_deshbord (request):
     }
     return render(request, 'user/user_deshbord.html', context)
 
+def user_invoice(request):
+    razorpayOrderId = request.POST.get('razorpay_order_id')
+    moneyDonation = MoneyDonation.objects.filter(razorpay_order_id = razorpayOrderId).first()
+    context = {
+        'moneyDonation': moneyDonation
+    }
+    return render(request, 'user/user_invoice.html', context)    
+    
 def logout(request):
     # logout(request)
     del request.session['username']

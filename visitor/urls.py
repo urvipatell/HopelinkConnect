@@ -23,6 +23,7 @@ urlpatterns = [
     path('userdonation', views.user_donation, name="userdonation"),
     path('userdeshbord', views.user_deshbord, name="userdeshbord"),
     path('userfeedback', views.user_feedback, name="userfeedback"),
+    path('userinvoice', views.user_invoice, name='userinvoice'), 
     
     path('user_notification/', views.user_notification, name='user_notification'),
     path('fetch_notifications/', views.fetch_notifications, name='fetch_notifications'),

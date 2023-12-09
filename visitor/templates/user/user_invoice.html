@@ -1,0 +1,156 @@
+{% extends 'profile_base.html' %}
+{% load static %}
+{% block content %}
+{% csrf_token %}
+<div class="midde_cont" id="pt">
+   <div class="container-fluid">
+      <div class="row column_title">
+         <div class="col-md-12">
+            <div class="page_title">
+               <h2>Invoice</h2>
+            </div>
+         </div>
+      </div>
+      <!-- row -->
+      <div class="row">
+         <!-- invoice section -->
+         <div class="col-md-12">
+            <div class="white_shd full margin_bottom_30">
+               <div class="full graph_head">
+                  <div class="heading1 margin_0">
+                     <h2><i class="fa fa-file-text-o"></i> Invoice</h2>
+                  </div>
+               </div>
+               <div class="full">
+                  <div class="invoice_inner">
+                     <div class="row">
+                        <div class="col-md-4">
+                           <div class="full invoice_blog padding_infor_info padding-bottom_0">
+                              <h4>From</h4>
+                              <p><strong>HopeLink Connect</strong><br>  
+                                 123 Street, Maninagar,<br> 
+                                 Ahemdabad, Gujarat<br>    
+                                 <strong>Phone : </strong><a href="tel:09054678389">+91 9054678389</a><br>  
+                                 <strong>Email : </strong><a href="mailto:hopelinkconnect@gmail.com">hopelinkconnect@gmail.com</a>
+                              </p>
+                           </div>
+                        </div>
+                        <div class="col-md-4">
+                           <div class="full invoice_blog padding_infor_info padding-bottom_0">
+                              <h4>To</h4>
+                              <p><strong>{{moneyDonation.name}}</strong><br>  
+                                 {{moneyDonation.address}}<br> 
+                                 {{moneyDonation.city}}, {{moneyDonation.state}}<br>    
+                                 <strong>Phone : </strong><a href="tel:0{{moneyDonation.phone_number}}">{{moneyDonation.ph_code}} {{moneyDonation.phone_number}}</a><br>  
+                                 <strong>Email : </strong><a href="mailto:{{moneyDonation.email}}">{{moneyDonation.email}}</a>
+                              </p>
+                           </div>
+                        </div>
+                        <div class="col-md-4">
+                           <div class="full invoice_blog padding_infor_info padding-bottom_0">
+                              <h4>Invoice No - #{{moneyDonation.razorpay_order_id}} </h4>
+                              <p><strong>Order ID : </strong>5b6R9C<br> 
+                                 <strong>Payment Due : </strong>December/18/2023<br> 
+                                 <strong>Account : </strong>UPI Payment
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="full padding_infor_info">
+                  <div class="table_row">
+                     <div class="table-responsive">
+                        <table class="table table-striped">
+                           <thead>
+                              <tr>
+                                 <th>Qty</th>
+                                 <th>Product</th>
+                                 <th>Serial #</th>
+                                 <th>Description</th>
+                                 <th>Subtotal</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                 <td>1</td>
+                                 <td>Money Donation</td>
+                                 <td>{{moneyDonation.razorpay_order_id}}</td>
+                                 <td>Donation use for child education</td>
+                                 <td>{{moneyDonation.currency}} {{moneyDonation.donation_amount}}</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- row -->
+      <div class="row">
+         <div class="col-md-6">
+            <div class="full white_shd">
+               <div class="full graph_head">
+                  <div class="heading1 margin_0">
+                     <h2>Payment Methods</h2>
+                  </div>
+               </div>
+               <div class="full padding_infor_info">
+                  <ul class="payment_option">
+                     {% comment %} <li><img src="images/layout_img/visa.png" alt="#" /></li> {% endcomment %}
+                  </ul>
+                  <p class="note_cont">Razorpay</p>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="full white_shd">
+               <div class="full graph_head">
+                  <div class="heading1 margin_0">
+                     <h2>Total Amount</h2>
+                  </div>
+               </div>
+               <div class="full padding_infor_info">
+                  <div class="price_table">
+                     <div class="table-responsive">
+                        <table class="table">
+                           <tbody>
+                              <tr>
+                                 <th style="width:50%">Subtotal:</th>
+                                 <td>{{moneyDonation.currency}} {{moneyDonation.donation_amount}}</td>
+                              </tr>
+                              <tr>
+                                 <th>Tax (9.3%)</th>
+                                 <td>{{moneyDonation.currency}} 100</td>
+                              </tr>
+                              <tr>
+                                 <th>Total:</th>
+                                 <td>{{moneyDonation.currency}} {{moneyDonation.donation_amount}}</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- footer -->
+   <div class="container-fluid">
+      <div class="footer">
+         <button onclick="myfun('pt')" class="btn btn-success btn-xs">Download<button>
+      </div>
+   </div>
+</div>
+<script type="text/javascript">
+   function myfun(pa){
+   var bk = document.body.innerHTML;
+   var dv = document.getElementById(pa).innerHTML;
+       document.body.innerHTML = dv;
+       window.print();
+   }
+
+</script>
+{% endblock %}

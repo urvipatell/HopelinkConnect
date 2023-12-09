@@ -195,7 +195,11 @@
                                     <td>{{ allMoneyDonation.ph_code }} - {{ allMoneyDonation.phone_number }}</td>
                                     <td>{{allMoneyDonation.currency}}. {{ allMoneyDonation.donation_amount }}</td>
                                     <td>
-                                       <button type="button" class="btn btn-success btn-xs">Download</button>
+                                       <form action="{% url 'userinvoice' %}" method="post">
+                                          {% csrf_token %}
+                                          <input type="hidden" name="razorpay_order_id" value="{{allMoneyDonation.razorpay_order_id}}" />
+                                          <button type="submit" class="btn btn-success btn-xs">View</button>
+                                        </form>
                                     </td>
                                  </tr>
                                  {% endfor %}
