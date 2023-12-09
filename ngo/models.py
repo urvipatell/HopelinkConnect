@@ -20,15 +20,23 @@ class ContactUs(models.Model):
 
 class signup(models.Model):
     name = models.CharField(max_length=100)
-    gender = models.CharField(max_length=1, choices=[('M', 'Male'), ('F', 'Female'), ('O', 'Other')])
+    gender = models.CharField(max_length=6, choices=[('Male', 'Male'), ('Female', 'Female'), ('Other', 'Other')])
     email = models.EmailField()
     phonecode= models.CharField(max_length=4)
     phonenumber = models.CharField(max_length=10)
     image = models.ImageField(upload_to='user_images/')
     username = models.CharField(max_length=100, unique=True)
     password = models.CharField(max_length=100)
-    forwhom = models.CharField(max_length=1, choices=[('u', 'User'), ('s', 'Staff')])
-
+    forwhom = models.CharField(max_length=5, choices=[('user', 'User'), ('staff', 'Staff')])
+    status = models.CharField(
+        max_length=255,
+        choices=[
+            ("Pending", "Pending"),
+            ("Approved", "Approved"),
+            ("Rejected", "Rejected"),
+        ],
+        default="Pending",
+    )
     def __str__(self):
         return self.username
     

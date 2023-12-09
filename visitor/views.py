@@ -87,9 +87,9 @@ def login (request):
                 user_profile = signup.objects.get(username=username,password=password)
                 request.session['username'] = user_profile.username
                 request.session['profileImage'] = user_profile.image.url
-                if user_profile.forwhom == 'u':
+                if user_profile.forwhom == 'user':
                     return redirect('userdeshbord')
-                elif user_profile.forwhom == 's':
+                elif user_profile.forwhom == 'staff'and user_profile.status == 'Approved':
                     return redirect('staffdeshbord')
                 
             except signup.DoesNotExist:
@@ -133,12 +133,12 @@ def registration(request):
             request.session['username'] = user_profile.username
             request.session['profileImage'] = user_profile.image.url
 
-            if forwhom == 'u':
+            if forwhom == 'user':
                 # Redirect to the user dashboard
                 return redirect('userdeshbord')
-            elif forwhom == 's':
+            elif forwhom == 'staff':
                 # Redirect to the staff dashboard
-                return redirect('staffdeshbord')
+                return redirect('login')
 
     return render(request, 'visitor/registration.html')
 

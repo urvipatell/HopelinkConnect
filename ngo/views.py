@@ -219,6 +219,38 @@ def admin_socialactivity(request):
     }
     return render(request, 'ngo/admin_socialactivity.html',context)
 
+def staff(request):
+    if request.method == 'POST':
+        
+        form_id = request.POST.get('form_id')
+        status = request.POST.get('status')  # 'approve' or 'reject'
+
+        staff= get_object_or_404(signup, id=form_id)
+      
+
+        # Update the status of the donation.
+        staff.status = status
+        staff.save()
+
+    staff = signup.objects.filter(forwhom='staff')
+
+    context = {
+        'staff': staff
+    }
+
+    return render(request, 'ngo/Staff.html',context)
+
+
+
+def user(request):
+    
+    user= signup.objects.filter(forwhom='user')
+
+    context = {
+        'user': user,
+    }
+
+    return render(request, 'ngo/user.html',context)
 
 def applications(request):
     # Query the 'intantship' model to get all internship applications
@@ -253,3 +285,6 @@ def admin_tables(request):
 
 def admin_signup(request):
     return render(request, 'ngo/admin_sign-up.html')
+
+
+
