@@ -14,6 +14,7 @@
             <div class="navbar-nav ms-auto py-0 pe-4">
                 <a href="{% url 'userhome' %}"class="nav-item nav-link  {% if request.resolver_match.url_name == 'userhome' %}active{% endif %}">Home</a>
                 <a href="{% url 'userabout' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'userabout' %}active{% endif %}">About</a>
+                <a href="{% url 'userintent' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'intant' %}active{% endif %}">Internship</a>
                 <a href="{% url 'usergallery' %}"class="nav-item nav-link {% if request.resolver_match.url_name == 'usergallery' %}active{% endif %}">Gallery</a>
                 {% comment %} <a href="{% url 'intant' %}" class="nav-item nav-link">Internship</a> {% endcomment %}
                 {% comment %} <div class="nav-item dropdown">

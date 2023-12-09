@@ -1,0 +1,226 @@
+{% extends 'userbase.html' %}
+
+{% load static %}
+
+
+
+{% block content %}
+<div class="container-xxl py-5 bg-dark hero-header mb-5">
+    <div class="container text-center my-5 pt-5 pb-4">
+        <h1 class="display-3 text-white mb-3 animated slideInDown">Internship</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center text-uppercase">
+                <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                
+                <li class="breadcrumb-item text-white active" aria-current="page">Internship</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Navbar & Hero End -->
+<!--intern start-->
+<div class="container intant">
+<header class="header">
+  <h1 id="title" class="text-center">Internship Application Form</h1>
+  <p id="description" class="description text-center">
+    You will be contacted only if the organisation wishes to pursue this application
+  </p>
+</header>
+<form id="survey-form" method= "POST"  action="{% url 'intant' %}" >
+  {% csrf_token %}
+  <div class="form-group">
+    <label id="name-label" for="name">Full Name</label>
+    <input
+      type="text"
+      name="name"
+      id="name"
+      class="form-control"
+      placeholder="Enter your name"
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label id="email-label" for="email">Email</label>
+    <input
+      type="email"
+      name="email"
+      id="email"
+      class="form-control"
+      placeholder="Enter your Email"
+      required
+    />
+    <br>
+  </div>
+    <div class="form-group">
+      <label id="phonenumber" for="phno">Phone No</label>
+      <input
+        type="number"
+        name="phonenumber"
+        id="phonenumber"
+        class="form-control"
+        placeholder="Enter your phno"
+        required
+      />
+  </div>
+  <div class="form-group">
+    <label id="number-label" for="number"
+      >Age</label
+    >
+    <input
+      type="number"
+      name="age"
+      id="number"
+      min="10"
+      max="99"
+      class="form-control"
+      placeholder="Age"
+    />
+  </div>
+  <div class="form-group">
+    <label>Which option best describes your current role?</label>
+    <select id="dropdown" name="role" class="form-control" required>
+      <option disabled selected value>Select current role</option>
+      <option value="student">Student</option>
+      <option value="job">Full Time Job</option>
+      <option value="learner">Full Time Learner</option>
+      <option value="preferNo">Prefer not to say</option>
+      <option value="other">Other</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Have you done any internship before?</label>
+    <label>
+      <input
+        name="user-recommend"
+        value="yes"
+        type="radio"
+        class="input-radio"
+        
+      />Yes</label
+    >
+    <label>
+      <input
+        name="user-recommend"
+        value="No"
+        type="radio"
+        class="input-radio"/>No</label>
+
+   
+  </div>
+
+  <div class="form-group">
+    <label>Gender</label>
+    <label>
+      <input
+        name="gender"
+        value="M"
+        type="radio"
+        class="input-radio"
+        
+      />Male</label
+    >
+    <label>
+      <input
+        name="gender"
+        value="F"
+        type="radio"
+        class="input-radio"/>Female</label>
+
+        <label>
+          <input
+            name="gender"
+            value="O"
+            type="radio"
+            class="input-radio"/>Other</label>
+  
+  </div>
+
+  <div class="form-group">
+    <label>
+      What made you to choose our NGO?
+    </label>
+    <select id="most-like" name="mostLike" class="form-control" required>
+      <option disabled selected value>Select an option</option>
+      <option value="Flexible Working Hours">Flexible Working Hours</option>
+      <option value="Certificates and Letter of Recommendation">Certificates and Letter of Recommendation</option>
+      <option value="Stipends">Stipends</option>
+      <option value="">Social activities</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>
+      What are your areas of intreste?
+      <span class="clue">(Check all that apply)</span>
+    </label>
+
+    <label
+      ><input
+        name="prefer"
+        value="HealthCare"
+        type="checkbox"
+        class="input-checkbox"
+      />HealthCare</label
+    >
+    <label>
+      <input
+        name="prefer"
+        value="Sports"
+        type="checkbox"
+        class="input-checkbox"
+      />Sports</label
+    >
+    <label
+      ><input
+        name="prefer"
+        value="Nutrition"
+        type="checkbox"
+        class="input-checkbox"
+      />Nutrition </label
+    >
+    <label
+      ><input
+        name="prefer"
+        value="Social Activities"
+        type="checkbox"
+        class="input-checkbox"
+      />Social Activities</label
+    >
+    <label
+      ><input
+        name="prefer"
+        value="EnvironmentalConservation"
+        type="checkbox"
+        class="input-checkbox"
+      />EnvironmentalConservation</label
+    >
+    <label
+      ><input
+        name="prefer"
+        value="Safety training<"
+        type="checkbox"
+        class="input-checkbox"
+      />Safety training</label
+    >
+    
+  </div>
+
+  <div class="form-group">
+    <label>What additional skills can you bring to the organisation?</label>
+    <textarea
+      id="comments"
+      class="input-textarea"
+      name="comment"
+      placeholder="Enter your comment here..."
+    ></textarea>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" id="submit" class="submit-button">
+      Submit
+    </button>
+  </div>
+</form>
+</div><!--intern end-->
+{% endblock %}

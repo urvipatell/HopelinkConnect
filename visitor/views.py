@@ -199,6 +199,9 @@ def user_about (request):
 def user_contact (request):
     return render(request, 'user/user_contact.html')
 
+def user_intentship (request):
+    return render(request, 'user/user_intentship.html')
+
 def user_feedback(request):
     if request.method == 'POST':
         # Handle the form submission
