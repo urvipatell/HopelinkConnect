@@ -851,7 +851,7 @@ def staff_scholarship(request):
     
    scholarship_applications = ScholarshipApplication.objects.filter(status='Approved').order_by('-id')
 
-   return render(request, 'staff/staff_scholarship.html', {'scholarship_applications ': scholarship_applications })
+   return render(request, 'staff/staff_scholarship.html', {'scholarship_applications': scholarship_applications })
 
 def staff_impactstory(request):
     
