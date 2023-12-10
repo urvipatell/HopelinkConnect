@@ -216,60 +216,31 @@
             </div>
         </div>
         <!-- Menu End -->
-<!-- Testimonial Start -->
-<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.5s">
-<div class="container">
-<div class="text-center">
-<h5 class="section-title ff-secondary text-center text-primary fw-normal">Testimonial</h5>
-<h1 class="mb-5">Our Doners Say!!!</h1>
-</div>
-<div class="owl-carousel testimonial-carousel">
-<div class="testimonial-item bg-transparent border rounded p-4">
-    <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-    <p>I've been donating to our local food bank for years, and it's incredibly rewarding. Knowing that I'm helping families in need put food on their tables is a feeling like no other. The impact is immediate and heartfelt." </p>
-    <div class="d-flex align-items-center">
-        <img class="img-fluid flex-shrink-0 rounded-circle" src="{% static 'img/testimonial-1.jpg' %}" style="width: 50px; height: 50px;">
-        <div class="ps-3">
-            <h5 class="mb-1">Priya Patel</h5>
+            <!-- Testimonial Start -->
+    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.5s">
+        <div class="container">
+            <div class="text-center">
+                <h5 class="section-title ff-secondary text-center text-primary fw-normal">Testimonial</h5>
+                <h1 class="mb-5">Our Donors Say!!!</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel">
+                {% for feedback in feedback %}
+                    <div class="testimonial-item bg-transparent border rounded p-4">
+                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                        <p>{{ feedback.comments }}</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="{{ feedback.image }}" style="width: 50px; height: 50px;">
+                            <div class="ps-3">
+                                <h5 class="mb-1">{{ feedback.name }}</h5>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
-</div>
-<div class="testimonial-item bg-transparent border rounded p-4">
-    <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-    <p>"I started volunteering at a homeless shelter last year, and it has been life-changing. Seeing the smiles on the faces of those we help, even in the most challenging circumstances, reminds me of the power of compassion and community." </p>
-    <div class="d-flex align-items-center">
-        <img class="img-fluid flex-shrink-0 rounded-circle" src="{% static 'img/testimonial-2.jpg' %}" style="width: 50px; height: 50px;">
-        <div class="ps-3">
-            <h5 class="mb-1">Raj Sharma</h5>
-        
-        </div>
-    </div>
-</div>
-<div class="testimonial-item bg-transparent border rounded p-4">
-    <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-    <p>"I've been donating to medical research organizations for over a decade. Recently, they made a breakthrough in a disease that has affected my family. I'm proud to have played a small part in supporting their work." </p>
-    <div class="d-flex align-items-center">
-        <img class="img-fluid flex-shrink-0 rounded-circle" src="{% static 'img/testimonial-3.jpg' %}" style="width: 50px; height: 50px;">
-        <div class="ps-3">
-            <h5 class="mb-1">Lokin Meheta</h5>
-        
-        </div>
-    </div>
-</div>
-{% comment %} <div class="testimonial-item bg-transparent border rounded p-4">
-    <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-    <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
-    <div class="d-flex align-items-center">
-        <img class="img-fluid flex-shrink-0 rounded-circle" src="{% static 'img/testimonial-4.jpg' %}" style="width: 50px; height: 50px;">
-        <div class="ps-3">
-            <h5 class="mb-1">Client Name</h5>
-            <small>Profession</small>
-        </div>
-    </div> {% endcomment %}
-</div>
-</div>
-</div>
-</div>
+    <!-- Testimonial End -->
+
 
 
 <!-- Team Start -->

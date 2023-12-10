@@ -19,7 +19,25 @@ from django.http import JsonResponse
 
 def index(request):
     notifications = StaffNotification.objects.all()
-    return render(request, 'visitor/index.html',{'notifications': notifications})
+    feedback=Feedback.objects.filter(feedback_type__in=['thought', 'suggestion'])
+    return render(request, 'visitor/index.html', {'notifications': notifications, 'feedback': feedback })
+
+def user_feedback(request):
+    username = request.session.get('username')
+    userDetails = signup.objects.filter(username=username).first()
+    if request.method == 'POST':
+
+        # Handle the form submission
+        image = request.POST.get('image')
+        name = request.POST.get('name')
+        email =request.POST.get('email')
+        feedback_type = request.POST.get('feedbackType')
+        comments = request.POST.get('comments')
+
+        feedback = Feedback(name=name, email=email, feedback_type=feedback_type, comments=comments,image=image)
+        feedback.save()
+
+    return render(request, 'user/user_feedback.html', {'userDetails': userDetails})
 
 def about (request):
     return render(request, 'visitor/about.html')
@@ -194,7 +212,8 @@ def intant (request):
 def user_index (request):
     # profileImage = request.session.get('image')
     notifications = StaffNotification.objects.all()
-    return render(request, 'user/user_index.html',{'notifications': notifications})
+    feedback=Feedback.objects.filter(feedback_type__in=['thought', 'suggestion']) 
+    return render(request, 'user/user_index.html',{'notifications': notifications,'feedback': feedback})
 
 def user_about (request):
     return render(request, 'user/user_about.html')
@@ -205,18 +224,7 @@ def user_contact (request):
 def user_intentship (request):
     return render(request, 'user/user_intentship.html')
 
-def user_feedback(request):
-    if request.method == 'POST':
-        # Handle the form submission
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        feedback_type = request.POST.get('feedbackType')
-        comments = request.POST.get('comments')
 
-        feedback = Feedback(name=name, email=email, feedback_type=feedback_type, comments=comments)
-        feedback.save()
-
-    return render(request, 'user/user_feedback.html')
 
 def map (request):
     return render(request, 'user/map.html')
@@ -608,8 +616,9 @@ def staff_deshbord (request):
         'childMember':childMember
     }
 
+    feedback = Feedback.objects.all()
 
-    return render(request, 'staff/staff_deshbord.html', context)
+    return render(request, 'staff/staff_deshbord.html',{'context':context,'feedback': feedback})
 
 def staff_profile (request):
   username = request.session.get('username')
@@ -743,8 +752,10 @@ def user_notification(request):
     for notification in notifications:
         notification.is_read = True
         notification.save()
+    
+    total_notification_count = notifications.count()
 
-    return render(request, 'user/user_notification.html', {'notifications': notifications})
+    return render(request, 'user/user_notification.html', {'notifications': notifications, 'total_notification_count': total_notification_count})
 
 
 

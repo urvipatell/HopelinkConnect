@@ -354,14 +354,15 @@ class EventImage(models.Model):
     def __str__(self):
         return self.event
 
+
+
 class Feedback(models.Model):
-    name = models.CharField(max_length=100)
+    image = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
     email = models.EmailField()
-    feedback_type = models.CharField(
-        max_length=20,
-        choices=[('compliment', 'Compliment'), ('suggestion', 'Suggestion'), ('thought', 'thought')],
-    )
+    feedback_type = models.CharField(max_length=20)
     comments = models.TextField()
+
 
     def __str__(self):
         return self.email

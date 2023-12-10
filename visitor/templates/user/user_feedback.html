@@ -59,27 +59,32 @@
             </div>
           </div>
       </div>
-  <form id="feedbackForm" method="post" acrion="{% url 'userfeedback' %}">
+  <form id="feedbackForm" method="post" acrion="{% url 'userfeedback' %}" enctype="multipart/form-data">
     {% csrf_token %}
 
     <h1><center><b>Feedback Form</b></center></h1>
-
+    <input type="hidden" name="image" value="{{userDetails.image.url}}">
     <div class="form-group">
       <label for="name">Name:</label>
-      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      <input type="text" id="name" value="{{userDetails.name}}" name="name"  placeholder="Enter your name"  required>
     </div>
 
     <div class="form-group">
       <label for="email">Email:</label>
-      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      <input type="email" id="email" name="email" value="{{userDetails.email}}" placeholder="Enter your email" required>
     </div>
+    {% comment %} <div class="form-group">
+      <div class="label"> Photo </div>
+      <input id="image" type="file" name="image" value="{{userDetails.image.url}}" />
+    </div> {% endcomment %}
 
     <div class="form-group">
       <label for="feedbackType">Feedback Type:</label>
       <select id="feedbackType" name="feedbackType" required>
-        <option value="compliment">Compliment</option>
         <option value="suggestion">Suggestion</option>
         <option value="thought">Thought</option>
+        <option value="compliment">Compliment</option>
+        
       </select>
     </div>
 
