@@ -156,10 +156,18 @@ MEDIA_ROOT = os.path.join( BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'sandbox.smtp.mailtrap.io'  # Replace with your Mailtrap SMTP server
+# EMAIL_PORT = 2525  # Mailtrap default SMTP port
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = '2dbfdbafe9747d'  # Replace with your Mailtrap SMTP username
+# EMAIL_HOST_PASSWORD = '01f7726ca1c79a'  # Replace with your Mailtrap SMTP password
+# DEFAULT_FROM_EMAIL = 'hopelinkconnect@gmail.com'  # Replace with your Mailtrap sender email
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'sandbox.smtp.mailtrap.io'  # Replace with your Mailtrap SMTP server
-EMAIL_PORT = 2525  # Mailtrap default SMTP port
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'hopelinkconnectt@gmail.com' 
+EMAIL_HOST_PASSWORD = 'ylra futb rqqp ywph'
+EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = '2dbfdbafe9747d'  # Replace with your Mailtrap SMTP username
-EMAIL_HOST_PASSWORD = '01f7726ca1c79a'  # Replace with your Mailtrap SMTP password
-DEFAULT_FROM_EMAIL = 'hopelinkconnect@gmail.com'  # Replace with your Mailtrap sender email
+EMAIL_USE_SSL = False

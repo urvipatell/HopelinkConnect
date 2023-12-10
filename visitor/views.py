@@ -40,11 +40,14 @@ def contact (request):
             message=message
         )
         subject = subject
-        message = message
-        from_email = 'hopelinkconnect@gmail.com'
+        from_email = 'hopelinkconnectt@gmail.com'
         recipient_list = [email] 
 
+        body= "Hi Sir/Ma'am, User detail: Name: " + name + " Email:" + email + " Subject: " + subject + " Message:" + message + " Thank you, Team Hoeplink Coonect"
+        message= "Hi " + name + ", Thank you for connecting will connect within a days. Thank you, Team Hopelink Connect"
+        print (body)
         send_mail(subject, message, from_email, recipient_list)
+        send_mail("User connect with us", body, from_email, [from_email])
         contact.save()
     return render(request, 'visitor/contact.html')
 
