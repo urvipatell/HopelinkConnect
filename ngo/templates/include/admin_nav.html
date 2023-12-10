@@ -140,23 +140,23 @@
       </a>
     </li>
     </li>
-    <li class="nav-item">
-      <a class="nav-link text-white {% if request.resolver_match.url_name == 'adminnotification' %}active bg-gradient-primary{% endif %}" href="{% url 'adminnotification' %}"style="font-size: 18px;">
-      <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-        <i class="material-icons opacity-10">notifications</i>
-      </div>
-      <span class="nav-link-text ms-1">Notifications</span>
-      </a>
-    </li>
-    {% comment %} <li class="nav-item">
-      <a class="nav-link text-white {% if request.resolver_match.url_name == 'admin_staffnotification' %}active bg-gradient-primary{% endif %}" href="{% url 'admin_staffnotification' %}">
+      <li class="nav-item">
+      <a class="nav-link text-white {% if request.resolver_match.url_name == 'admin_staffnotification' %}active bg-gradient-primary{% endif %}" href="{% url 'admin_staffnotification' %}" style="font-size: 18px;">
       <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
         <i class="material-icons opacity-10">notifications</i>
       </div>
       <span class="nav-link-text ms-1">StaffNotifications</span>
       </a>
-    </li> {% endcomment %}
-   
+    </li> 
+    <li class="nav-item">
+      <a class="nav-link text-white {% if request.resolver_match.url_name == 'adminnotification' %}active bg-gradient-primary{% endif %}" href="{% url 'adminnotification' %}"style="font-size: 18px;">
+      <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+        <i class="material-icons opacity-10">notifications</i>
+      </div>
+      <span class="nav-link-text ms-1">UserNotifications</span>
+      </a>
+    </li>
+    
     <li class="nav-item">
       <a class="nav-link text-white {% if request.resolver_match.url_name == 'calendar' %}active bg-gradient-primary{% endif %}" href="{% url 'calendar' %}"style="font-size: 18px;" >
       <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">

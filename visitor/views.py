@@ -823,12 +823,18 @@ def new_member(request):
     return render(request, 'staff/ngo_member.html',{'new_member': new_member })
 
 
-def notification(request):
+def notification_admin(request):
     
-  
+    user_notifications = StaffNotification.objects.filter(user=request.user).order_by('-timestamp')
 
-    return render(request, 'staff/notification.html')
+    total_notification_count = user_notifications.count()  # Use count() on the queryset
 
+    context = {
+        'user_notifications': user_notifications,
+        'total_notification_count': total_notification_count,
+    }
+
+    return render(request, 'staff/notification.html', context)
 
 
 

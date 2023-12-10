@@ -59,66 +59,86 @@
     
 
 
-    <form id="notification-form">
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+        }
+    
+        form {
+          max-width: 400px;
+          margin: 50px auto;
+          padding: 20px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    
+        .form-group {
+          margin-bottom: 20px;
+        }
+    
+        .form-group label {
+          display: block;
+          margin-bottom: 8px;
+        }
+    
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+          width: 100%;
+          padding: 8px;
+          box-sizing: border-box;
+        }
+    
+        .form-group button {
+          background-color: #ff9800;
+          color: white;
+          padding: 10px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+    
+        .form-group button:hover {
+          background-color: #45a049;
+        }
+      </style>
+      
+      <form id="notification" method="post" acrion="{% url 'admin_staffnotification' %}" enctype="multipart/form-data">
         {% csrf_token %}
-        <label for="message">Notification Message:</label>
-        <textarea name="message" rows="4" cols="50"></textarea>
-        <br>
-        <button type="submit">Add Notification</button>
-    </form>
+    
+        {% comment %} <h1><center><b>Feedback Form</b></center></h1> {% endcomment %}
+        <div class="form-group">
+          <label for="name">UserName:</label>
+          <input type="text" id="name" name="username"  placeholder="Enter your name"  required>
+        </div>
+    
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
 
-    <table class="notification-table">
-        <thead>
-            <tr>
-                <th>Previous Notification</th>
-                <th>Timestamp</th>
-            </tr>
-        </thead>
-        <tbody id="notification-body">
-            <!-- Notifications will be displayed here using JavaScript -->
-        </tbody>
-    </table>
+        <div class="form-group">
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time" placeholder="Enter time you meet" required>
+        </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            // Function to fetch and display notifications
-            function fetchNotifications() {
-                $.ajax({
-                    url: '{% url 'fetch_notifications' %}',
-                    type: 'GET',
-                    dataType: 'json',
-                    success: function (data) {
-                        var notifications = data.notifications;
-                        var notificationsHtml = '';
-                        for (var i = 0; i < notifications.length; i++) {
-                            notificationsHtml += '<tr>' +
-                                '<td>' + notifications[i].message + '</td>' +
-                                '<td>' + notifications[i].timestamp + '</td>' +
-                                '</tr>';
-                        }
-                        $('#notification-body').html(notificationsHtml);
-                    }
-                });
-            }
-
-            // Initial fetch of notifications
-            fetchNotifications();
-
-            // Submit the notification form via AJAX
-            $('#notification-form').submit(function (e) {
-                e.preventDefault();
-                $.ajax({
-                    url: '{% url 'admin_notifications' %}',
-                    type: 'POST',
-                    data: $(this).serialize(),
-                    success: function () {
-                        fetchNotifications(); // Refresh notifications after adding one
-                    }
-                });
-            });
-        });
+        <div class="form-group">
+          <label for="comments">Messages:</label>
+          <textarea id="comments" name="comments" placeholder="Enter your comments" rows="4" required></textarea>
+        </div>
+    
+        <div class="form-group">
+          <button type="submit">Submit Feedback</button>
+        </div>
+      </form>
+    
+    <script >
+      function submitFeedback() {
+        // Here, you can add JavaScript logic to handle the form submission, such as sending data to a server or displaying a thank you message.
+        // For this example, let's just show an alert.
+        alert("Thank you for your feedback!");
+      }
     </script>
-</body>
-</html>
+    
 {% endblock %}

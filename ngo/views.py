@@ -276,6 +276,21 @@ def admin_notifications(request):
 
 
 def admin_staffnotification(request):
+    if request.method == 'POST':
+        # Handle the form submission
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        time = request.POST.get('time')
+        comments = request.POST.get('comments')
+
+        # Assuming you are using the currently logged-in user
+        user = request.user
+
+        # Create a StaffNotification object and save it
+        notification = StaffNotification(user=user, username=username, email=email, time=time, comments=comments)
+        notification.save()
+
+        return redirect('admin_staffnotification') 
     
     return render(request, 'ngo/admin_Staffnotification.html')
 

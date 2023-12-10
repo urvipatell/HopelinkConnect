@@ -85,7 +85,7 @@
                       <div class="icon_info">
                          <ul>
                            <li><a href="{% url 'user_notification' %}"><i class="fa fa-bell-o"></i><span class="badge">{{ total_notification_count }}</span></a></li>
-                            <li><a href="#"><i class="fa fa-question-circle"></i></a></li>
+                            {% comment %} <li><a href="#"><i class="fa fa-question-circle"></i></a></li> {% endcomment %}
                             {% comment %} <li><a href="#"><i class="fa fa-envelope-o"></i><span class="badge">3</span></a></li> {% endcomment %}
                          </ul>
                          <ul class="user_profile_dd">

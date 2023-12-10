@@ -85,7 +85,7 @@
                    <div class="right_topbar">
                       <div class="icon_info">
                          <ul>
-                           <a href="{% url 'userevent' %}" class="btn btn-primary py-2 px-4 {% if request.resolver_match.url_name == 'userevent' %}active{% endif %}">Book An Event Now</a>
+                           <li><a href="{%url 'notification_admin'%}"><i class="fa fa-bell-o"></i><span class="badge">{{ total_notification_count }}</span></a></li>
                            
                          </ul>
                          <ul class="user_profile_dd">
