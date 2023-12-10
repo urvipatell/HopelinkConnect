@@ -824,8 +824,10 @@ def new_member(request):
 
 
 def notification_admin(request):
-    
-    user_notifications = StaffNotification.objects.filter(user=request.user).order_by('-timestamp')
+    username = request.session.get('username')
+
+    userDetails = signup.objects.filter(username=username).first()
+    user_notifications = StaffNotification.objects.filter(username=userDetails).order_by('-timestamp')
 
     total_notification_count = user_notifications.count()  # Use count() on the queryset
 
@@ -855,11 +857,6 @@ def staff_clothdonation(request):
    cloth_donation = clothDonation.objects.filter(status='Approved').order_by('-id')
 
    return render(request, 'staff/staff_clothdonation.html', {'cloth_donation': cloth_donation})
-
-
-
-
-
 
 
 def staff_healthcare(request):
