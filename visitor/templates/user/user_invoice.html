@@ -120,10 +120,10 @@
                                  <th style="width:50%">Subtotal:</th>
                                  <td>{{moneyDonation.currency}} {{moneyDonation.donation_amount}}</td>
                               </tr>
-                              <tr>
+                              {% comment %} <tr>
                                  <th>Tax (9.3%)</th>
                                  <td>{{moneyDonation.currency}} 100</td>
-                              </tr>
+                              </tr> {% endcomment %}
                               <tr>
                                  <th>Total:</th>
                                  <td>{{moneyDonation.currency}} {{moneyDonation.donation_amount}}</td>
@@ -140,7 +140,16 @@
    <!-- footer -->
    <div class="container-fluid">
       <div class="footer">
-         <button onclick="myfun('pt')" class="btn btn-success btn-xs">Download<button>
+         <button onclick="myfun('pt')" class="btn btn-success btn-xs" style="margin-right: 20px">Download<button>
+         <a style=" 
+         text-decoration: none;
+         background-color: #EEEEEE;
+         color: #333333;
+         padding: 2px 6px 2px 6px;
+         border-top: 1px solid #CCCCCC;
+         border-right: 1px solid #333333;
+         border-bottom: 1px solid #333333;
+         border-left: 1px solid #CCCCCC;" href="{% url 'userdeshbord' %}">Back</a>
       </div>
    </div>
 </div>
