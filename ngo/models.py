@@ -399,3 +399,12 @@ class StaffNotification(models.Model):
 
     def __str__(self):
         return f"{self.username} - {self.timestamp}"
+
+
+class EventNotification(models.Model):
+    name = models.CharField(max_length=255)
+    event_datetime = models.DateTimeField()
+    description = models.TextField()
+
+    def __str__(self):
+        return f"{self.name} - {self.event_datetime}"

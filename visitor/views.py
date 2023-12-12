@@ -18,7 +18,7 @@ from django.http import JsonResponse
 # Create your views here.
 
 def index(request):
-    notifications = StaffNotification.objects.all()
+    notifications = EventNotification.objects.all()
     feedback=Feedback.objects.filter(feedback_type__in=['thought', 'suggestion'])
     return render(request, 'visitor/index.html', {'notifications': notifications, 'feedback': feedback })
 
@@ -211,7 +211,7 @@ def intant (request):
 
 def user_index (request):
     # profileImage = request.session.get('image')
-    notifications = StaffNotification.objects.all()
+    notifications = EventNotification.objects.all()
     feedback=Feedback.objects.filter(feedback_type__in=['thought', 'suggestion']) 
     return render(request, 'user/user_index.html',{'notifications': notifications,'feedback': feedback})
 
@@ -663,7 +663,8 @@ def staff_media (request):
         )
         
         eventimage.save()
-        return redirect(reverse('staffmediagallery'))
+         
+        return redirect('staffmediagallery')
 
     health_camp_images = EventImage.objects.filter(event='Health Camp')
     social_activity_images = EventImage.objects.filter(event='Social Activity')
@@ -702,14 +703,15 @@ def staff_notification (request):
         description = request.POST.get('description')
 
         # Create a new StaffNotification instance and save it to the database
-        staff_notification = StaffNotification(
+        staff_notification = EventNotification(
             name=name,
             event_datetime=event_datetime,
             description=description,
         )
         staff_notification.save()
     
-    notifications = StaffNotification.objects.all()
+    notifications = EventNotification.objects.all()
+
     return render(request, 'staff/staff_notification.html', {'notifications': notifications})
 
 
@@ -816,7 +818,9 @@ def new_member(request):
         uploaded_file = uploaded_file
         )
         new_member.save()
-        return redirect(reverse('newmember'))
+
+        return redirect('newmember')  
+
 
     new_member = NewMember.objects.filter(status='Approved').order_by('-id')
 

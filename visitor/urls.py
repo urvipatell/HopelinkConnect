@@ -30,7 +30,6 @@ urlpatterns = [
     path('fetch_notifications/', views.fetch_notifications, name='fetch_notifications'),
 
     path('notification_admin/', views.notification_admin, name='notification_admin'),   
-
     path('newmember', views.new_member, name="newmember"),
     path('staffdeshbord', views.staff_deshbord, name="staffdeshbord"),
     path('staffdonationre', views.staff_donation, name="staffdonationre"),
