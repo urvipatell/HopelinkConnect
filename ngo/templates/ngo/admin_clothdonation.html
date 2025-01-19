@@ -58,6 +58,7 @@
               <td><img src="{{ cloth_donation.image.url}}" width="200px" height="200px"/></td>
               <td id="status-{{ cloth_donation.id }}">{{ cloth_donation.status }}</td>
               <td>
+
                 <form action="{% url 'admin_clothdonation' %}" method="post">
                   {% csrf_token %}
                   <input type="hidden" name="form_type" value="cloth" />
@@ -65,6 +66,7 @@
                   <input type="hidden" name="status" value="Approved" />
                   <button type="submit" class="btn btn-success">Approve</button>
                 </form>
+                
                 <form action="{% url 'admin_clothdonation' %}" method="post">
                   {% csrf_token %}
                   <input type="hidden" name="form_type" value="cloth" />

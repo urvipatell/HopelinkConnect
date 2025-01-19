@@ -92,7 +92,6 @@ def gallery (request):
     #     messages.error(request, 'Profile data not found')
     #     return redirect('home')
 
-
 def login (request):
     if request.method == 'POST':
         username = request.POST['username']
